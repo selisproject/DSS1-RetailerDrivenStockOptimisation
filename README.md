@@ -1,0 +1,2 @@
+# DSS1-RetailerDriverStockOptimisation
+The Retailer Driven Stock Optimisation Decision Support System provides retailers with the visibility upstream of their supply chain, and suppliers with the visibility of the downstream supply chain, enabling a more efficient optimization of operational parameters such as production, stocks position, movements and levels, maximization of products freshness and prevention of waste generation hotspots.
