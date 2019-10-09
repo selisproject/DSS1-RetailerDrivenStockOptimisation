@@ -1,0 +1,3374 @@
+@import "css/bootstrap.min.css";
+@import "Notification.css";
+@import "pretty-checkbox.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Hind");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+/* ================= Imports ======================== */
+
+/* ================= End of Imports ======================== */
+
+/* ================= Rules derived from Options ======================== */
+
+body:not(.jb-ignore-global) {
+  font-family: Roboto;
+  color: #3a3a3a;
+  font-size: 14px;
+}
+.jb-control[ui-role-font-size='xs']:not(.jb-ignore-global) {
+  font-size: 6px;
+}
+.jb-control[ui-role-font-size='sm']:not(.jb-ignore-global) {
+  font-size: 12px;
+}
+.jb-control[ui-role-font-size='med']:not(.jb-ignore-global) {
+  font-size: 14px;
+}
+.jb-control[ui-role-font-size='lg']:not(.jb-ignore-global) {
+  font-size: 18px;
+}
+.jb-control[ui-role-font-size='xl']:not(.jb-ignore-global) {
+  font-size: 35px;
+}
+body:not(.jb-ignore-global) {
+  background-color: #f4f3f3;
+}
+.jb-control[jb-type='Modal'],
+.jb-control[jb-type='ModalContent'],
+.jb-control[jb-type='FieldSet'] {
+  background-color: white;
+}
+.jb-control[ui-role-color='default']:not(.jb-ignore-global) {
+  background-color: #d1d1ce;
+}
+.jb-control[ui-role-color='default']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='default']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='default']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='default']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #eaeae8;
+}
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global) {
+  background-color: #4c92d8;
+}
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #76abe1;
+}
+.jb-control[ui-role-color='primary']:not(.jb-ignore-global)[jb-type='Iconism'].jb-round-icon {
+  color: white;
+}
+.jb-control[ui-role-color='success']:not(.jb-ignore-global) {
+  background-color: #329e32;
+}
+.jb-control[ui-role-color='success']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='success']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='success']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='success']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #40c340;
+}
+.jb-control[ui-role-color='success']:not(.jb-ignore-global)[jb-type='Iconism'].jb-round-icon {
+  color: white;
+}
+.jb-control[ui-role-color='info']:not(.jb-ignore-global) {
+  background-color: #58b0bc;
+}
+.jb-control[ui-role-color='info']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='info']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='info']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='info']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #7cc1cb;
+}
+.jb-control[ui-role-color='info']:not(.jb-ignore-global)[jb-type='Iconism'].jb-round-icon {
+  color: white;
+}
+.jb-control[ui-role-color='warning']:not(.jb-ignore-global) {
+  background-color: #eab840;
+}
+.jb-control[ui-role-color='warning']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='warning']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='warning']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='warning']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #efc96e;
+}
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global) {
+  background-color: #e14e4e;
+}
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global)[jb-type='Button']:ie-wont-hover,
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global)[jb-type='PickList']:ie-wont-hover,
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global)[jb-type='DataPickList']:ie-wont-hover,
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global)[jb-type='ListCommandButton']:ie-wont-hover {
+  background-color: #e87a7a;
+}
+.jb-control[ui-role-color='danger']:not(.jb-ignore-global)[jb-type='Iconism'].jb-round-icon {
+  color: white;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='default']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='default']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='default']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #d1d1ce;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='primary']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='primary']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='primary']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #4c92d8;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='success']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='success']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='success']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #329e32;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='info']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='info']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='info']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #58b0bc;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='warning']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='warning']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='warning']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #eab840;
+}
+.jb-control[jb-type='Iconism'][ui-role-color='danger']:not(.jb-ignore-global):not(.jb-round-icon),
+.jb-control[jb-type='HyperLink'][ui-role-color='danger']:not(.jb-ignore-global),
+.jb-control[jb-type='Label'][ui-role-color='danger']:not(.jb-ignore-global) {
+  background-color: initial;
+  color: #e14e4e;
+}
+.radius-on-top {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.radius-on-bottom {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.radius-at-all {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.no-radius-on-top {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.no-radius-on-bottom {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.no-radius-at-all {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.with-shadow {
+  box-shadow: 0 !important;
+}
+.no-shadow {
+  box-shadow: initial !important;
+}
+.with-transition {
+  transition: unset;
+}
+.jb-control[jb-type='Button']:not(.jb-ignore-global),
+.jb-control[jb-type='PickList']:not(.jb-ignore-global) .jb-control[jb-type='DataPickList']:not(.jb-ignore-global) {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 !important;
+  transition: unset;
+}
+.sweet-alert button {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 !important;
+  transition: unset;
+}
+.sweet-alert button.confirm {
+  background-color: #4c92d8 !important;
+}
+.sweet-alert button.confirm:ie-wont-hover {
+  background-color: #76abe1 !important;
+}
+.sweet-alert button.cancel {
+  background-color: #d1d1ce !important;
+  color: black !important;
+}
+.sweet-alert button.cancel:ie-wont-hover {
+  background-color: #eaeae8 !important;
+}
+.jb-control[jb-type='TextBox']:not(.jb-ignore-global),
+.jb-control[jb-type='RichTextBox']:not(.jb-ignore-global),
+.jb-control[jb-type='TextArea']:not(.jb-ignore-global),
+.jb-control[jb-type='DateTimeBox']:not(.jb-ignore-global),
+.jb-control[jb-type='PasswordTextBox']:not(.jb-ignore-global),
+.jb-control[jb-type='ProgressBar']:not(.jb-ignore-global),
+.jb-control[jb-type='DropDownBox']:not(.jb-ignore-global) {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transition: unset;
+  outline: none !important;
+  height: unset;
+  padding-top: unset;
+  padding-bottom: unset;
+  padding-left: unset;
+  padding-right: unset;
+  background-color: unset;
+  border-top-width: unset;
+  border-bottom-width: unset;
+  border-right-width: unset;
+  border-left-width: unset;
+  border-top-color: #d4d4d4;
+  border-left-color: #d4d4d4;
+  border-right-color: #d4d4d4;
+  border-bottom-color: #d4d4d4;
+  border: unset solid #d4d4d4;
+  color: unset;
+  font-size: unset;
+}
+.jb-control[jb-type='List']:not(.jb-ignore-global),
+.jb-control[jb-type='ModalContent']:not(.jb-ignore-global),
+.jb-control[jb-type='FieldSet']:not(.jb-ignore-global) {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 !important;
+}
+.jb-control[jb-type='ModalContent'] .jb-control[jb-type='ModalBody']:not(.jb-ignore-global),
+.jb-control[jb-type='ModalContent'] .jb-control[jb-type='ModalFooter']:not(.jb-ignore-global),
+.jb-control[jb-type='ModalContent'] .jb-control[jb-type='ModalHeader']:not(.jb-ignore-global),
+.jb-control[jb-type='FieldSet'] .jb-control[jb-type='FieldSetBody']:not(.jb-ignore-global) {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.jb-control[jb-type='FieldSet'] .jb-control[jb-type='FieldSetHeader']:not(.jb-ignore-global) {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.jb-control[jb-type='FieldSet'] .jb-control[jb-type='FieldSetFooter']:not(.jb-ignore-global) {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.jb-control[jb-type='TabContainer'] .jb-control[jb-type='TabContent']:not(.jb-ignore-global) {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 !important;
+}
+.jb-control[jb-type='TabContainer'] .jb-control[jb-type='TabHeader']:not(.jb-ignore-global) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+/* ================= End of Rules derived from Options ======================== */
+
+/* ================= Rules derived from Mappings ======================== */
+
+/* ================= BodyContainer (Role: None) ======================== */
+
+/* ================= End of BodyContainer (Role: None) ======================== */
+
+/* ================= TextBox (Role: None) ======================== */
+
+/* ================= End of TextBox (Role: None) ======================== */
+
+/* ================= Body (Role: None) ======================== */
+
+.jb-control[jb-type='Body'] {
+  overflow-x: hidden;
+  font-size: 12px;
+}
+/* ================= End of Body (Role: None) ======================== */
+
+/* ================= TextArea (Role: None) ======================== */
+
+/* ================= End of TextArea (Role: None) ======================== */
+
+/* ================= DropDownBox (Role: None) ======================== */
+
+.jb-control[jb-type='DropDownBox'] {
+  visibility: hidden !important;
+}
+.jb-control[jb-type='DropDownBox'] + .chosen-container {
+  height: 30px;
+  width: 100% !important;
+}
+.jb-control[jb-type='DropDownBox'] + .chosen-container .chosen-single {
+  background: white !important;
+  height: 30px !important;
+  padding: 2px 0 0 8px !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  box-shadow: initial !important;
+}
+.jb-control[jb-type='DropDownBox'] + .chosen-container .chosen-drop {
+  border-radius: 2px !important;
+  box-shadow: initial !important;
+}
+.jb-control[jb-type='DropDownBox'] + .chosen-container .chosen-drop .chosen-results .active-result.highlighted {
+  color: white !important;
+  background: #4c92d8 !important;
+}
+.jb-control[jb-type='DropDownBox'] + .chosen-container-single .chosen-single div b {
+  position: relative;
+  top: 2px;
+}
+.jb-control[jb-type='DropDownBox'].jb-required + .chosen-container .chosen-drop {
+  width: calc(100% - 20px) !important;
+}
+.jb-control[jb-type='DropDownBox'].jb-required + .chosen-container {
+  padding-right: 20px;
+  background-image: url(images/icon-asterisk.png);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 2px);
+  background-position-y: 2px;
+}
+/* ================= End of DropDownBox (Role: None) ======================== */
+
+/* ================= RichTextBox (Role: None) ======================== */
+
+/* ================= End of RichTextBox (Role: None) ======================== */
+
+/* ================= OptionButton (Role: None) ======================== */
+
+.jb-control[jb-type='OptionButton'] {
+  zoom: 1.5;
+  cursor: pointer;
+  opacity: 0.8;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+.jb-control[jb-type='OptionButton']:ie-wont-hover {
+  opacity: 1;
+}
+/* ================= End of OptionButton (Role: None) ======================== */
+
+/* ================= FieldSet (Role: None) ======================== */
+
+.jb-control[jb-type='FieldSet'] [jb-type='FieldSetToggleStateIcon'] {
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 14px;
+  float: right;
+}
+.jb-control[jb-type='FieldSet'] [jb-type='FieldSetToggleStateIcon']:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='FieldSet'] [jb-type='FieldSetToggleStateIcon']:ie-wont-hover {
+  opacity: 1;
+}
+/* ================= End of FieldSet (Role: None) ======================== */
+
+/* ================= FieldSetHeader (Role: None) ======================== */
+
+/* ================= End of FieldSetHeader (Role: None) ======================== */
+
+/* ================= FieldSetBody (Role: None) ======================== */
+
+.jb-control[jb-type='FieldSetBody'].jb-collapsed {
+  display: none;
+}
+/* ================= End of FieldSetBody (Role: None) ======================== */
+
+/* ================= FieldSetFooter (Role: None) ======================== */
+
+.jb-control[jb-type='FieldSetFooter'] {
+  background-color: inherit;
+}
+/* ================= End of FieldSetFooter (Role: None) ======================== */
+
+/* ================= CheckBox (Role: None) ======================== */
+
+.jb-control[jb-type='CheckBox'] {
+  zoom: 2;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.jb-control[jb-type='CheckBox']:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='CheckBox'].jb-readonly {
+  cursor: default !important;
+  opacity: 1 !important;
+}
+/* ================= End of CheckBox (Role: None) ======================== */
+
+/* ================= ImageBox (Role: None) ======================== */
+
+.jb-control[jb-type='ImageBox'][jb-thumbnail='true'] {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.jb-control[jb-type='ImageBox'][jb-thumbnail='true']:ie-wont-hover {
+  opacity: 1;
+}
+/* ================= End of ImageBox (Role: None) ======================== */
+
+/* ================= NewMapControl (Role: None) ======================== */
+
+/* ================= End of NewMapControl (Role: None) ======================== */
+
+/* ================= Chart (Role: None) ======================== */
+
+/* ================= End of Chart (Role: None) ======================== */
+
+/* ================= ProgressBar (Role: None) ======================== */
+
+.jb-control[jb-type='ProgressBar'] {
+  box-shadow: 0;
+}
+.jb-control[jb-type='ProgressBar'] .progress-bar {
+  font-size: inherit;
+  line-height: inherit;
+}
+/* ================= End of ProgressBar (Role: None) ======================== */
+
+/* ================= Modal (Role: None) ======================== */
+
+.jb-control[jb-type='Modal'] {
+  position: absolute;
+  z-index: 101;
+  display: none;
+}
+.jb-control[jb-type='Modal'] .modal-close-button {
+  position: absolute;
+  right: 10px;
+  width: initial !important;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: initial !important;
+}
+.jb-control[jb-type='Modal'] .modal-close-button::after {
+  content: "\d7";
+  font-size: 30px;
+  position: absolute;
+  bottom: -20px;
+  left: 5px;
+}
+.jb-control[jb-type='Modal'] .jb-modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.jb-control[jb-type='Modal'] [jb-type='List'] {
+  box-shadow: initial !important;
+}
+/* ================= End of Modal (Role: None) ======================== */
+
+/* ================= ModalContent (Role: None) ======================== */
+
+/* ================= End of ModalContent (Role: None) ======================== */
+
+/* ================= ModalHeader (Role: None) ======================== */
+
+.jb-control[jb-type='ModalHeader'] {
+  height: 30px;
+  width: 100%;
+  padding-top: 8px;
+  border: none;
+}
+/* ================= End of ModalHeader (Role: None) ======================== */
+
+/* ================= ModalBody (Role: None) ======================== */
+
+.jb-control[jb-type='ModalBody'] {
+  height: calc(100% - 80px);
+  width: 100%;
+}
+/* ================= End of ModalBody (Role: None) ======================== */
+
+/* ================= ModalFooter (Role: None) ======================== */
+
+.jb-control[jb-type='ModalFooter'] {
+  /*height: 50px;*/
+  width: 100%;
+  padding-top: 8px;
+  border: none;
+  background-color: inherit;
+}
+/* ================= End of ModalFooter (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveRow (Role: None) ======================== */
+
+.jb-control[jb-type='ResponsiveRow'] {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+/* ================= End of ResponsiveRow (Role: None) ======================== */
+
+/* ================= ResponsiveTable (Role: None) ======================== */
+
+/* ================= End of ResponsiveTable (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= ResponsiveColumn (Role: None) ======================== */
+
+/* ================= End of ResponsiveColumn (Role: None) ======================== */
+
+/* ================= List, DataList (Role: None) ======================== */
+
+.jb-control[jb-type='List'],
+.jb-control[jb-type='DataList'] {
+  /*background-color:white;*/
+  border: none;
+  padding: 5px 15px 5px 15px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.jb-control[jb-type='List'] .groups-grid table tr th,
+.jb-control[jb-type='DataList'] .groups-grid table tr th,
+.jb-control[jb-type='List'] .filters-grid table tr th,
+.jb-control[jb-type='DataList'] .filters-grid table tr th,
+.jb-control[jb-type='List'] .preferences-grid table tr th,
+.jb-control[jb-type='DataList'] .preferences-grid table tr th {
+  color: #3a3a3a;
+  font-weight: lighter;
+  border-bottom: 1px solid rgba(41, 41, 41, 0.11);
+}
+.jb-control[jb-type='List'] .groups-grid table tr td,
+.jb-control[jb-type='DataList'] .groups-grid table tr td,
+.jb-control[jb-type='List'] .filters-grid table tr td,
+.jb-control[jb-type='DataList'] .filters-grid table tr td,
+.jb-control[jb-type='List'] .preferences-grid table tr td,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td {
+  vertical-align: middle;
+}
+.jb-control[jb-type='List'] .groups-grid table tr td input[type="radio"],
+.jb-control[jb-type='DataList'] .groups-grid table tr td input[type="radio"],
+.jb-control[jb-type='List'] .filters-grid table tr td input[type="radio"],
+.jb-control[jb-type='DataList'] .filters-grid table tr td input[type="radio"],
+.jb-control[jb-type='List'] .preferences-grid table tr td input[type="radio"],
+.jb-control[jb-type='DataList'] .preferences-grid table tr td input[type="radio"] {
+  display: inline-block;
+  margin: 0px;
+}
+.jb-control[jb-type='List'] .groups-grid table tr td .glyphicon,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .glyphicon,
+.jb-control[jb-type='List'] .filters-grid table tr td .glyphicon,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .glyphicon,
+.jb-control[jb-type='List'] .preferences-grid table tr td .glyphicon,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .glyphicon {
+  color: #3a3a3a;
+}
+.jb-control[jb-type='List'] .groups-grid table tr td .add-group,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .add-group,
+.jb-control[jb-type='List'] .filters-grid table tr td .add-group,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .add-group,
+.jb-control[jb-type='List'] .preferences-grid table tr td .add-group,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .add-group,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-up,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-up,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-up,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-up,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-up,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-up,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-down,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-down,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-down,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-down,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-down,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-down,
+.jb-control[jb-type='List'] .groups-grid table tr td .remove-group,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .remove-group,
+.jb-control[jb-type='List'] .filters-grid table tr td .remove-group,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .remove-group,
+.jb-control[jb-type='List'] .preferences-grid table tr td .remove-group,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .remove-group {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+}
+.jb-control[jb-type='List'] .groups-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .remove-group:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .groups-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .add-group:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-up:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .move-down:ie-wont-hover,
+.jb-control[jb-type='List'] .groups-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .groups-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='List'] .filters-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filters-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='List'] .preferences-grid table tr td .remove-group:ie-wont-hover,
+.jb-control[jb-type='DataList'] .preferences-grid table tr td .remove-group:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .collapsile-grid-footer,
+.jb-control[jb-type='DataList'] .collapsile-grid-footer {
+  background-color: #eaeae8;
+  padding: 10px;
+  text-align: center;
+}
+.jb-control[jb-type='List'] .groups-grid .groups-header,
+.jb-control[jb-type='DataList'] .groups-grid .groups-header,
+.jb-control[jb-type='List'] .filters-grid .filters-header,
+.jb-control[jb-type='DataList'] .filters-grid .filters-header,
+.jb-control[jb-type='List'] .grids-header.preferences-header,
+.jb-control[jb-type='DataList'] .grids-header.preferences-header {
+  background-color: #4c92d8;
+  color: white;
+}
+.jb-control[jb-type='List'].stand-alone,
+.jb-control[jb-type='DataList'].stand-alone {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.jb-control[jb-type='List'].stand-alone .row-num-border,
+.jb-control[jb-type='DataList'].stand-alone .row-num-border {
+  background-color: transparent;
+  width: auto;
+}
+.jb-control[jb-type='List'].stand-alone .list-data-container .row-num-border,
+.jb-control[jb-type='DataList'].stand-alone .list-data-container .row-num-border {
+  width: 45px;
+  border-top: none;
+}
+.jb-control[jb-type='List'].stand-alone .list-docked-grids,
+.jb-control[jb-type='DataList'].stand-alone .list-docked-grids {
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  height: 100% !important;
+  right: 0px;
+  z-index: 10000;
+  background-color: white;
+}
+.jb-control[jb-type='List'].stand-alone .list-docked-grids .collapsible-grid,
+.jb-control[jb-type='DataList'].stand-alone .list-docked-grids .collapsible-grid {
+  margin: 0px;
+}
+.jb-control[jb-type='List'] .list-wrapper,
+.jb-control[jb-type='DataList'] .list-wrapper {
+  margin-bottom: 10px;
+}
+.jb-control[jb-type='List'] .list-data-table,
+.jb-control[jb-type='DataList'] .list-data-table {
+  margin-bottom: 5px;
+}
+.jb-control[jb-type='List'] .list-column-vertical-scrollbar,
+.jb-control[jb-type='DataList'] .list-column-vertical-scrollbar {
+  float: right;
+  position: relative;
+}
+.jb-control[jb-type='List'] .list-column-vertical-scrollbar .top-right-corner,
+.jb-control[jb-type='DataList'] .list-column-vertical-scrollbar .top-right-corner {
+  background-color: transparent;
+  border-top-right-radius: 2px;
+  border-bottom: solid 1px transparent;
+  border-left: 1px solid transparent;
+}
+.jb-control[jb-type='List'] .list-column-vertical-scrollbar .bottom-right-corner,
+.jb-control[jb-type='DataList'] .list-column-vertical-scrollbar .bottom-right-corner {
+  background-color: transparent;
+  border-bottom: solid 1px transparent;
+  border-left: 1px solid transparent;
+}
+.jb-control[jb-type='List'] .list-column-vertical-scrollbar .bottom-right-corner.bottom-cap,
+.jb-control[jb-type='DataList'] .list-column-vertical-scrollbar .bottom-right-corner.bottom-cap {
+  border-left: none;
+  border-bottom: solid 5px transparent;
+}
+.jb-control[jb-type='List'] .list-column-vertical-scrollbar .scrollbar-content-wrapper,
+.jb-control[jb-type='DataList'] .list-column-vertical-scrollbar .scrollbar-content-wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] .list-column-horzontal-scrollbar,
+.jb-control[jb-type='DataList'] .list-column-horzontal-scrollbar {
+  float: left;
+  position: relative;
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] .list-column-horzontal-scrollbar .scrollbar-content-wrapper,
+.jb-control[jb-type='DataList'] .list-column-horzontal-scrollbar .scrollbar-content-wrapper {
+  float: left;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.jb-control[jb-type='List'] .scrollbars-bottom-right-corner,
+.jb-control[jb-type='DataList'] .scrollbars-bottom-right-corner {
+  float: right;
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] .list-data-row,
+.jb-control[jb-type='DataList'] .list-data-row {
+  height: 40px;
+  cursor: pointer;
+}
+.jb-control[jb-type='List'] .list-data-row > td,
+.jb-control[jb-type='DataList'] .list-data-row > td {
+  transition: all ease 0.25s;
+  vertical-align: middle !important;
+  padding: 10px;
+}
+.jb-control[jb-type='List'] .header-right .global-search-button,
+.jb-control[jb-type='DataList'] .header-right .global-search-button {
+  cursor: pointer;
+  opacity: 0.8;
+  margin: 3px 3px 3px 0px;
+  color: #3a3a3a;
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] .header-right .global-search-button:ie-wont-hover,
+.jb-control[jb-type='DataList'] .header-right .global-search-button:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .header-right .global-search-button:ie-wont-hover,
+.jb-control[jb-type='DataList'] .header-right .global-search-button:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .select-page-size,
+.jb-control[jb-type='DataList'] .select-page-size,
+.jb-control[jb-type='List'] .list-current-page,
+.jb-control[jb-type='DataList'] .list-current-page {
+  height: 30px;
+  padding: 6px 12px;
+}
+.jb-control[jb-type='List'] .select-page-size,
+.jb-control[jb-type='DataList'] .select-page-size {
+  height: 28px;
+  position: relative;
+  top: 1px;
+}
+.jb-control[jb-type='List'] .list-current-page,
+.jb-control[jb-type='DataList'] .list-current-page {
+  text-align: center;
+  padding: initial;
+  width: 40px;
+  position: relative;
+  bottom: 1px;
+  height: 28px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.jb-control[jb-type='List'] tr.list-data-row,
+.jb-control[jb-type='DataList'] tr.list-data-row {
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] tr.list-data-row td,
+.jb-control[jb-type='DataList'] tr.list-data-row td {
+  font-weight: lighter;
+}
+.jb-control[jb-type='List'] tr:ie-wont-hover td.list-data-cell:not(.row-number),
+.jb-control[jb-type='DataList'] tr:ie-wont-hover td.list-data-cell:not(.row-number) {
+  background-color: #eaeae8;
+}
+.jb-control[jb-type='List'] tr.group-row:ie-wont-hover td.list-data-cell:not(.row-number),
+.jb-control[jb-type='DataList'] tr.group-row:ie-wont-hover td.list-data-cell:not(.row-number) {
+  background-color: #eaeae8 !important;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-clear,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-clear {
+  cursor: pointer;
+  opacity: 0.7;
+  position: absolute;
+  font-size: 18px;
+  z-index: 1;
+  top: 7px;
+  right: 39px;
+  display: none;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-clear:ie-wont-hover,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-clear:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-clear:ie-wont-hover,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-clear:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-input,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-input {
+  box-shadow: initial !important;
+  outline: none;
+  border-color: transparent;
+  border-bottom-color: rgba(41, 41, 41, 0.11);
+  padding-right: 20px;
+  padding-left: 2px;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-input:focus,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-input:focus {
+  border-bottom-color: #4c92d8 !important;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-btn.btn-default,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-btn.btn-default {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+  right: 25px;
+  z-index: 77;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-btn.btn-default:ie-wont-hover,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-btn.btn-default:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .global-search-area .global-search-btn.btn-default:ie-wont-hover,
+.jb-control[jb-type='DataList'] .global-search-area .global-search-btn.btn-default:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .quick-filters-container .hide-quick-filters,
+.jb-control[jb-type='DataList'] .quick-filters-container .hide-quick-filters {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+  position: relative;
+  padding: 0px;
+  left: 3px;
+}
+.jb-control[jb-type='List'] .quick-filters-container .hide-quick-filters:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .hide-quick-filters:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .quick-filters-container .hide-quick-filters:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .hide-quick-filters:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .header-toolbar-container,
+.jb-control[jb-type='DataList'] .header-toolbar-container {
+  border: none !important;
+}
+.jb-control[jb-type='List'] .quick-filters-container .apply-quick-filter,
+.jb-control[jb-type='DataList'] .quick-filters-container .apply-quick-filter,
+.jb-control[jb-type='List'] .quick-filters-container .remove-quick-filter,
+.jb-control[jb-type='DataList'] .quick-filters-container .remove-quick-filter {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.jb-control[jb-type='List'] .quick-filters-container .apply-quick-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .apply-quick-filter:ie-wont-hover,
+.jb-control[jb-type='List'] .quick-filters-container .remove-quick-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .remove-quick-filter:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .quick-filters-container .apply-quick-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .apply-quick-filter:ie-wont-hover,
+.jb-control[jb-type='List'] .quick-filters-container .remove-quick-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .quick-filters-container .remove-quick-filter:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .list-header-container th,
+.jb-control[jb-type='DataList'] .list-header-container th {
+  padding-top: 5px;
+}
+.jb-control[jb-type='List'] .list-header-container th .list-context-button > label,
+.jb-control[jb-type='DataList'] .list-header-container th .list-context-button > label {
+  font-weight: lighter !important;
+}
+.jb-control[jb-type='List'] .tool-buttons-container .available-views option.default,
+.jb-control[jb-type='DataList'] .tool-buttons-container .available-views option.default {
+  background-color: #329e32;
+}
+.jb-control[jb-type='List'] .tool-buttons-container .btn,
+.jb-control[jb-type='DataList'] .tool-buttons-container .btn {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+}
+.jb-control[jb-type='List'] .tool-buttons-container .btn:ie-wont-hover,
+.jb-control[jb-type='DataList'] .tool-buttons-container .btn:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .tool-buttons-container .btn:ie-wont-hover,
+.jb-control[jb-type='DataList'] .tool-buttons-container .btn:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .filter-row .remove-filter,
+.jb-control[jb-type='DataList'] .filter-row .remove-filter {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.jb-control[jb-type='List'] .filter-row .remove-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filter-row .remove-filter:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .filter-row .remove-filter:ie-wont-hover,
+.jb-control[jb-type='DataList'] .filter-row .remove-filter:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .list-footer-container,
+.jb-control[jb-type='DataList'] .list-footer-container {
+  float: left;
+  overflow: hidden;
+}
+.jb-control[jb-type='List'] .list-footer-container .bottom-cap > *,
+.jb-control[jb-type='DataList'] .list-footer-container .bottom-cap > * {
+  border: none !important;
+}
+.jb-control[jb-type='List'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container,
+.jb-control[jb-type='DataList'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container {
+  float: left;
+  margin-left: 0px;
+}
+.jb-control[jb-type='List'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container .aggregator-caption,
+.jb-control[jb-type='DataList'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container .aggregator-caption {
+  font-weight: bold;
+  color: #3a3a3a;
+}
+.jb-control[jb-type='List'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container .aggregator-value,
+.jb-control[jb-type='DataList'] .list-footer-container .list-footer .list-aggregators-row .aggregator-container .aggregator-value {
+  font-weight: bold;
+  color: #4c92d8;
+}
+.jb-control[jb-type='List'] .btn-group .btn,
+.jb-control[jb-type='DataList'] .btn-group .btn {
+  margin-left: 5px;
+}
+.jb-control[jb-type='List'] .mobile-menu,
+.jb-control[jb-type='DataList'] .mobile-menu {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+}
+.jb-control[jb-type='List'] .mobile-menu:ie-wont-hover,
+.jb-control[jb-type='DataList'] .mobile-menu:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .mobile-menu:ie-wont-hover,
+.jb-control[jb-type='DataList'] .mobile-menu:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .group-aggregators-row,
+.jb-control[jb-type='DataList'] .group-aggregators-row {
+  background-color: #eaeae8;
+}
+.jb-control[jb-type='List'] .column-titles-container,
+.jb-control[jb-type='DataList'] .column-titles-container {
+  background-color: transparent;
+}
+.jb-control[jb-type='List'] .column-titles-container .show-quick-filters,
+.jb-control[jb-type='DataList'] .column-titles-container .show-quick-filters {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+  position: relative;
+  right: 3px;
+}
+.jb-control[jb-type='List'] .column-titles-container .show-quick-filters:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .show-quick-filters:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container .show-quick-filters:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .show-quick-filters:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container th .title,
+.jb-control[jb-type='DataList'] .column-titles-container th .title {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 6px;
+  width: auto;
+  color: #3a3a3a !important;
+}
+.jb-control[jb-type='List'] .column-titles-container th .title.not-sortable,
+.jb-control[jb-type='DataList'] .column-titles-container th .title.not-sortable {
+  cursor: default !important;
+}
+.jb-control[jb-type='List'] .column-titles-container th .title:not(.not-sortable):ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container th .title:not(.not-sortable):ie-wont-hover {
+  text-decoration: underline;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-right,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-right {
+  cursor: pointer;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  padding: 14px 5px;
+  right: 0px;
+  opacity: 0;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-right:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-right:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-right:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-right:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-right:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-right:ie-wont-hover {
+  opacity: 1 !important;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-left,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-left {
+  cursor: pointer;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 14px 5px;
+  opacity: 0;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-left:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-left:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-left:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-left:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .move-column-left:ie-wont-hover,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .move-column-left:ie-wont-hover {
+  opacity: 1 !important;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .glyphicon-arrow-up,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .glyphicon-arrow-up,
+.jb-control[jb-type='List'] .column-titles-container .column-title .glyphicon-arrow-down,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .glyphicon-arrow-down {
+  top: -4px;
+}
+.jb-control[jb-type='List'] .column-titles-container .column-title .sort-direction-icon,
+.jb-control[jb-type='DataList'] .column-titles-container .column-title .sort-direction-icon {
+  color: rgba(76, 146, 216, 0.6);
+}
+.jb-control[jb-type='List'] .list-column-header .row-number-header,
+.jb-control[jb-type='DataList'] .list-column-header .row-number-header,
+.jb-control[jb-type='List'] .list-data-row .row-number,
+.jb-control[jb-type='DataList'] .list-data-row .row-number,
+.jb-control[jb-type='List'] .list-aggregators-row .row-number,
+.jb-control[jb-type='DataList'] .list-aggregators-row .row-number,
+.jb-control[jb-type='List'] .list-data-table .no-results-row .row-number,
+.jb-control[jb-type='DataList'] .list-data-table .no-results-row .row-number {
+  background-color: transparent;
+  font-weight: bold;
+  text-align: center;
+  color: #3a3a3a;
+}
+.jb-control[jb-type='List'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header),
+.jb-control[jb-type='DataList'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header) {
+  border-right: 2px dashed rgba(58, 58, 58, 0.1) !important;
+  border-left: 2px dashed rgba(58, 58, 58, 0.1) !important;
+}
+.jb-control[jb-type='List'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header) .move-column-left,
+.jb-control[jb-type='DataList'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header) .move-column-left,
+.jb-control[jb-type='List'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header) .move-column-right,
+.jb-control[jb-type='DataList'].resizable-cols .list-column-header .column-title:ie-wont-hover:not(.row-number-header) .move-column-right {
+  opacity: 0.2;
+}
+.jb-control[jb-type='List'] .list-data-row:ie-wont-hover:not(.group-row):not(.selected-row) .row-number,
+.jb-control[jb-type='DataList'] .list-data-row:ie-wont-hover:not(.group-row):not(.selected-row) .row-number {
+  background-color: #eaeae8;
+}
+.jb-control[jb-type='List'] .list-data-table .group-toggle,
+.jb-control[jb-type='DataList'] .list-data-table .group-toggle {
+  cursor: pointer;
+  opacity: 0.85;
+}
+.jb-control[jb-type='List'] .list-data-table .group-toggle:ie-wont-hover,
+.jb-control[jb-type='DataList'] .list-data-table .group-toggle:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .list-data-table .group-toggle:ie-wont-hover,
+.jb-control[jb-type='DataList'] .list-data-table .group-toggle:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .list-data-table .group-aggregators-row[data-level='1'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-aggregators-row[data-level='1'] td {
+  background-color: #d1d1ce;
+}
+.jb-control[jb-type='List'] .list-data-table .group-aggregators-row[data-level='2'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-aggregators-row[data-level='2'] td,
+.jb-control[jb-type='List'] .list-data-table .group-header[data-level='2'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-header[data-level='2'] td {
+  background-color: #b8b8b4;
+}
+.jb-control[jb-type='List'] .list-data-table .group-aggregators-row[data-level='3'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-aggregators-row[data-level='3'] td,
+.jb-control[jb-type='List'] .list-data-table .group-header[data-level='3'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-header[data-level='3'] td {
+  background-color: #a0a099;
+}
+.jb-control[jb-type='List'] .list-data-table .group-aggregators-row[data-level='4'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-aggregators-row[data-level='4'] td,
+.jb-control[jb-type='List'] .list-data-table .group-header[data-level='4'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-header[data-level='4'] td {
+  background-color: #87877f;
+}
+.jb-control[jb-type='List'] .list-data-table .group-aggregators-row[data-level='5'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-aggregators-row[data-level='5'] td,
+.jb-control[jb-type='List'] .list-data-table .group-header[data-level='5'] td,
+.jb-control[jb-type='DataList'] .list-data-table .group-header[data-level='5'] td {
+  background-color: #6d6d66;
+}
+.jb-control[jb-type='List'] tr.selected-row:not(.group-row) td.list-data-cell .circled-num,
+.jb-control[jb-type='DataList'] tr.selected-row:not(.group-row) td.list-data-cell .circled-num {
+  background-color: #4c92d8;
+  color: white;
+}
+.jb-control[jb-type='List'] table tr.selected-row.active td.list-data-cell:not(.row-number),
+.jb-control[jb-type='DataList'] table tr.selected-row.active td.list-data-cell:not(.row-number),
+.jb-control[jb-type='List'] table tr.selected-row.group-row:ie-wont-hover td.list-data-cell,
+.jb-control[jb-type='DataList'] table tr.selected-row.group-row:ie-wont-hover td.list-data-cell,
+.jb-control[jb-type='List'] table tr.selected-row td.list-data-cell,
+.jb-control[jb-type='DataList'] table tr.selected-row td.list-data-cell {
+  background-color: rgba(76, 146, 216, 0.1);
+}
+.jb-control[jb-type='List'] .pager-container,
+.jb-control[jb-type='DataList'] .pager-container {
+  font-size: 13px;
+}
+.jb-control[jb-type='List'] .pager-container span,
+.jb-control[jb-type='DataList'] .pager-container span {
+  color: #3a3a3a;
+  font-weight: lighter;
+}
+.jb-control[jb-type='List'] .pager-container .data-total,
+.jb-control[jb-type='DataList'] .pager-container .data-total {
+  color: #4c92d8;
+  font-weight: bold;
+}
+.jb-control[jb-type='List'] .pager-container .btn-group .btn,
+.jb-control[jb-type='DataList'] .pager-container .btn-group .btn {
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  border: none !important;
+  box-shadow: initial !important;
+  background-color: transparent !important;
+}
+.jb-control[jb-type='List'] .pager-container .btn-group .btn:ie-wont-hover,
+.jb-control[jb-type='DataList'] .pager-container .btn-group .btn:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .pager-container .btn-group .btn:ie-wont-hover,
+.jb-control[jb-type='DataList'] .pager-container .btn-group .btn:ie-wont-hover {
+  opacity: 1;
+}
+.jb-control[jb-type='List'] .pager-container .list-current-page,
+.jb-control[jb-type='DataList'] .pager-container .list-current-page {
+  box-shadow: initial !important;
+  outline: none;
+  border-color: transparent;
+  border-bottom-color: rgba(41, 41, 41, 0.11);
+  border-left-style: initial;
+  border-right-style: initial;
+  border-width: 1px;
+  color: #4c92d8;
+  font-weight: bold;
+}
+.jb-control[jb-type='List'] .pager-container .list-current-page:focus,
+.jb-control[jb-type='DataList'] .pager-container .list-current-page:focus {
+  border-bottom-color: #4c92d8 !important;
+}
+/* ================= End of List, DataList (Role: None) ======================== */
+
+/* ================= TabContainer (Role: None) ======================== */
+
+.jb-control[jb-type='TabContainer'] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: transparent !important;
+}
+.jb-control[jb-type='TabContainer'] .tab-content {
+  padding: 15px !important;
+  border-color: transparent !important;
+  margin-bottom: 0px !important;
+}
+.jb-control[jb-type='TabContainer'] > .nav-tabs {
+  border-bottom: none;
+}
+.jb-control[jb-type='TabContainer'] li > a {
+  border: none !important;
+  border-color: transparent !important;
+  color: #3a3a3a;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-left .tab-content {
+  padding-top: 10px !important;
+  width: 90% !important;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-right .tab-content {
+  padding-top: 10px !important;
+  width: 90% !important;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-right > .nav-tabs {
+  right: initial !important;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-right li > a {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-bottom .tab-content {
+  padding-top: 10px !important;
+}
+.jb-control[jb-type='TabContainer'].jb-tabs-bottom li {
+  margin-bottom: initial !important;
+}
+/* left */
+
+.jb-tabs-left {
+  margin-bottom: 20px;
+}
+.jb-tabs-left [jb-type='TabHeader'] {
+  display: inline-block;
+  width: 10%;
+  border-bottom: none;
+  float: left;
+  right: 7px;
+}
+.jb-tabs-left [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitle'] {
+  float: none;
+  margin-bottom: 2px;
+}
+.jb-tabs-left [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitle'] > [jb-type='TabHeaderPageTitleText'] {
+  float: none;
+  border: none;
+}
+.jb-tabs-left [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitle']:not(.active) > [jb-type='TabHeaderPageTitleText'] {
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.jb-tabs-left [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitle'].active > [jb-type='TabHeaderPageTitleText'] {
+  border: 1px solid #3a3a3a;
+  border-right: none;
+  margin-right: -1px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+}
+.jb-tabs-left [jb-type='TabContent'] {
+  display: inline-block;
+  width: calc(90% - 5px);
+  vertical-align: top;
+  min-height: 200px;
+}
+/* right */
+
+.jb-tabs-right {
+  margin-bottom: 20px;
+}
+.jb-tabs-right [jb-type='TabHeader'] {
+  display: inline-block;
+  width: 10%;
+  border-bottom: none;
+  position: relative;
+  right: 4px;
+  float: right;
+}
+.jb-tabs-right [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitle'] {
+  float: none;
+  margin-bottom: 2px;
+}
+.jb-tabs-right [jb-type='TabHeader'] > [jb-type='TabHeaderPageTitleText'] {
+  float: none;
+  border: none;
+}
+.jb-tabs-right [jb-type='TabContent'] {
+  display: inline-block;
+  width: calc(90% - 5px);
+  vertical-align: top;
+  min-height: 200px;
+}
+/* bottom */
+
+.jb-tabs-bottom [jb-type='TabContent'] {
+  margin-bottom: 0px !important;
+}
+.jb-tabs-bottom [jb-type='TabHeader'] {
+  margin-bottom: 20px !important;
+}
+/* ================= End of TabContainer (Role: None) ======================== */
+
+/* ================= TabHeader (Role: None) ======================== */
+
+/* ================= End of TabHeader (Role: None) ======================== */
+
+/* ================= TabContent (Role: None) ======================== */
+
+.jb-control[jb-type='TabContent'] {
+  background-color: white;
+}
+/* ================= End of TabContent (Role: None) ======================== */
+
+/* ================= TabPage (Role: None) ======================== */
+
+/* ================= End of TabPage (Role: None) ======================== */
+
+/* ================= TabHeaderPageTitle (Role: None) ======================== */
+
+/* ================= End of TabHeaderPageTitle (Role: None) ======================== */
+
+/* ================= TabHeaderPageTitle (Role: None) ======================== */
+
+/* ================= End of TabHeaderPageTitle (Role: None) ======================== */
+
+/* ================= HyperLink (Role: None) ======================== */
+
+/* ================= End of HyperLink (Role: None) ======================== */
+
+/* ================= Label (Role: None) ======================== */
+
+.jb-control[jb-type='Label'] {
+  font-weight: normal;
+}
+.jb-control[jb-type='Label'].round-icon {
+  box-shadow: 0 !important;
+  font-size: 25px;
+  color: white;
+  background-color: #4c92d8;
+  padding: 10px;
+  border-radius: 140px;
+  margin-right: 5px;
+  position: relative;
+  top: 5px;
+}
+/* ================= End of Label (Role: None) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: None) ======================== */
+
+.jb-control[jb-type='Button'],
+.jb-control[jb-type='PickList'],
+.jb-control[jb-type='DataPickList'],
+.jb-control[jb-type='ListCommandButton'] {
+  cursor: pointer;
+  outline: none !important;
+  border: none !important;
+}
+.jb-control[jb-type='Button'] > *,
+.jb-control[jb-type='PickList'] > *,
+.jb-control[jb-type='DataPickList'] > *,
+.jb-control[jb-type='ListCommandButton'] > * {
+  position: initial !important;
+  color: inherit !important;
+  cursor: pointer !important;
+}
+.jb-control[jb-type='Button'] label,
+.jb-control[jb-type='PickList'] label,
+.jb-control[jb-type='DataPickList'] label,
+.jb-control[jb-type='ListCommandButton'] label {
+  margin-bottom: 0px;
+}
+.jb-control[jb-type='Button'] label.glyphicon,
+.jb-control[jb-type='PickList'] label.glyphicon,
+.jb-control[jb-type='DataPickList'] label.glyphicon,
+.jb-control[jb-type='ListCommandButton'] label.glyphicon {
+  min-width: initial !important;
+}
+.jb-control[jb-type='Button'] [jb-type='Iconism'],
+.jb-control[jb-type='PickList'] [jb-type='Iconism'],
+.jb-control[jb-type='DataPickList'] [jb-type='Iconism'],
+.jb-control[jb-type='ListCommandButton'] [jb-type='Iconism'] {
+  position: relative !important;
+  top: 2px;
+}
+.jb-control[jb-type='Button'] [jb-type='Iconism'] + [jb-type='Label'],
+.jb-control[jb-type='PickList'] [jb-type='Iconism'] + [jb-type='Label'],
+.jb-control[jb-type='DataPickList'] [jb-type='Iconism'] + [jb-type='Label'],
+.jb-control[jb-type='ListCommandButton'] [jb-type='Iconism'] + [jb-type='Label'] {
+  margin-left: 10px !important;
+}
+.jb-control[jb-type='Button'].jb-link-btn,
+.jb-control[jb-type='PickList'].jb-link-btn,
+.jb-control[jb-type='DataPickList'].jb-link-btn,
+.jb-control[jb-type='ListCommandButton'].jb-link-btn {
+  box-shadow: initial !important;
+  background-color: transparent !important;
+}
+.jb-control[jb-type='Button'].jb-link-btn label,
+.jb-control[jb-type='PickList'].jb-link-btn label,
+.jb-control[jb-type='DataPickList'].jb-link-btn label,
+.jb-control[jb-type='ListCommandButton'].jb-link-btn label {
+  color: #4c92d8 !important;
+}
+.jb-control[jb-type='Button'].jb-link-btn:ie-wont-hover label,
+.jb-control[jb-type='PickList'].jb-link-btn:ie-wont-hover label,
+.jb-control[jb-type='DataPickList'].jb-link-btn:ie-wont-hover label,
+.jb-control[jb-type='ListCommandButton'].jb-link-btn:ie-wont-hover label {
+  color: #4c92d8 !important;
+  text-decoration: underline;
+}
+.jb-control[jb-type='Button'].btn-circle,
+.jb-control[jb-type='PickList'].btn-circle,
+.jb-control[jb-type='DataPickList'].btn-circle,
+.jb-control[jb-type='ListCommandButton'].btn-circle {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 1.33;
+}
+.jb-control[jb-type='Button'].btn-circle label,
+.jb-control[jb-type='PickList'].btn-circle label,
+.jb-control[jb-type='DataPickList'].btn-circle label,
+.jb-control[jb-type='ListCommandButton'].btn-circle label {
+  font-weight: lighter;
+}
+.jb-control[jb-type='Button'].btn-circle label.glyphicon,
+.jb-control[jb-type='PickList'].btn-circle label.glyphicon,
+.jb-control[jb-type='DataPickList'].btn-circle label.glyphicon,
+.jb-control[jb-type='ListCommandButton'].btn-circle label.glyphicon {
+  top: -1px;
+}
+.jb-control[jb-type='Button'].btn-circle-sm,
+.jb-control[jb-type='PickList'].btn-circle-sm,
+.jb-control[jb-type='DataPickList'].btn-circle-sm,
+.jb-control[jb-type='ListCommandButton'].btn-circle-sm {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+}
+.jb-control[jb-type='Button'].btn-circle-sm label,
+.jb-control[jb-type='PickList'].btn-circle-sm label,
+.jb-control[jb-type='DataPickList'].btn-circle-sm label,
+.jb-control[jb-type='ListCommandButton'].btn-circle-sm label {
+  font-weight: lighter;
+}
+.jb-control[jb-type='Button'].btn-circle-sm label.glyphicon,
+.jb-control[jb-type='PickList'].btn-circle-sm label.glyphicon,
+.jb-control[jb-type='DataPickList'].btn-circle-sm label.glyphicon,
+.jb-control[jb-type='ListCommandButton'].btn-circle-sm label.glyphicon {
+  top: 0px;
+}
+.jb-control[jb-type='Button'].transparent,
+.jb-control[jb-type='PickList'].transparent,
+.jb-control[jb-type='DataPickList'].transparent,
+.jb-control[jb-type='ListCommandButton'].transparent {
+  background-color: transparent !important;
+  box-shadow: initial !important;
+}
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: None) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Default) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Default) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Primary) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Primary) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Info) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Info) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Small) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Small) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Success) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Success) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Large) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Large) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: ExtraSmall) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: ExtraSmall) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='Button'][ui-role-element-size='xl'],
+.jb-control[jb-type='PickList'][ui-role-element-size='xl'],
+.jb-control[jb-type='DataPickList'][ui-role-element-size='xl'],
+.jb-control[jb-type='ListCommandButton'][ui-role-element-size='xl'] {
+  padding: 20px;
+  font-size: 35px;
+}
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: ExtraLarge) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Warning) ======================== */
+
+.jb-control[jb-type='Button'][ui-role-color='warning'],
+.jb-control[jb-type='PickList'][ui-role-color='warning'],
+.jb-control[jb-type='DataPickList'][ui-role-color='warning'],
+.jb-control[jb-type='ListCommandButton'][ui-role-color='warning'] {
+  color: black !important;
+}
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Warning) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Danger) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Danger) ======================== */
+
+/* ================= FieldSetBody (Role: Info) ======================== */
+
+/* ================= End of FieldSetBody (Role: Info) ======================== */
+
+/* ================= FieldSetBody (Role: Default) ======================== */
+
+/* ================= End of FieldSetBody (Role: Default) ======================== */
+
+/* ================= TextBox (Role: Info) ======================== */
+
+/* ================= End of TextBox (Role: Info) ======================== */
+
+/* ================= TextArea (Role: Info) ======================== */
+
+/* ================= End of TextArea (Role: Info) ======================== */
+
+/* ================= OptionButton (Role: Info) ======================== */
+
+/* ================= End of OptionButton (Role: Info) ======================== */
+
+/* ================= DropDownBox (Role: Info) ======================== */
+
+/* ================= End of DropDownBox (Role: Info) ======================== */
+
+/* ================= DropDownBox (Role: Default) ======================== */
+
+/* ================= End of DropDownBox (Role: Default) ======================== */
+
+/* ================= HyperLink (Role: Default) ======================== */
+
+/* ================= End of HyperLink (Role: Default) ======================== */
+
+/* ================= FieldSet (Role: Default) ======================== */
+
+/* ================= End of FieldSet (Role: Default) ======================== */
+
+/* ================= Button, PickList, DataPickList, ListCommandButton (Role: Normal) ======================== */
+
+/* ================= End of Button, PickList, DataPickList, ListCommandButton (Role: Normal) ======================== */
+
+/* ================= DropDownBox (Role: ExtraSmall) ======================== */
+
+/* ================= End of DropDownBox (Role: ExtraSmall) ======================== */
+
+/* ================= CheckBox (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='CheckBox'][ui-role-element-size='xs'] {
+  zoom: 1;
+}
+/* ================= End of CheckBox (Role: ExtraSmall) ======================== */
+
+/* ================= TextBox (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-element-size='xs'] {
+  font-size: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  height: 20px;
+}
+/* ================= End of TextBox (Role: ExtraSmall) ======================== */
+
+/* ================= Label (Role: ExtraSmall) ======================== */
+
+/* ================= End of Label (Role: ExtraSmall) ======================== */
+
+/* ================= Label (Role: Default) ======================== */
+
+/* ================= End of Label (Role: Default) ======================== */
+
+/* ================= Label (Role: Primary) ======================== */
+
+/* ================= End of Label (Role: Primary) ======================== */
+
+/* ================= Label (Role: Danger) ======================== */
+
+/* ================= End of Label (Role: Danger) ======================== */
+
+/* ================= Label (Role: Warning) ======================== */
+
+/* ================= End of Label (Role: Warning) ======================== */
+
+/* ================= Label (Role: ExtraLarge) ======================== */
+
+/* ================= End of Label (Role: ExtraLarge) ======================== */
+
+/* ================= Label (Role: Large) ======================== */
+
+/* ================= End of Label (Role: Large) ======================== */
+
+/* ================= TextBox (Role: Large) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-element-size='lg'] {
+  height: 40px;
+  font-size: 18px;
+}
+/* ================= End of TextBox (Role: Large) ======================== */
+
+/* ================= OptionButton (Role: Large) ======================== */
+
+.jb-control[jb-type='OptionButton'][ui-role-element-size='lg'] {
+  zoom: 2;
+}
+/* ================= End of OptionButton (Role: Large) ======================== */
+
+/* ================= CheckBox (Role: Large) ======================== */
+
+.jb-control[jb-type='CheckBox'][ui-role-element-size='lg'] {
+  zoom: 2.5;
+}
+/* ================= End of CheckBox (Role: Large) ======================== */
+
+/* ================= DropDownBox (Role: Large) ======================== */
+
+/* ================= End of DropDownBox (Role: Large) ======================== */
+
+/* ================= RichTextBox (Role: Large) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-element-size='lg'] {
+  font-size: 18px;
+}
+/* ================= End of RichTextBox (Role: Large) ======================== */
+
+/* ================= ImageBox (Role: Large) ======================== */
+
+/* ================= End of ImageBox (Role: Large) ======================== */
+
+/* ================= HyperLink (Role: Large) ======================== */
+
+/* ================= End of HyperLink (Role: Large) ======================== */
+
+/* ================= TextArea (Role: Large) ======================== */
+
+.jb-control[jb-type='TextArea'][ui-role-element-size='lg'] {
+  font-size: 18px;
+}
+/* ================= End of TextArea (Role: Large) ======================== */
+
+/* ================= BodyContainer (Role: Large) ======================== */
+
+/* ================= End of BodyContainer (Role: Large) ======================== */
+
+/* ================= TextBox (Role: Small) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-element-size='sm'] {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  height: 30px;
+}
+/* ================= End of TextBox (Role: Small) ======================== */
+
+/* ================= Label (Role: Info) ======================== */
+
+/* ================= End of Label (Role: Info) ======================== */
+
+/* ================= TextBox (Role: Default) ======================== */
+
+/* ================= End of TextBox (Role: Default) ======================== */
+
+/* ================= CheckBox (Role: Default) ======================== */
+
+/* ================= End of CheckBox (Role: Default) ======================== */
+
+/* ================= OptionButton (Role: Default) ======================== */
+
+/* ================= End of OptionButton (Role: Default) ======================== */
+
+/* ================= TextArea (Role: Default) ======================== */
+
+/* ================= End of TextArea (Role: Default) ======================== */
+
+/* ================= RichTextBox (Role: Default) ======================== */
+
+/* ================= End of RichTextBox (Role: Default) ======================== */
+
+/* ================= ImageBox (Role: Default) ======================== */
+
+/* ================= End of ImageBox (Role: Default) ======================== */
+
+/* ================= ResponsiveTable (Role: Default) ======================== */
+
+/* ================= End of ResponsiveTable (Role: Default) ======================== */
+
+/* ================= Table (Role: Default) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='default'] {
+  border: 1px solid #d1d1ce;
+}
+/* ================= End of Table (Role: Default) ======================== */
+
+/* ================= Table (Role: None) ======================== */
+
+.jb-control[jb-type='Table'] {
+  font-size: inherit;
+}
+/* ================= End of Table (Role: None) ======================== */
+
+/* ================= Table (Role: Primary) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='primary'] {
+  color: white;
+}
+/* ================= End of Table (Role: Primary) ======================== */
+
+/* ================= NewMapControl (Role: Info) ======================== */
+
+/* ================= End of NewMapControl (Role: Info) ======================== */
+
+/* ================= tHeader (Role: None) ======================== */
+
+.jb-control[jb-type='tHeader'] tr > td > [jb-type='Label'] {
+  font-weight: bold;
+}
+/* ================= End of tHeader (Role: None) ======================== */
+
+/* ================= Cell (Role: None) ======================== */
+
+.jb-control[jb-type='Cell'] {
+  padding: 5px;
+}
+/* ================= End of Cell (Role: None) ======================== */
+
+/* ================= Row (Role: None) ======================== */
+
+/* ================= End of Row (Role: None) ======================== */
+
+/* ================= DropDownBox (Role: ExtraLarge) ======================== */
+
+/* ================= End of DropDownBox (Role: ExtraLarge) ======================== */
+
+/* ================= TextBox (Role: Primary) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-color='primary'] {
+  color: white;
+}
+/* ================= End of TextBox (Role: Primary) ======================== */
+
+/* ================= TextBox (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-element-size='xl'] {
+  height: 50px;
+  font-size: 35px;
+}
+/* ================= End of TextBox (Role: ExtraLarge) ======================== */
+
+/* ================= TextBox (Role: Normal) ======================== */
+
+/* ================= End of TextBox (Role: Normal) ======================== */
+
+/* ================= TextBox (Role: Success) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-color='success'] {
+  color: white;
+}
+/* ================= End of TextBox (Role: Success) ======================== */
+
+/* ================= TextBox (Role: Danger) ======================== */
+
+.jb-control[jb-type='TextBox'][ui-role-color='danger'] {
+  color: white;
+}
+/* ================= End of TextBox (Role: Danger) ======================== */
+
+/* ================= TextBox (Role: Warning) ======================== */
+
+/* ================= End of TextBox (Role: Warning) ======================== */
+
+/* ================= FieldSetFooter (Role: Default) ======================== */
+
+/* ================= End of FieldSetFooter (Role: Default) ======================== */
+
+/* ================= FieldSetFooter (Role: Info) ======================== */
+
+/* ================= End of FieldSetFooter (Role: Info) ======================== */
+
+/* ================= FieldSetFooter (Role: Danger) ======================== */
+
+/* ================= End of FieldSetFooter (Role: Danger) ======================== */
+
+/* ================= Table (Role: Danger) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='danger'] {
+  color: white;
+}
+/* ================= End of Table (Role: Danger) ======================== */
+
+/* ================= tBody (Role: Danger) ======================== */
+
+/* ================= End of tBody (Role: Danger) ======================== */
+
+/* ================= tFooter (Role: Danger) ======================== */
+
+/* ================= End of tFooter (Role: Danger) ======================== */
+
+/* ================= Row (Role: Danger) ======================== */
+
+/* ================= End of Row (Role: Danger) ======================== */
+
+/* ================= Cell (Role: Danger) ======================== */
+
+/* ================= End of Cell (Role: Danger) ======================== */
+
+/* ================= tFooter (Role: None) ======================== */
+
+/* ================= End of tFooter (Role: None) ======================== */
+
+/* ================= tBody (Role: None) ======================== */
+
+/* ================= End of tBody (Role: None) ======================== */
+
+/* ================= TextArea (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='TextArea'][ui-role-element-size='xs'] {
+  font-size: 12px;
+  padding: 3px;
+}
+/* ================= End of TextArea (Role: ExtraSmall) ======================== */
+
+/* ================= TextArea (Role: Small) ======================== */
+
+.jb-control[jb-type='TextArea'][ui-role-element-size='sm'] {
+  font-size: 12px;
+}
+/* ================= End of TextArea (Role: Small) ======================== */
+
+/* ================= TextArea (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='TextArea'][ui-role-element-size='xl'] {
+  font-size: 35px;
+}
+/* ================= End of TextArea (Role: ExtraLarge) ======================== */
+
+/* ================= CheckBox (Role: Small) ======================== */
+
+.jb-control[jb-type='CheckBox'][ui-role-element-size='sm'] {
+  zoom: 1.5;
+}
+/* ================= End of CheckBox (Role: Small) ======================== */
+
+/* ================= CheckBox (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='CheckBox'][ui-role-element-size='xl'] {
+  zoom: 3;
+}
+/* ================= End of CheckBox (Role: ExtraLarge) ======================== */
+
+/* ================= RichTextBox (Role: Primary) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-color='primary'] {
+  color: white;
+}
+/* ================= End of RichTextBox (Role: Primary) ======================== */
+
+/* ================= RichTextBox (Role: Success) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-color='success'] {
+  color: white;
+}
+/* ================= End of RichTextBox (Role: Success) ======================== */
+
+/* ================= RichTextBox (Role: Danger) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-color='danger'] {
+  color: white;
+}
+/* ================= End of RichTextBox (Role: Danger) ======================== */
+
+/* ================= RichTextBox (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-element-size='xs'] {
+  font-size: 12px;
+  padding: 3px;
+}
+/* ================= End of RichTextBox (Role: ExtraSmall) ======================== */
+
+/* ================= RichTextBox (Role: Small) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-element-size='sm'] {
+  font-size: 12px;
+}
+/* ================= End of RichTextBox (Role: Small) ======================== */
+
+/* ================= RichTextBox (Role: Normal) ======================== */
+
+/* ================= End of RichTextBox (Role: Normal) ======================== */
+
+/* ================= RichTextBox (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='RichTextBox'][ui-role-element-size='xl'] {
+  font-size: 35px;
+}
+/* ================= End of RichTextBox (Role: ExtraLarge) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Normal) ======================== */
+
+/* ================= End of CheckBox (Role: Normal) ======================== */
+
+/* ================= OptionButton (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='OptionButton'][ui-role-element-size='xs'] {
+  zoom: 1;
+}
+/* ================= End of OptionButton (Role: ExtraSmall) ======================== */
+
+/* ================= OptionButton (Role: Small) ======================== */
+
+.jb-control[jb-type='OptionButton'][ui-role-element-size='sm'] {
+  zoom: 1.2;
+}
+/* ================= End of OptionButton (Role: Small) ======================== */
+
+/* ================= OptionButton (Role: Normal) ======================== */
+
+/* ================= End of OptionButton (Role: Normal) ======================== */
+
+/* ================= OptionButton (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='OptionButton'][ui-role-element-size='xl'] {
+  zoom: 3;
+}
+/* ================= End of OptionButton (Role: ExtraLarge) ======================== */
+
+/* ================= ProgressBar (Role: ExtraSmall) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-element-size='xs'] {
+  height: 5px;
+  font-size: 0px;
+}
+/* ================= End of ProgressBar (Role: ExtraSmall) ======================== */
+
+/* ================= ProgressBar (Role: Small) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-element-size='sm'] {
+  height: 10px;
+  font-size: 9px;
+}
+/* ================= End of ProgressBar (Role: Small) ======================== */
+
+/* ================= ProgressBar (Role: Large) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-element-size='lg'] {
+  height: 30px;
+  font-size: 22px;
+}
+/* ================= End of ProgressBar (Role: Large) ======================== */
+
+/* ================= ProgressBar (Role: ExtraLarge) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-element-size='xl'] {
+  height: 50px;
+  font-size: 35px;
+}
+/* ================= End of ProgressBar (Role: ExtraLarge) ======================== */
+
+/* ================= ProgressBar (Role: Default) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='default'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='default'] .progress-bar {
+  background-color: #d1d1ce;
+}
+/* ================= End of ProgressBar (Role: Default) ======================== */
+
+/* ================= ProgressBar (Role: Primary) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='primary'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='primary'] .progress-bar {
+  background-color: #4c92d8;
+}
+/* ================= End of ProgressBar (Role: Primary) ======================== */
+
+/* ================= ProgressBar (Role: Info) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='info'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='info'] .progress-bar {
+  background-color: #58b0bc;
+}
+/* ================= End of ProgressBar (Role: Info) ======================== */
+
+/* ================= ProgressBar (Role: Success) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='success'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='success'] .progress-bar {
+  background-color: #329e32;
+}
+/* ================= End of ProgressBar (Role: Success) ======================== */
+
+/* ================= ProgressBar (Role: Warning) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='warning'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='warning'] .progress-bar {
+  background-color: #eab840;
+}
+/* ================= End of ProgressBar (Role: Warning) ======================== */
+
+/* ================= ProgressBar (Role: Danger) ======================== */
+
+.jb-control[jb-type='ProgressBar'][ui-role-color='danger'] {
+  background-color: inherit;
+}
+.jb-control[jb-type='ProgressBar'][ui-role-color='danger'] .progress-bar {
+  background-color: #e14e4e;
+}
+/* ================= End of ProgressBar (Role: Danger) ======================== */
+
+/* ================= Chart (Role: Info) ======================== */
+
+/* ================= End of Chart (Role: Info) ======================== */
+
+/* ================= Table (Role: Info) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='info'] {
+  border: 1px solid #58b0bc;
+}
+/* ================= End of Table (Role: Info) ======================== */
+
+/* ================= tHeader (Role: Default) ======================== */
+
+/* ================= End of tHeader (Role: Default) ======================== */
+
+/* ================= tBody (Role: Default) ======================== */
+
+/* ================= End of tBody (Role: Default) ======================== */
+
+/* ================= tBody (Role: Primary) ======================== */
+
+/* ================= End of tBody (Role: Primary) ======================== */
+
+/* ================= tHeader (Role: Primary) ======================== */
+
+/* ================= End of tHeader (Role: Primary) ======================== */
+
+/* ================= Table (Role: Success) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='success'] {
+  color: white;
+}
+/* ================= End of Table (Role: Success) ======================== */
+
+/* ================= tHeader (Role: Info) ======================== */
+
+/* ================= End of tHeader (Role: Info) ======================== */
+
+/* ================= tBody (Role: Info) ======================== */
+
+/* ================= End of tBody (Role: Info) ======================== */
+
+/* ================= tFooter (Role: Info) ======================== */
+
+/* ================= End of tFooter (Role: Info) ======================== */
+
+/* ================= Row (Role: Info) ======================== */
+
+/* ================= End of Row (Role: Info) ======================== */
+
+/* ================= Cell (Role: Info) ======================== */
+
+/* ================= End of Cell (Role: Info) ======================== */
+
+/* ================= tFooter (Role: Default) ======================== */
+
+/* ================= End of tFooter (Role: Default) ======================== */
+
+/* ================= Row (Role: Default) ======================== */
+
+/* ================= End of Row (Role: Default) ======================== */
+
+/* ================= Cell (Role: Default) ======================== */
+
+/* ================= End of Cell (Role: Default) ======================== */
+
+/* ================= Cell (Role: Primary) ======================== */
+
+/* ================= End of Cell (Role: Primary) ======================== */
+
+/* ================= Row (Role: Primary) ======================== */
+
+/* ================= End of Row (Role: Primary) ======================== */
+
+/* ================= tFooter (Role: Primary) ======================== */
+
+.jb-control[jb-type='tFooter'][ui-role-color='primary'] {
+  color: white;
+}
+/* ================= End of tFooter (Role: Primary) ======================== */
+
+/* ================= Table (Role: Warning) ======================== */
+
+.jb-control[jb-type='Table'][ui-role-color='warning'] {
+  border: 1px solid #eab840;
+}
+/* ================= End of Table (Role: Warning) ======================== */
+
+/* ================= tHeader (Role: Warning) ======================== */
+
+/* ================= End of tHeader (Role: Warning) ======================== */
+
+/* ================= tBody (Role: Warning) ======================== */
+
+/* ================= End of tBody (Role: Warning) ======================== */
+
+/* ================= tFooter (Role: Warning) ======================== */
+
+/* ================= End of tFooter (Role: Warning) ======================== */
+
+/* ================= Row (Role: Warning) ======================== */
+
+/* ================= End of Row (Role: Warning) ======================== */
+
+/* ================= Cell (Role: Warning) ======================== */
+
+/* ================= End of Cell (Role: Warning) ======================== */
+
+/* ================= tHeader (Role: Danger) ======================== */
+
+.jb-control[jb-type='tHeader'][ui-role-color='danger'] {
+  color: white;
+  font-weight: normal;
+}
+/* ================= End of tHeader (Role: Danger) ======================== */
+
+/* ================= tHeader (Role: Success) ======================== */
+
+.jb-control[jb-type='tHeader'][ui-role-color='success'] {
+  color: white;
+  font-weight: normal;
+}
+/* ================= End of tHeader (Role: Success) ======================== */
+
+/* ================= tFooter (Role: Success) ======================== */
+
+/* ================= End of tFooter (Role: Success) ======================== */
+
+/* ================= tBody (Role: Success) ======================== */
+
+/* ================= End of tBody (Role: Success) ======================== */
+
+/* ================= Cell (Role: Success) ======================== */
+
+/* ================= End of Cell (Role: Success) ======================== */
+
+/* ================= Row (Role: Success) ======================== */
+
+/* ================= End of Row (Role: Success) ======================== */
+
+/* ================= Modal (Role: Info) ======================== */
+
+/* ================= End of Modal (Role: Info) ======================== */
+
+/* ================= Modal (Role: Danger) ======================== */
+
+/* ================= End of Modal (Role: Danger) ======================== */
+
+/* ================= Modal (Role: Primary) ======================== */
+
+/* ================= End of Modal (Role: Primary) ======================== */
+
+/* ================= FieldSet (Role: Primary) ======================== */
+
+.jb-control[jb-type='FieldSet'][ui-role-color='primary'] {
+  color: white;
+}
+/* ================= End of FieldSet (Role: Primary) ======================== */
+
+/* ================= FieldSet (Role: Info) ======================== */
+
+/* ================= End of FieldSet (Role: Info) ======================== */
+
+/* ================= FieldSet (Role: Success) ======================== */
+
+.jb-control[jb-type='FieldSet'][ui-role-color='success'] {
+  color: white;
+}
+/* ================= End of FieldSet (Role: Success) ======================== */
+
+/* ================= FieldSet (Role: Warning) ======================== */
+
+/* ================= End of FieldSet (Role: Warning) ======================== */
+
+/* ================= FieldSet (Role: Danger) ======================== */
+
+.jb-control[jb-type='FieldSet'][ui-role-color='danger'] {
+  color: white;
+}
+/* ================= End of FieldSet (Role: Danger) ======================== */
+
+/* ================= CheckBox (Role: None) ======================== */
+
+/* ================= End of CheckBox (Role: None) ======================== */
+
+/* ================= CheckBox (Role: Default) ======================== */
+
+/* ================= End of CheckBox (Role: Default) ======================== */
+
+/* ================= CheckBox (Role: Success) ======================== */
+
+/* ================= End of CheckBox (Role: Success) ======================== */
+
+/* ================= CheckBox (Role: Primary) ======================== */
+
+/* ================= End of CheckBox (Role: Primary) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Warning) ======================== */
+
+/* ================= End of CheckBox (Role: Warning) ======================== */
+
+/* ================= CheckBox (Role: Danger) ======================== */
+
+/* ================= End of CheckBox (Role: Danger) ======================== */
+
+/* ================= CheckBox (Role: None) ======================== */
+
+/* ================= End of CheckBox (Role: None) ======================== */
+
+/* ================= CheckBox (Role: Default) ======================== */
+
+/* ================= End of CheckBox (Role: Default) ======================== */
+
+/* ================= CheckBox (Role: Success) ======================== */
+
+/* ================= End of CheckBox (Role: Success) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Primary) ======================== */
+
+/* ================= End of CheckBox (Role: Primary) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Warning) ======================== */
+
+/* ================= End of CheckBox (Role: Warning) ======================== */
+
+/* ================= CheckBox (Role: Danger) ======================== */
+
+/* ================= End of CheckBox (Role: Danger) ======================== */
+
+/* ================= CheckBox (Role: None) ======================== */
+
+/* ================= End of CheckBox (Role: None) ======================== */
+
+/* ================= CheckBox (Role: Default) ======================== */
+
+/* ================= End of CheckBox (Role: Default) ======================== */
+
+/* ================= CheckBox (Role: Success) ======================== */
+
+/* ================= End of CheckBox (Role: Success) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Primary) ======================== */
+
+/* ================= End of CheckBox (Role: Primary) ======================== */
+
+/* ================= CheckBox (Role: Info) ======================== */
+
+/* ================= End of CheckBox (Role: Info) ======================== */
+
+/* ================= CheckBox (Role: Warning) ======================== */
+
+/* ================= End of CheckBox (Role: Warning) ======================== */
+
+/* ================= CheckBox (Role: Danger) ======================== */
+
+/* ================= End of CheckBox (Role: Danger) ======================== */
+
+/* ================= OptionButton (Role: None) ======================== */
+
+/* ================= End of OptionButton (Role: None) ======================== */
+
+/* ================= OptionButton (Role: Default) ======================== */
+
+/* ================= End of OptionButton (Role: Default) ======================== */
+
+/* ================= OptionButton (Role: Primary) ======================== */
+
+/* ================= End of OptionButton (Role: Primary) ======================== */
+
+/* ================= OptionButton (Role: Success) ======================== */
+
+/* ================= End of OptionButton (Role: Success) ======================== */
+
+/* ================= OptionButton (Role: Info) ======================== */
+
+/* ================= End of OptionButton (Role: Info) ======================== */
+
+/* ================= OptionButton (Role: Warning) ======================== */
+
+/* ================= End of OptionButton (Role: Warning) ======================== */
+
+/* ================= OptionButton (Role: Danger) ======================== */
+
+/* ================= End of OptionButton (Role: Danger) ======================== */
+
+/* ================= OptionButton (Role: None) ======================== */
+
+/* ================= End of OptionButton (Role: None) ======================== */
+
+/* ================= OptionButton (Role: Default) ======================== */
+
+/* ================= End of OptionButton (Role: Default) ======================== */
+
+/* ================= OptionButton (Role: Primary) ======================== */
+
+/* ================= End of OptionButton (Role: Primary) ======================== */
+
+/* ================= OptionButton (Role: Success) ======================== */
+
+/* ================= End of OptionButton (Role: Success) ======================== */
+
+/* ================= OptionButton (Role: Info) ======================== */
+
+/* ================= End of OptionButton (Role: Info) ======================== */
+
+/* ================= OptionButton (Role: Warning) ======================== */
+
+/* ================= End of OptionButton (Role: Warning) ======================== */
+
+/* ================= OptionButton (Role: Danger) ======================== */
+
+/* ================= End of OptionButton (Role: Danger) ======================== */
+
+/* ================= OptionButton (Role: None) ======================== */
+
+/* ================= End of OptionButton (Role: None) ======================== */
+
+/* ================= OptionButton (Role: Default) ======================== */
+
+/* ================= End of OptionButton (Role: Default) ======================== */
+
+/* ================= OptionButton (Role: Primary) ======================== */
+
+/* ================= End of OptionButton (Role: Primary) ======================== */
+
+/* ================= OptionButton (Role: Success) ======================== */
+
+/* ================= End of OptionButton (Role: Success) ======================== */
+
+/* ================= OptionButton (Role: Info) ======================== */
+
+/* ================= End of OptionButton (Role: Info) ======================== */
+
+/* ================= OptionButton (Role: Warning) ======================== */
+
+/* ================= End of OptionButton (Role: Warning) ======================== */
+
+/* ================= OptionButton (Role: Danger) ======================== */
+
+/* ================= End of OptionButton (Role: Danger) ======================== */
+
+/* ================= End of Rules derived from Mappings ======================== */
+
+/* ================= Custom Rules ======================== */
+
+.form-control {
+  box-shadow: initial !important;
+}
+.form-control.jb-required {
+  padding-right: 20px;
+  background-image: url(images/icon-asterisk.png);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 2px);
+  background-position-y: 2px;
+}
+.form-control.jb-readonly {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.jb-overflow-menu #okeyNavLeft .menu-root [jb-type="MenuItemsContainer"].dropdown-menu {
+  right: 100% !important;
+  left: -100% !important;
+  top: 0px !important;
+}
+.bluish-custom {
+  background-color: #6593d3;
+  color: white;
+}
+#JooveBoxControlTemplates {
+  display: none;
+}
+.jb-invalid-binding:not(.chosen-container),
+.jb-dv-failed:not(.chosen-container),
+.required-empty-mark:not(.chosen-container) {
+  background-color: rgba(225, 78, 78, 0.5) !important;
+}
+.jb-invalid-binding .chosen-single,
+.jb-dv-failed .chosen-single,
+.required-empty-mark .chosen-single {
+  background: rgba(225, 78, 78, 0.5) !important;
+}
+.validation-panel {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  padding: 0;
+  z-index: 777;
+  outline: 2px solid #4c92d8;
+  margin-bottom: 0;
+  /* 35px;  This is the height of the default master page footer */
+
+}
+.validation-panel .alert {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.validation-panel .panel-heading .tools {
+  position: relative;
+  bottom: 14px;
+  margin-right: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.validation-panel .panel-heading .tools:ie-wont-hover {
+  opacity: 1;
+}
+.validation-panel .panel-heading .tools:ie-wont-hover {
+  opacity: 1;
+}
+.validation-panel .panel-body {
+  overflow: auto;
+  max-height: 150px;
+  /*span.glyphicon {
+            font-size: 20px;
+            line-height: 20px;
+            top: 2px;
+        }*/
+
+}
+.validation-panel .panel-body span.message {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.validation-panel .panel-body .btn-message {
+  float: right;
+  margin-right: 5px;
+}
+.validation-panel .panel-body .validation-nav {
+  float: right;
+}
+.validation-panel .panel-body .alert {
+  cursor: pointer;
+  opacity: 0.9;
+  background-color: transparent;
+  border: none;
+}
+.validation-panel .panel-body .alert:ie-wont-hover {
+  opacity: 1;
+}
+.validation-panel .panel-body .alert:ie-wont-hover {
+  opacity: 1;
+}
+.validation-panel .panel-body .alert .message {
+  font-size: 16px;
+  position: relative;
+  bottom: 2px;
+}
+.validation-panel .panel-body .alert-warning {
+  color: #b18213;
+  background-color: #f9ebca;
+}
+.validation-panel .panel-body .alert-information {
+  color: #58b0bc;
+  background-color: #c5e4e8;
+}
+.validation-panel .panel-body .alert-danger {
+  color: #e14e4e;
+  background-color: #f7d1d1;
+}
+.highlight-danger,
+.highlight-danger:focus {
+  border: 1px solid #e14e4e;
+  background-color: #f7d1d1;
+}
+.highlight-warning,
+.highlight-warning:focus {
+  border: 1px solid #eab840;
+  background-color: #f9ebca;
+}
+.highlight-information,
+.highlight-information:focus {
+  border: 1px solid #58b0bc;
+  background-color: #c5e4e8;
+}
+.select2-container.highlight-danger,
+.select2-container.highlight-warning,
+.select2-container.highlight-information {
+  border-radius: 5px;
+}
+.select2-container.highlight-danger .select2-selection,
+.select2-container.highlight-warning .select2-selection,
+.select2-container.highlight-information .select2-selection {
+  height: 30px;
+}
+.select2-container.highlight-danger .select2-selection__rendered {
+  background-color: #fde4e4;
+}
+.select2-container.highlight-warning .select2-selection__rendered {
+  background-color: #f9ebca;
+}
+.select2-container.highlight-information .select2-selection__rendered {
+  background-color: white;
+}
+/* MISC */
+
+[jb-type='PickList'].jb-disabled *,
+[jb-type='Button'].jb-disabled * {
+  cursor: not-allowed !important;
+}
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+  font-weight: lighter !important;
+  opacity: 0.7 !important;
+  color: #3a3a3a !important;
+}
+textarea {
+  resize: vertical;
+}
+textarea[disabled],
+textarea[readonly] {
+  resize: none;
+}
+.btn-img {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.btn-img:ie-wont-hover {
+  opacity: 1;
+}
+.btn-img:ie-wont-hover {
+  opacity: 1;
+}
+.btn-link {
+  cursor: pointer;
+}
+.btn-link > * {
+  cursor: pointer;
+}
+.hfill-body {
+  display: flex;
+  min-height: calc(100vh - 50px);
+  flex-direction: column;
+}
+.open-sidenav {
+  margin-left: 200px;
+  transition: margin-left ease 0.4s;
+}
+.open-sidenav.pull {
+  margin-left: 0px !important;
+}
+.open-sidenav .list-docked-grids {
+  top: 0 !important;
+}
+.open-sidenav .hfill-body {
+  min-height: 100vh !important;
+}
+.open-sidenav .navbar-nav {
+  margin: 0px !important;
+}
+.open-sidenav .master-page-title {
+  margin: -15px 0 0 55px !important;
+}
+div[jb-type='MenuControl'] {
+  margin-bottom: 0px;
+  height: 50px;
+}
+div[jb-type='MenuControl'] .jb-overflow-menu .glyphicon-option-horizontal {
+  -webkit-transition: transform 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: transform 0, 5s;
+}
+div[jb-type='MenuControl'] .jb-overflow-menu.open .glyphicon-option-horizontal {
+  /* Rotate div */
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+}
+div[jb-type='MenuControl'] [jb-type='MenuHeaderContainer'] [jb-type='MenuHeader'] {
+  cursor: pointer;
+}
+div[jb-type='MenuControl'] > [jb-type='MenuItemsContainer'] {
+  width: 100%;
+}
+div[jb-type='MenuControl'] [jb-type='MenuItem'] {
+  cursor: pointer;
+}
+div[jb-type='MenuControl'] .nav [jb-type='MenuItem'] {
+  visibility: hidden;
+}
+div[jb-type='MenuControl'] ul[jb-type='MenuItemsContainer'] li[jb-type='MenuItem'] a[jb-type='MenuItemLabelContainer'] {
+  width: 100%;
+  display: inline-block;
+}
+div[jb-type='MenuControl'] [jb-type="MenuItemIcon"] {
+  width: 16px;
+}
+li[jb-type='MenuItem'] a[jb-type='MenuItemLabelContainer'] span[jb-type='MenuItemIcon'] {
+  margin-right: 5px;
+}
+li[jb-type='MenuItem'] a[jb-type='MenuItemLabelContainer'] {
+  width: 100%;
+  display: inline-block;
+}
+li[jb-type='MenuItem'] [jb-type='ImageBox'] {
+  height: 28px;
+  margin-right: 5px;
+}
+li[jb-type='MenuItem'].jb-menu-header {
+  font-weight: bold;
+  font-size: 22px;
+}
+li[jb-type='MenuItem'].jb-menu-right {
+  margin-right: 20px;
+}
+.navbar.navbar-default {
+  background-color: #6593d3;
+  border: none !important;
+  color: white;
+  box-shadow: 0 !important;
+}
+.navbar.navbar-default .in {
+  background-color: #4c92d8 !important;
+  width: 90%;
+  margin: 0 auto;
+}
+.navbar.navbar-default .collapsing {
+  background-color: #4c92d8 !important;
+  width: 90%;
+  margin: 0 auto;
+}
+.navbar.navbar-default .navbar-collapse {
+  border-top: 0px solid transparent;
+}
+.navbar.navbar-default .navbar-header .navbar-toggle {
+  border-color: #6593d3 !important;
+}
+.navbar.navbar-default .navbar-header .navbar-toggle .icon-bar {
+  background-color: white !important;
+}
+.navbar.navbar-default .navbar-header .navbar-toggle:ie-wont-hover {
+  background-color: #79a1d9 !important;
+}
+.navbar.navbar-default .navbar-header .navbar-toggle:focus {
+  background-color: #79a1d9 !important;
+}
+.navbar.navbar-default .navbar-header .navbar-brand {
+  color: white !important;
+}
+.navbar.navbar-default .navbar-header .jb-menu-header .jb-no-icon {
+  display: none !important;
+}
+.navbar.navbar-default .navbar-header .jb-menu-header [jb-type='ImageBox'] {
+  position: relative;
+  height: 45px;
+  bottom: 13px;
+}
+.navbar.navbar-default .navbar-header .jb-menu-header [jb-type='ImageBox'] + [jb-type='MenuItemLabel'] {
+  display: inline-block;
+  position: relative;
+  bottom: 11px;
+}
+.navbar.navbar-default .nav.navbar-nav > li > a {
+  opacity: 1 !important;
+  color: white !important;
+  font-size: 16px;
+}
+.navbar.navbar-default .nav.navbar-nav > li > a > .glyphicon {
+  top: 3px;
+}
+.navbar.navbar-default .nav.navbar-nav > li > a > [jb-type='MenuItemLabel'] {
+  position: relative;
+  top: 1px;
+}
+.navbar.navbar-default .nav.navbar-nav > li.jb-menu-header > a {
+  font-size: 22px;
+  font-weight: lighter;
+  padding-left: 25px;
+  height: 50px;
+}
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.175);
+  border: none !important;
+  background-color: #79a1d9 !important;
+  border-radius: 0px !important;
+}
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu > li > a {
+  font-size: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  color: white !important;
+  font-weight: lighter !important;
+}
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu > li > a > [jb-type='MenuItemArrow'],
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu > li > a > [jb-type='MenuItemIcon'] {
+  color: white;
+}
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu > li > a:ie-wont-hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.navbar.navbar-default .nav.navbar-nav > li .dropdown-menu > li.open > a {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.navbar.navbar-default .nav.navbar-nav > li:ie-wont-hover > a,
+.navbar.navbar-default .nav.navbar-nav > li.open > a {
+  background-color: #79a1d9 !important;
+  color: white !important;
+}
+.navbar.navbar-default .nav.navbar-nav .dropdown-menu .dropdown-menu {
+  right: -100% !important;
+  left: 100% !important;
+  top: 0px !important;
+}
+.navbar.navbar-default .nav.navbar-nav.navbar-right .dropdown-menu .dropdown-menu {
+  right: 100% !important;
+  left: -100% !important;
+  top: 0px !important;
+}
+.submenu-visible {
+  position: absolute;
+  left: 95%;
+  top: 10px;
+}
+.caret-right {
+  ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  margin-left: 15px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > a.submenu-expanded {
+  background-image: none !important;
+}
+.dropdown-submenu > .dropdown-menu.right {
+  left: 100% !important;
+  right: auto !important;
+}
+.dropdown-submenu > .dropdown-menu.left {
+  right: 100% !important;
+  left: auto !important;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  margin-top: -6px;
+  margin-left: -1px;
+}
+.dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+}
+#sidenav-toogle {
+  position: fixed;
+  top: 10px;
+  left: 215px;
+  z-index: 50;
+  transition: left ease 0.4s;
+}
+#sidenav-toogle.pull {
+  left: 15px;
+}
+#sidenav-toogle.btn {
+  cursor: pointer;
+  opacity: 0.9;
+  background-color: #f4f3f3 !important;
+  color: black !important;
+  outline: 0;
+}
+#sidenav-toogle.btn:ie-wont-hover {
+  opacity: 1;
+}
+#sidenav-toogle.btn:ie-wont-hover {
+  opacity: 1;
+}
+.sidenav .dropdown-menu {
+  position: absolute !important;
+}
+.sidenav [jb-type="MenuItemArrow"] {
+  float: right;
+}
+.sidenav [jb-type="MenuItemArrow"].caret {
+  cursor: pointer;
+  opacity: 0.8;
+  border: 0;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: -15px;
+  margin-top: 2px;
+  height: 16px;
+  width: 16px;
+}
+.sidenav [jb-type="MenuItemArrow"].caret:ie-wont-hover {
+  opacity: 1;
+}
+.sidenav [jb-type="MenuItemArrow"].caret:ie-wont-hover {
+  opacity: 1;
+}
+.sidenav [jb-type="MenuItemArrow"].caret:before {
+  content: "\e258";
+}
+.sidenav .menu-root > a [jb-type="MenuItemArrow"] {
+  margin-left: 2px;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+.sidenav .menu-root > a [jb-type="MenuItemIcon"] {
+  cursor: pointer;
+  opacity: 0.8;
+  float: right;
+  margin-right: 2px !important;
+}
+.sidenav .menu-root > a [jb-type="MenuItemIcon"]:ie-wont-hover {
+  opacity: 1;
+}
+.sidenav .menu-root > a [jb-type="MenuItemIcon"]:ie-wont-hover {
+  opacity: 1;
+}
+.sidenav .menu-root > a [jb-type="MenuItemArrow"].hasIcon {
+  visibility: hidden !important;
+}
+.sidenav.navbar-header {
+  float: none;
+}
+.sidenav.navbar-header span {
+  color: white;
+}
+.sidenav.navbar {
+  position: fixed;
+  width: 200px;
+  z-index: 45;
+  height: 100%;
+  border-radius: unset;
+  left: 0;
+  transition: left ease 0.4s;
+}
+.sidenav.pull {
+  left: calc(0px - 200px);
+}
+.sidenav .nav > [jb-type="MenuItem"] {
+  width: 200px;
+}
+.sidenav .open .dropdown-menu {
+  left: 100%;
+  top: 0%;
+}
+.sidenav .open .caret {
+  /* Rotate div */
+  -ms-transform: rotate(0deg);
+  /* IE 9 */
+  -webkit-transform: rotate(0deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+}
+.sidenav .nav.navbar-right {
+  margin-right: 0;
+}
+.sidenav .nav.navbar-right > [jb-type="MenuItem"] {
+  margin-right: 0;
+}
+.sidenav .caret {
+  float: right;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  opacity: 0.45;
+  transition: all ease 0.4s;
+}
+.sidenav .dropdown-menu .dropdown-menu {
+  left: 100% !important;
+}
+[jb-type='DataSourceGrid'] {
+  table-layout: fixed;
+}
+[jb-type='DataSourceGrid'] td.numbering {
+  width: 50px;
+  text-align: center;
+}
+[joove-ds-sort] {
+  cursor: pointer;
+}
+[joove-ds-sort]:ie-wont-hover {
+  text-decoration: underline;
+}
+[jb-type='DataSourceGrid'] > tbody > tr:ie-wont-hover,
+[jb-type='Grid'] > tbody > tr:ie-wont-hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+[jb-type='DataSourceGrid'].jb-alternate-rows > tbody > tr:nth-child(even),
+[jb-type='Grid'].jb-alternate-rows > tbody > tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+[jb-type='RemoveItemLabel'] {
+  cursor: pointer;
+  opacity: 0.5;
+  color: #e14e4e;
+  float: right;
+  padding-top: 8px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 25px;
+}
+[jb-type='RemoveItemLabel']:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='RemoveItemLabel']:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='RemoveItemLabel']:ie-wont-hover {
+  color: #e14e4e !important;
+  background-color: transparent !important;
+}
+[jb-type='AddItemLabel'] {
+  color: #4c92d8;
+  padding: 10px;
+  font-size: 25px;
+  margin-left: calc(50% - 8px);
+  cursor: pointer;
+  opacity: 0.5;
+}
+[jb-type='AddItemLabel']:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='AddItemLabel']:ie-wont-hover {
+  opacity: 1;
+}
+.grid-numbering-label {
+  margin-left: 40%;
+  margin-top: 4%;
+}
+[jb-type="tFooter"] [jb-type="Pager"] {
+  margin-top: 15px !important;
+}
+.pager-cell {
+  text-align: center;
+}
+[jb-type="tHeader"] [jb-type="Pager"] {
+  margin-bottom: 15px !important;
+}
+[jb-type="Pager"] {
+  display: inline-block;
+  padding-left: 0;
+  margin: 0;
+}
+[jb-type="Pager"] a {
+  cursor: pointer;
+  line-height: 1.52857;
+  padding: 4px 10px;
+  border: 1px solid #d1d1ce;
+  color: #3a3a3a !important;
+  border-radius: 20px;
+  font-size: 12px;
+  float: left;
+  text-decoration: none;
+  margin-right: 10px;
+  text-align: center;
+  height: 28px;
+}
+[jb-type="Pager"] li {
+  display: inline;
+  /*&:first-child a {
+            border-left-width: 1px;
+            .border-radius(@default-radius 0 0 @default-radius);
+        }
+
+        &:last-child a {
+            .border-radius(0 @default-radius @default-radius 0);
+        }*/
+
+}
+[jb-type="Pager"] li:ie-wont-hover a,
+[jb-type="Pager"] li.jb-active a {
+  background-color: #4c92d8 !important;
+  border-color: transparent;
+  color: white !important;
+  opacity: 0.85;
+}
+[jb-type="Pager"] li:ie-wont-hover:not(.jb-active) a {
+  background-color: rgba(209, 209, 206, 0.9) !important;
+  color: #3a3a3a !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode .mobile-full-width {
+  width: 100% !important;
+  position: initial !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode .mobile-full-width[jb-type='TextBox'] {
+  padding-left: 10px !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode .jb-mobile-hidden {
+  display: none !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode thead tr td,
+[jb-type='DataSourceGrid'].responsive-mode thead tr th {
+  display: block;
+  width: 100% !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode thead tr td > *,
+[jb-type='DataSourceGrid'].responsive-mode thead tr th > * {
+  float: left !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr {
+  box-shadow: 0 !important;
+  border-radius: 2px;
+  margin: 20px !important;
+  padding: 20px;
+  display: block;
+  border: 1px solid #d1d1ce;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr > td {
+  display: block;
+  padding: 8px;
+  width: 100% !important;
+  text-align: right !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr > td.numbering {
+  text-align: center !important;
+  border-bottom: none !important;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr > td:not(:last-child) {
+  border-bottom: 1px dotted #d1d1ce;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr > td:before {
+  content: attr(title);
+  float: left;
+  font-weight: bold;
+}
+[jb-type='DataSourceGrid'].responsive-mode tbody > tr > td [jb-type='Label'] {
+  max-width: 60%;
+  min-height: 20px;
+  word-break: break-all;
+}
+[jb-type='DataSourceGrid'].responsive-mode tfoot td:not(.pager-cell) {
+  display: none;
+}
+[jb-type='DataSourceGrid'].responsive-mode tfoot td {
+  display: block;
+}
+.jb-modal-overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0.4;
+  z-index: 100;
+  display: none;
+  background-color: black;
+}
+.sweet-alert {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.spinner {
+  margin: 0px auto;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(58, 58, 58, 0.2);
+  border-right: 1.1em solid rgba(58, 58, 58, 0.2);
+  border-bottom: 1.1em solid rgba(58, 58, 58, 0.2);
+  border-left: 1.1em solid #4c92d8;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.spinner,
+.spinner:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+form#navigationForm {
+  margin: 0px;
+}
+[jb-type='Slide'] {
+  position: fixed;
+  height: 100%;
+  background-color: white;
+  right: 0px;
+  width: 35%;
+  z-index: 9999;
+  box-shadow: 0;
+  transition: all ease-in 0.5s;
+}
+[jb-type='Slide'] .slide-close-button {
+  cursor: pointer;
+  opacity: 0.6;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  box-sizing: initial;
+  font-size: 45px;
+  float: right;
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+  color: black;
+  z-index: 9999;
+}
+[jb-type='Slide'] .slide-close-button:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='Slide'] .slide-close-button:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='Slide'] .jb-modal-iframe {
+  border: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+[jb-type='Iconism'][ng-dblclick],
+[jb-type='Iconism'][ng-click] {
+  cursor: pointer;
+  opacity: 0.8;
+}
+[jb-type='Iconism'][ng-dblclick]:ie-wont-hover,
+[jb-type='Iconism'][ng-click]:ie-wont-hover {
+  opacity: 1;
+}
+[jb-type='Iconism'][ng-dblclick]:ie-wont-hover,
+[jb-type='Iconism'][ng-click]:ie-wont-hover {
+  opacity: 1;
+}
+.jb-round-icon {
+  box-shadow: 0 !important;
+  padding: 10px;
+  border-radius: 140px;
+}
+@media (max-width: 600px) {
+  .jb-mobile-hidden {
+    display: none !important;
+  }
+}
+.select2-container {
+  min-width: 100px !important;
+}
+.data-list-standalone-outer-static-elements-dummy {
+  height: 170px;
+}
+.jb-control[jb-type='DateTimeBox'] {
+  border: 1px solid #dedede;
+  outline: none;
+  color: black;
+  background-color: #f4f3f3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.jb-control[jb-type='PasswordTextBox'] {
+  outline: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  height: 34px;
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+}
+/* Temp list fix */
+
+.no-selection-button .select-actions {
+  display: none !important;
+  visiblity: hidden !important;
+  opacity: 0 !important;
+}
+/* ================= End of Custom Rules ======================== */
+

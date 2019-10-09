@@ -1,0 +1,1705 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<Theme DateCreated="" Model_Name="Bootstrap" Model_Description="" Version="">
+  <RawCss>// Form Controls
+.form-control {
+    box-shadow: initial !important;
+    
+    &amp;.jb-required {
+       padding-right: 20px;
+       background-image: url(images/icon-asterisk.png);
+       background-repeat: no-repeat;
+       background-position-x: ~"calc(100% - 2px)";
+       background-position-y: 2px;
+    }
+    
+    &amp;.jb-readonly {
+    	cursor: not-allowed;
+        opacity: 0.75;
+    }
+}
+
+.jb-overflow-menu #okeyNavLeft .menu-root [jb-type="MenuItemsContainer"].dropdown-menu {
+    right: 100% !important;
+    left: -100% !important;
+    top: 0px !important;
+}
+
+//bluish
+.bluish-custom {
+    background-color:#6593d3;
+    color: #ffffff;
+}
+
+// Menu Variable
+@sidenav-open-width: 200px;
+@sidenav-toogle-width: 0px;
+@sidenav-hamburger-open: 215px;
+@sidenav-hamburger-close: 15px;
+@sidenav-hamburger-title-margin: -15px 0 0 55px;
+@sidenav-hamburger-color: black;
+@sidenav-hamburger-bgcolor: @bg-color;
+
+// @sidenav-open-width: 200px;
+// @sidenav-toogle-width: 50px;
+// @sidenav-hamburger-open: 155px;
+// @sidenav-hamburger-close: 5px;
+// @sidenav-hamburger-title-margin: 0px;
+// @sidenav-hamburger-color: @bg-color;
+// @sidenav-hamburger-bgcolor: transparent;
+
+@navbar-color: white;
+@navbar-brand-color: white;
+
+@navbar-bg-color: @bluish-custom;//@color-primary;
+@navbar-brand-bg-color: @navbar-bg-color;
+@navbar-brand-bg-color-border: @navbar-bg-color;
+@navbar-brand-bg-color-hover: lighten(@navbar-bg-color, 5%);
+@navbar-brand-bg-color-focus: lighten(@navbar-bg-color, 5%);
+
+// Helpers
+.clickable(@opacity) {
+    cursor: pointer;
+    opacity: @opacity;
+
+    &amp;:hover {
+        opacity: 1;
+    }
+}
+
+.rotate(@radius) {
+    /* Rotate div */
+    -ms-transform: rotate(@radius); /* IE 9 */
+    -webkit-transform: rotate(@radius); /* Chrome, Safari, Opera */
+    transform: rotate(@radius);
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Templates
+#JooveBoxControlTemplates {
+	display: none;
+}
+
+// Validations
+.jb-invalid-binding:not(.chosen-container),
+.jb-dv-failed:not(.chosen-container),
+.required-empty-mark:not(.chosen-container) {
+    background-color: fadeout(@color-danger, 50%) !important;
+}
+
+.jb-invalid-binding .chosen-single,
+.jb-dv-failed .chosen-single,
+.required-empty-mark .chosen-single {
+    background: fadeout(@color-danger, 50%) !important;
+}
+
+.validation-panel {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    padding: 0;
+    z-index: 777;
+    outline: 2px solid @color-primary;
+    margin-bottom: 0; /* 35px;  This is the height of the default master page footer */
+
+    .alert {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .panel-heading {
+        .tools {
+            position: relative;
+            bottom: 14px;
+            margin-right: 5px;
+            .clickable(0.5);
+        }
+    }
+
+    .panel-body {
+        overflow: auto;
+        max-height: 150px;
+
+        /*span.glyphicon {
+            font-size: 20px;
+            line-height: 20px;
+            top: 2px;
+        }*/
+
+        span.message {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .btn-message {
+            float: right;
+            margin-right: 5px;
+        }
+
+        .validation-nav {
+            float: right;
+        }
+
+        .alert {
+            .clickable(0.9);
+            background-color: transparent;
+            border: none;
+
+            .message {
+                font-size: 16px;
+                position: relative;
+                bottom: 2px;
+            }
+        }
+
+        .alert-warning {
+            color: darken(@color-warning, 20%);
+            background-color: lighten(@color-warning, 30%);
+        }
+
+        .alert-information {
+            color: @color-info;
+            background-color: lighten(@color-info, 30%);
+        }
+        .alert-danger {
+            color: @color-danger;
+            background-color: lighten(@color-danger, 30%);
+        }
+    }
+}
+
+.highlight-danger, .highlight-danger:focus {
+    border: 1px solid @color-danger;
+    background-color: lighten(@color-danger, 30%);
+}
+
+.highlight-warning, .highlight-warning:focus {
+    border: 1px solid @color-warning;
+    background-color: lighten(@color-warning, 30%);
+}
+
+.highlight-information, .highlight-information:focus {
+    border: 1px solid @color-info;
+    background-color: lighten(@color-info, 30%);
+}
+
+.select2-container.highlight-danger, .select2-container.highlight-warning, .select2-container.highlight-information {
+	border-radius: 5px;
+}
+
+.select2-container.highlight-danger .select2-selection, .select2-container.highlight-warning .select2-selection, .select2-container.highlight-information .select2-selection {
+	height: 30px;
+}
+
+.select2-container.highlight-danger .select2-selection__rendered {
+	background-color: #fde4e4;
+}
+
+.select2-container.highlight-warning .select2-selection__rendered {
+	background-color: #f9ebca;	
+}
+
+.select2-container.highlight-information .select2-selection__rendered {
+	background-color: #ffffff;
+}
+
+// end of Validations
+
+/* MISC */
+[jb-type='PickList'].jb-disabled *,
+[jb-type='Button'].jb-disabled * {
+    cursor: not-allowed !important;
+}
+
+// Placeholders
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+    font-weight: lighter !important;
+    opacity: 0.7 !important;
+    color: @font-color !important;
+}
+
+// Text Area
+textarea {
+    resize: vertical;
+}
+textarea[disabled],
+textarea[readonly] {
+    resize: none;
+}
+
+// Button Extra Classes
+.btn-img {
+    .clickable(0.9);
+}
+
+.btn-link {
+    cursor: pointer;
+}
+
+.btn-link &gt; * {
+    cursor: pointer;
+}
+
+// End of Buttons
+
+// Menu
+.collapsing(@width) {
+    background-color: @color-primary !important;
+    width: @width;
+    margin: 0 auto;
+}
+
+.clickable(@opacity) {
+    cursor: pointer;
+    opacity: @opacity;
+
+    &amp;:hover {
+        opacity: 1;
+    }
+}
+
+// Start of Menu Layout Fixes
+.hfill-body {
+    display: flex;
+	min-height: ~"calc(100vh - 50px)";
+	flex-direction: column;
+}
+
+.open-sidenav {
+    margin-left: @sidenav-open-width;
+    transition: margin-left ease 0.4s;
+
+    &amp;.pull {
+        margin-left: @sidenav-toogle-width !important;
+    }
+
+    .list-docked-grids {
+        top: 0!important;
+    }
+
+    .hfill-body {
+    	min-height: 100vh !important;
+    }
+
+    .navbar-nav {
+        margin: 0px !important;
+    }
+
+    .master-page-title {
+        margin: @sidenav-hamburger-title-margin !important;
+    }
+}
+// End of Menu Layout Fixes
+
+// Start of Navbar
+div[jb-type='MenuControl'] {
+    margin-bottom: 0px;
+	height: 50px;
+
+    .jb-overflow-menu {
+        .glyphicon-option-horizontal {
+            -webkit-transition: transform 0.5s; /* For Safari 3.1 to 6.0 */
+            transition: transform 0,5s;
+        }
+
+        &amp;.open {
+            .glyphicon-option-horizontal {
+                /* Rotate div */
+                -ms-transform: rotate(90deg); /* IE 9 */
+                -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    [jb-type='MenuHeaderContainer'] [jb-type='MenuHeader']{
+        cursor: pointer;
+    }
+
+    &gt; [jb-type='MenuItemsContainer'] {
+       width: 100%;
+    }
+
+    [jb-type='MenuItem'] {
+        cursor: pointer;
+    }
+
+    .nav [jb-type='MenuItem'] {
+        visibility: hidden;
+    }
+
+    ul[jb-type='MenuItemsContainer'] li[jb-type='MenuItem'] a[jb-type='MenuItemLabelContainer']{
+        width: 100%;
+	    display: inline-block;
+    }
+    [jb-type="MenuItemIcon"] {
+        width: 16px;
+    }
+}
+
+li[jb-type='MenuItem'] {
+    a[jb-type='MenuItemLabelContainer'] span[jb-type='MenuItemIcon']{
+        margin-right : 5px;
+    }
+
+    a[jb-type='MenuItemLabelContainer'] {
+        width: 100%;
+	    display: inline-block;
+    }
+
+    [jb-type='ImageBox'] {
+        height: 28px;
+        margin-right: 5px;
+    }
+
+    &amp;.jb-menu-header{
+        font-weight : bold;
+	    font-size : 22px;
+    }
+
+    &amp;.jb-menu-right{
+        margin-right : 20px;
+    }
+}
+
+.navbar.navbar-default {
+    background-color: @navbar-bg-color;
+    border: none !important;
+    color: @navbar-color;
+
+    .with-shadow();
+
+    .in {.collapsing(90%);}
+
+    .collapsing {.collapsing(90%);}
+
+    .navbar-collapse {
+        border-top: 0px solid transparent;
+    }
+
+    .navbar-header {
+        .navbar-toggle {
+            .icon-bar {
+                background-color: @navbar-brand-color !important;
+            }
+
+            &amp;:hover {
+                background-color: @navbar-brand-bg-color-hover !important;
+            }
+
+            &amp;:focus {
+                background-color: @navbar-brand-bg-color-focus !important;
+            }
+
+            border-color: @navbar-brand-bg-color-border !important;
+        }
+
+        .navbar-brand {
+            color: @navbar-brand-color !important;
+        }
+
+        .jb-menu-header .jb-no-icon {
+            display: none !important;
+        }
+
+        .jb-menu-header [jb-type='ImageBox'] {
+            position: relative;
+            height: 45px;
+            bottom: 13px;
+        }
+
+        .jb-menu-header [jb-type='ImageBox'] + [jb-type='MenuItemLabel'] {
+            display: inline-block;
+            position: relative;
+            bottom: 11px;
+        }
+    }
+
+    .nav.navbar-nav {
+        &gt; li {
+            &gt; a {
+                opacity: 1 !important;
+                color: @navbar-color !important;
+                font-size: 16px;
+
+                &gt;.glyphicon {
+                    top: 3px;
+                }
+
+                &gt; [jb-type='MenuItemLabel'] {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            &amp;.jb-menu-header {
+                &gt; a {
+                    font-size: 22px;
+                    font-weight: lighter;
+                    padding-left: 25px;
+                    height: 50px;
+                }
+            }
+
+            .dropdown-menu {
+                box-shadow: 0 2px 1px rgba(0,0,0,.175);
+                border: none !important;
+                background-color: lighten(@navbar-bg-color, 5%) !important;
+                border-radius: 0px !important;
+
+                &gt; li {
+                    &gt; a {
+                        font-size: 16px;
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+                        padding-left: 10px;
+                        color: @navbar-color !important;
+                        font-weight: lighter !important;
+
+                        &gt; [jb-type='MenuItemArrow'],
+                        &gt; [jb-type='MenuItemIcon'] {
+                            color: @navbar-color;
+                        }
+
+                        &amp;:hover {
+                            background-color: fadeout(@navbar-color, 90%) !important;
+                        }
+                    }
+
+                    &amp;.open {
+                        &gt; a {
+                            background-color: fadeout(@navbar-color, 90%) !important;
+                        }
+                    }
+                }
+            }
+
+            &amp;:hover,
+            &amp;.open {
+                &gt; a {
+                    background-color: lighten(@navbar-bg-color, 5%) !important;
+                    color: @navbar-color !important;
+                }
+            }
+        }
+    }
+
+    .nav.navbar-nav {
+       .dropdown-menu {
+            .dropdown-menu {
+                right:-100% !important;
+                left: 100% !important;
+                top: 0px !important;
+            }
+        }
+    }
+
+    .nav.navbar-nav.navbar-right {
+        .dropdown-menu {
+            .dropdown-menu {
+                right:100% !important;
+                left: -100% !important;
+                top: 0px !important;
+            }
+        }
+    }
+}
+
+.submenu-visible {
+    position: absolute;
+    left: 95%;
+    top: 10px;
+}
+
+.caret-right {
+    ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    margin-left: 15px;
+}
+
+
+.dropdown-submenu {
+     position: relative;
+
+     &gt; a.submenu-expanded {
+        background-image: none !important;
+    }
+
+    &gt; .dropdown-menu.right {
+        left: 100% !important;
+        right: auto !important;
+    }
+
+    &gt; .dropdown-menu.left {
+        right: 100% !important;
+        left: auto !important;
+    }
+
+    &gt; .dropdown-menu {
+        top: 0;
+        margin-top: -6px;
+        margin-left: -1px;
+    }
+
+    &gt; a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    &amp;.pull-left {
+         float: none;
+
+         &gt; .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+.rotate(@radius) {
+    /* Rotate div */
+    -ms-transform: rotate(@radius); /* IE 9 */
+    -webkit-transform: rotate(@radius); /* Chrome, Safari, Opera */
+    transform: rotate(@radius);
+}
+// End of Navbar
+
+// Start of Sidenav
+#sidenav-toogle {
+    position: fixed;
+    top: 10px;
+    left: @sidenav-hamburger-open;
+    z-index: 50;
+    transition: left ease 0.4s;
+
+    &amp;.pull {
+        left: @sidenav-hamburger-close;
+    }
+    &amp;.btn {
+        .clickable(0.9);
+        background-color: @sidenav-hamburger-bgcolor !important;
+        color: @sidenav-hamburger-color !important;
+        outline: 0;
+    }
+}
+
+.sidenav {
+    .dropdown-menu {
+        position: absolute !important;
+    }
+
+    [jb-type="MenuItemArrow"] {
+        float: right;
+
+        &amp;.caret {
+            .clickable(0.8);
+
+            border: 0;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            margin-right: -15px;
+            margin-top: 2px;
+            height: 16px;
+            width: 16px;
+
+            &amp;:before {
+                content: "\e258";
+            }
+        }
+    }
+
+    .menu-root &gt; a [jb-type="MenuItemArrow"] {
+        margin-left: 2px;
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+
+    .menu-root &gt; a [jb-type="MenuItemIcon"] {
+        .clickable(0.8);
+        float: right;
+        margin-right: 2px !important;
+    }
+    .menu-root &gt; a [jb-type="MenuItemArrow"].hasIcon {
+        visibility: hidden !important;
+    }
+    &amp;.navbar-header {
+        float:none;
+    }
+
+    &amp;.navbar-header span{
+        color: white;
+    }
+
+    &amp;.navbar {
+        position:fixed;
+        width: @sidenav-open-width;
+        z-index: 45;
+        height: 100%;
+        border-radius: unset;
+        left: 0;
+        transition: left ease 0.4s;
+    }
+
+    &amp;.pull {
+        left: ~"calc(@{sidenav-toogle-width} - @{sidenav-open-width})";
+    }
+
+    .nav {
+        &amp;&gt; [jb-type="MenuItem"] {
+            width: @sidenav-open-width;
+        }
+    }
+
+    .open {
+        .dropdown-menu {
+            left: 100%;
+            top: 0%;
+        }
+
+        .caret {
+            .rotate(0deg);
+        }
+    }
+
+    .nav.navbar-right {
+        margin-right: 0;
+
+        &amp;&gt; [jb-type="MenuItem"] {
+            margin-right: 0;
+        }
+    }
+
+    .caret {
+        float: right;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        opacity: .45;
+       transition: all ease 0.4s;
+    }
+
+    .dropdown-menu {
+        .dropdown-menu {
+            left: 100% !important;
+        }
+    }
+}
+// End of Sidenav
+
+// end of menu
+
+// Grid
+[jb-type='DataSourceGrid'] {
+    table-layout: fixed;
+    
+    td.numbering {
+      width: 50px;
+      text-align: center;
+    }
+}
+
+[joove-ds-sort] {
+    cursor: pointer;
+    &amp;:hover {
+        text-decoration: underline;
+    }
+}
+
+[jb-type='DataSourceGrid'] &gt; tbody &gt; tr,
+[jb-type='Grid'] &gt; tbody &gt; tr {
+    &amp;:hover {
+        background-color: rgba(0,0,0,0.06) !important;
+    }
+}
+
+[jb-type='DataSourceGrid'].jb-alternate-rows &gt; tbody &gt; tr:nth-child(even),
+[jb-type='Grid'].jb-alternate-rows &gt; tbody &gt; tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.03);
+}
+
+[jb-type='RemoveItemLabel'] {
+    .clickable(0.5);
+    color: @color-danger;
+    float: right;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+
+    &amp;:hover {
+        color: @color-danger !important;
+        background-color: transparent !important;
+    }
+}
+
+[jb-type='AddItemLabel'] {
+    color: @color-primary;
+    padding: 10px;
+    font-size: 25px;
+    margin-left: ~"calc(50% - 8px)";
+    .clickable(0.5);
+}
+
+.grid-numbering-label {
+    margin-left: 40%;
+    margin-top: 4%;
+}
+
+[jb-type="tFooter"] [jb-type="Pager"] {
+    margin-top: 15px !important;
+}
+
+.pager-cell {
+    text-align: center;
+}
+
+[jb-type="tHeader"] [jb-type="Pager"] {
+    margin-bottom: 15px !important;
+}
+
+[jb-type="Pager"] {
+    display: inline-block;
+    padding-left: 0;
+    //border-radius: @default-radius !important;
+    margin: 0;
+
+    a {
+        cursor: pointer;
+        line-height: 1.52857;
+        padding: 4px 10px;
+        border: 1px solid @color-default;
+        color: @font-color !important;
+        border-radius: 20px;
+        font-size: @font-sm;
+        float: left;
+        text-decoration: none;
+        margin-right: 10px;
+        text-align: center;
+        height: 28px;
+    }
+
+    li {
+        display: inline;
+
+        /*&amp;:first-child a {
+            border-left-width: 1px;
+            .border-radius(@default-radius 0 0 @default-radius);
+        }
+
+        &amp;:last-child a {
+            .border-radius(0 @default-radius @default-radius 0);
+        }*/
+
+        &amp;:hover,
+        &amp;.jb-active {
+            a {
+                background-color: @color-primary !important;
+                border-color: transparent;
+                color: white !important;
+                opacity: 0.85;
+            }
+        }
+
+        &amp;:hover:not(.jb-active) {
+            a {
+                background-color: fadeout(@color-default, 10%) !important;
+                color: @font-color !important;
+            }
+        }
+    }
+}
+
+// Responsive
+[jb-type='DataSourceGrid'].responsive-mode {
+    .mobile-full-width {
+        width: 100% !important;                        
+        position: initial !important;
+        
+        &amp;[jb-type='TextBox'] {
+            padding-left: 10px !important;
+        }
+    }
+
+    .jb-mobile-hidden {
+        display: none !important;
+    }
+
+    thead {                     
+        tr {
+            td,th {
+                display: block;
+                width: 100% !important;              
+              
+                &gt; * {
+                    float: left !important;                   
+                }
+            }
+        }      
+    }
+    
+    tbody {
+        &gt; tr {
+            .with-shadow;
+            border-radius: @default-radius;
+            margin: 20px !important;
+            padding: 20px;
+            display: block;
+            border: 1px solid @color-default;
+            
+            &gt; td {
+                display: block;
+                padding: 8px;
+                width: 100% !important;
+                text-align: right !important;
+                
+                &amp;.numbering {
+                    text-align: center !important;
+                    border-bottom: none !important;
+                }
+                
+                &amp;:not(:last-child) {
+                    border-bottom: 1px  dotted @color-default;
+                }
+                
+                &amp;:before {
+                    content: attr(title);
+                    float: left;
+                    font-weight: bold;
+                }
+                
+                [jb-type='Label'] {
+                    max-width: 60%;
+                    min-height: 20px;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+    
+    tfoot {
+        td:not(.pager-cell) {
+            display: none;
+        }
+        
+        td {
+            display: block;
+        }
+    }
+}
+
+// End of Grid
+
+// Modal Overlay
+.jb-modal-overlay {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.4;
+    z-index: 100;
+    display: none;
+    background-color: black;
+}
+
+// Sweet Alert
+.sweet-alert {
+    .radius-at-all;
+}
+
+// Loading Spinner
+.spinner {
+  margin: 0px auto;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid fadeout(@font-color, 80%);
+  border-right: 1.1em solid fadeout(@font-color, 80%);
+  border-bottom: 1.1em solid fadeout(@font-color, 80%);
+  border-left: 1.1em solid @color-primary;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.spinner,
+.spinner:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+// End of Loading Spinner
+
+// Icon spin
+.spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+// End of icon spin
+// Start reset defaults
+form#navigationForm {
+    margin: 0px;
+}
+// End reset defaults
+
+// Slide
+[jb-type='Slide'] {
+    position: fixed;
+    height: 100%;
+    background-color: @containers-color;
+    right: 0px;
+    width: 35%;
+    z-index: 9999;
+    box-shadow: @default-shadow;
+    transition: all ease-in 0.5s;
+    .slide-close-button {
+        .clickable(0.6);
+        background-color: transparent;
+        outline: none;
+        border: none;
+        box-sizing: initial;
+        font-size: 45px;
+        float: right;
+        position: relative;
+        bottom: 10px;
+        right: 15px;
+        cursor: pointer;
+        color: black;
+        z-index: 9999;
+    }
+    .jb-modal-iframe {
+        border: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// End of Slide
+
+// Icons
+[jb-type='Iconism'][ng-dblclick],
+[jb-type='Iconism'][ng-click] {
+    .clickable(0.8);
+}
+
+.jb-round-icon {
+    .with-shadow;
+    padding: 10px;
+    border-radius: 140px;
+}
+
+// Mobile Hidden
+@media (max-width: 600px) {
+  .jb-mobile-hidden {
+       display: none !important;
+   }
+}
+
+// Σελέκτ 2 φιξ
+.select2-container {
+	min-width: 100px !important;
+}
+
+//Data Tables
+.data-list-standalone-outer-static-elements-dummy {
+    height: 170px;
+}
+
+
+//DateTime fix
+.jb-control[jb-type='DateTimeBox'] {
+    border: 1px solid #dedede;
+    outline: none;
+    color: black;
+    background-color: #f4f3f3;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+//Password TextBox Fix
+.jb-control[jb-type='PasswordTextBox'] {
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #cccccc;
+    padding: 6px 12px;
+}
+
+
+
+/* Temp list fix */
+.no-selection-button {
+    .select-actions {
+        display: none !important;
+        visiblity: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+</RawCss>
+  <Resources>
+    <Resource FileName="bootstrap.zip" RelativePath="" ImportToAllForms="true" Forms="" />
+    <Resource FileName="Notification.css" RelativePath="" ImportToAllForms="true" Forms="" />
+    <Resource FileName="pretty-checkbox.css" RelativePath="" ImportToAllForms="true" Forms="" />
+  </Resources>
+  <Mappings>
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="container-fluid" Css="" RelatedStyle="" Element="BodyContainer" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="form-control" Css="" RelatedStyle="" Element="TextBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="overflow-x: hidden;&#xA;font-size: 12px;" RelatedStyle="" Element="Body" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="form-control" Css="" RelatedStyle="" Element="TextArea" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="form-control" Css="visibility: hidden !important;&#xD;&#xA;&#xD;&#xA;+.chosen-container {&#xD;&#xA;    height: 30px;&#xD;&#xA;    width: 100% !important;&#xD;&#xA;    &#xD;&#xA;    .chosen-single {    &#xD;&#xA;        background:white !important;&#xD;&#xA;        height: 30px !important;&#xD;&#xA;        padding: 2px 0 0 8px !important;    &#xD;&#xA;        font-size: 12px !important;      &#xD;&#xA;        border-radius: @default-radius !important; &#xD;&#xA;        box-shadow: initial !important;&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    .chosen-drop {&#xD;&#xA;        border-radius: @default-radius !important;&#xD;&#xA;        //border-color:  @font-color !important;&#xD;&#xA;        box-shadow: initial !important;&#xD;&#xA;    &#xD;&#xA;        .chosen-results {&#xD;&#xA;            .active-result.highlighted {&#xD;&#xA;                color:white !important;&#xD;&#xA;                background: @color-primary !important;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;+.chosen-container-single .chosen-single div b {&#xD;&#xA;    position: relative;&#xD;&#xA;    top: 2px;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;.jb-required+.chosen-container .chosen-drop {&#xD;&#xA;    width: ~&quot;calc(100% - 20px)&quot; !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;.jb-required+.chosen-container  {&#xD;&#xA;   padding-right: 20px;&#xD;&#xA;   background-image: url(images/icon-asterisk.png);&#xD;&#xA;   background-repeat: no-repeat;&#xD;&#xA;   background-position-x: ~&quot;calc(100% - 2px)&quot;;&#xD;&#xA;   background-position-y: 2px;&#xD;&#xA;}" RelatedStyle="" Element="Select" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="form-control" Css="" RelatedStyle="" Element="RichText" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-smooth" Css="zoom: 1.5;&#xA;cursor: pointer;&#xA;opacity: 0.8;&#xA;position: relative;&#xA;top: 2px;&#xA;margin-right: 5px;&#xA;&#xA;&amp;:hover {&#xA;    opacity: 1;&#xA;}" RelatedStyle="" Element="Radio" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="panel" Css="[jb-type='FieldSetToggleStateIcon'] {&#xA;    .clickable(0.8);&#xA;    font-size: 14px;&#xA;    float: right;&#xA;}" RelatedStyle="" Element="FieldSet" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="panel-heading" Css="" RelatedStyle="" Element="FieldSetHeader" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="panel-body" Css="&amp;.jb-collapsed {&#xA;    display: none;&#xA;}" RelatedStyle="" Element="FieldSetBody" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="panel-footer" Css="background-color: inherit;" RelatedStyle="" Element="FieldSetFooter" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom:2;&#xA;cursor: pointer;&#xA;opacity: 0.8;&#xA;&#xA;&#xA;&amp;:hover {&#xA;    opacity: 1;&#xA;}&#xA;&#xA;&amp;.jb-readonly {&#xA;    cursor: default !important;&#xA;    opacity: 1 !important;&#xA;}" RelatedStyle="" Element="CheckBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="img-rounded" Css="&amp;[jb-thumbnail='true'] {&#xD;&#xA;	cursor: pointer;&#xD;&#xA;	opacity: 0.9;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;[jb-thumbnail='true']:hover {	&#xD;&#xA;	opacity: 1;&#xD;&#xA;}" RelatedStyle="" Element="ImageBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Map" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Chart" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="box-shadow: @default-shadow;&#xA;&#xA;.progress-bar {&#xA;    font-size: inherit;&#xA;    line-height: inherit;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="modal-dialog" Css="position: absolute;&#xD;&#xA;z-index: 101;&#xD;&#xA;display: none;&#xD;&#xA;&#xD;&#xA;.modal-close-button {&#xD;&#xA;    position: absolute;&#xD;&#xA;    right: 10px;&#xD;&#xA;    width: initial !important;&#xD;&#xA;    background-color: transparent !important;&#xD;&#xA;    outline: none !important;&#xD;&#xA;    box-shadow: initial !important;&#xD;&#xA;    &#xD;&#xA;    &amp;::after {&#xD;&#xA;        content: &quot;\d7&quot;;&#xD;&#xA;        font-size: 30px;&#xD;&#xA;        position: absolute;&#xD;&#xA;        bottom: -20px;&#xD;&#xA;        left: 5px;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;.jb-modal-iframe {&#xD;&#xA;    width: 100%;&#xD;&#xA;    height: 100%;&#xD;&#xA;    border: none;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[jb-type='List'] {&#xD;&#xA;    box-shadow: initial !important;&#xD;&#xA;}" RelatedStyle="" Element="Modal" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="modal-content" Css="" RelatedStyle="" Element="ModalContent" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="modal-header" Css="height: 30px;&#xD;&#xA;width: 100%;        &#xD;&#xA;padding-top: 8px;    &#xD;&#xA;border: none;" RelatedStyle="" Element="ModalHeader" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="modal-body" Css="height: ~&quot;calc(100% - 80px)&quot;;&#xD;&#xA;width: 100%;" RelatedStyle="" Element="ModalBody" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="modal-footer" Css="/*height: 50px;*/&#xD;&#xA;width: 100%;        &#xD;&#xA;padding-top: 8px;    &#xD;&#xA;border: none;&#xD;&#xA;background-color: inherit;" RelatedStyle="" Element="ModalFooter" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-9" Css="" RelatedStyle="" Element="LayoutColumn9" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="row" Css="padding-top: 3px;&#xA;padding-bottom: 3px;" RelatedStyle="" Element="LayoutRow" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Layout" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-1" Css="" RelatedStyle="" Element="LayoutColumn1" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-2" Css="" RelatedStyle="" Element="LayoutColumn2" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-3" Css="" RelatedStyle="" Element="LayoutColumn3" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-5" Css="" RelatedStyle="" Element="LayoutColumn5" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-7" Css="" RelatedStyle="" Element="LayoutColumn7" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-12" Css="" RelatedStyle="" Element="LayoutColumn12" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-4" Css="" RelatedStyle="" Element="LayoutColumn4" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-6" Css="" RelatedStyle="" Element="LayoutColumn6" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-8" Css="" RelatedStyle="" Element="LayoutColumn8" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-10" Css="" RelatedStyle="" Element="LayoutColumn10" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="col-md-11" Css="" RelatedStyle="" Element="LayoutColumn11" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="list-control-container" Css="/*background-color:white;*/&#xA;border: none;&#xA;padding: 5px 15px 5px 15px;   &#xA;border-radius: @default-radius;&#xA;margin-bottom: 10px;  &#xA;&#xA;.toolbutton() {&#xA;    .clickable(0.8);&#xA;    outline: none;&#xA;    border: none !important;&#xA;    box-shadow: initial !important;&#xA;    background-color: transparent !important;&#xA;}&#xA;&#xA;.groups-grid,&#xA;.filters-grid,&#xA;.preferences-grid {       &#xA;    table {&#xA;        tr {               &#xA;            th {&#xA;                color: @font-color;&#xA;                font-weight:lighter;&#xA;                border-bottom: 1px solid rgba(41, 41, 41, 0.11);&#xA;            }&#xA;&#xA;            td {&#xA;                vertical-align: middle;&#xA;&#xA;                 input[type=&quot;radio&quot;] {&#xA;                    display: inline-block;&#xA;                    margin: 0px;&#xA;                }&#xA;&#xA;                .glyphicon {&#xA;                    color: @font-color;&#xA;                }&#xA;&#xA;                .add-group,&#xA;                .move-up,&#xA;                .move-down,&#xA;                .remove-group {&#xA;                    .toolbutton();&#xA;                }&#xA;            }&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;.collapsile-grid-footer {            &#xA;    background-color: lighten(@color-default, 10%);&#xA;    padding: 10px;&#xA;    text-align: center;&#xA;}&#xA;&#xA;.groups-grid .groups-header,&#xA;.filters-grid .filters-header,&#xA;.grids-header.preferences-header {      &#xA;    background-color: @color-primary;&#xA;    color:white;     &#xA;}&#xA;&#xA;&amp;.stand-alone {&#xA;    margin: 0;&#xA;    padding-left: 10px;&#xA;    padding-right: 10px;&#xA;&#xA;    .row-num-border {&#xA;        background-color: transparent;&#xA;        width: auto;&#xA;    }&#xA;&#xA;    .list-data-container .row-num-border {&#xA;        width: 45px;&#xA;        border-top: none;            &#xA;    }&#xA;&#xA;    .list-docked-grids {            &#xA;        position: fixed;&#xA;        top: 50px;&#xA;        bottom: 0px;&#xA;        height: 100% !important;&#xA;        right: 0px;&#xA;        z-index: 10000;&#xA;        background-color:white;&#xA;&#xA;        .collapsible-grid {&#xA;            margin: 0px;&#xA;        }&#xA;    }&#xA;}  &#xA;&#xA;.list-wrapper {&#xA;    margin-bottom: 10px;&#xA;}&#xA;&#xA;.list-data-table {    &#xA;    margin-bottom: 5px;    &#xA;}&#xA;&#xA;.list-column-vertical-scrollbar {&#xA;    float: right;&#xA;    position: relative;&#xA;&#xA;    .top-right-corner {&#xA;        background-color: transparent;&#xA;        border-top-right-radius: @default-radius;&#xA;        border-bottom: solid 1px transparent;&#xA;        border-left: 1px solid transparent;&#xA;    }&#xA;&#xA;    .bottom-right-corner {&#xA;        background-color: transparent;&#xA;        border-bottom: solid 1px transparent;&#xA;        border-left: 1px solid transparent;&#xA;    }&#xA;&#xA;    .bottom-right-corner.bottom-cap {&#xA;        border-left: none;&#xA;        border-bottom: solid 5px transparent;&#xA;    }&#xA;&#xA;    .scrollbar-content-wrapper {&#xA;        overflow-x: hidden;&#xA;        overflow-y: scroll;&#xA;        background-color: transparent;&#xA;    }&#xA;}&#xA;    &#xA;.list-column-horzontal-scrollbar {&#xA;    float: left;&#xA;    position: relative;        &#xA;    background-color: transparent;&#xA;&#xA;    .scrollbar-content-wrapper {&#xA;        float: left;            &#xA;        overflow-x: scroll;&#xA;        overflow-y: hidden;&#xA;    }&#xA;}&#xA;                            &#xA;.scrollbars-bottom-right-corner {&#xA;    float: right;&#xA;    background-color: transparent;&#xA;}&#xA;&#xA;.list-column-header {&#xA;    .column-title:not(:last-child):not(:first-child) {&#xA;        /*border-left: 1px solid white;&#xA;        border-right: 1px solid white;*/ &#xA;    }&#xA;}&#xA;&#xA;.list-data-row {            &#xA;    height: 40px;&#xA;    cursor: pointer;        &#xA;    //border-bottom: 1px solid lighten(@font-color;&#xA;&#xA;    &gt; td {&#xA;        transition: all ease 0.25s;&#xA;        vertical-align: middle !important;&#xA;        padding: 10px;&#xA;    }&#xA;}&#xA;&#xA;.header-right .global-search-button {&#xA;    .clickable(0.8);&#xA;    margin: 3px 3px 3px 0px;&#xA;    color: @font-color;&#xA;    background-color: transparent;        &#xA;}     &#xA;   &#xA;.select-page-size,&#xA;.list-current-page {&#xA;    height:30px;       &#xA;    padding: 6px 12px;                &#xA;}&#xA;&#xA;.select-page-size {&#xA;    height: 28px;&#xA;    position: relative;&#xA;    top: 1px;&#xA;}&#xA;&#xA;.list-current-page {&#xA;    text-align: center;&#xA;    padding: initial;&#xA;    width: 40px;&#xA;    position: relative;&#xA;    bottom: 1px;&#xA;    height: 28px;&#xA;    margin-left: 5px;&#xA;    margin-right: 5px;&#xA;}&#xA;   &#xA;tr.list-data-row {&#xA;    background-color: transparent;&#xA;&#xA;    td {&#xA;        font-weight:lighter;&#xA;    }&#xA;}&#xA;&#xA;tr:hover td.list-data-cell:not(.row-number) {&#xA;    background-color: lighten(@color-default, 10%);&#xA;}&#xA;&#xA;tr.group-row:hover td.list-data-cell:not(.row-number) {&#xA;    background-color: lighten(@color-default, 10%) !important;&#xA;}&#xA;&#xA;.input-line() {&#xA;    box-shadow: initial !important;&#xA;    outline: none;&#xA;    border-color: transparent;&#xA;    border-bottom-color: rgba(41, 41, 41, 0.11);&#xA;    &#xA;    &amp;:focus {&#xA;        border-bottom-color: @color-primary !important;&#xA;    }         &#xA;}&#xA;&#xA;.global-search-area  {&#xA;    .global-search-clear {&#xA;        .clickable(0.7);&#xA;        position: absolute;&#xA;        font-size: 18px;&#xA;        z-index: 1;&#xA;        top: 7px;&#xA;        right: 39px;        &#xA;        display: none;        &#xA;    }&#xA;&#xA;    .global-search-input {    &#xA;        .input-line();           &#xA;        padding-right: 20px;            &#xA;        padding-left: 2px;                          &#xA;    }&#xA;&#xA;    .global-search-btn.btn-default {   &#xA;        .toolbutton();&#xA;        right: 25px;&#xA;        z-index: 77;            &#xA;    }                &#xA;}    &#xA;&#xA;.quick-filters-container {            &#xA;    //background-color: lighten(@color-default, 50%);&#xA;&#xA;    .hide-quick-filters {&#xA;        .toolbutton();  &#xA;        position: relative;            &#xA;        padding: 0px;&#xA;        left: 3px;          &#xA;    }&#xA;}&#xA;&#xA;.header-toolbar-container {&#xA;    border: none !important;               &#xA;}      &#xA;&#xA;.quick-filters-container {&#xA;    &#xA;    .apply-quick-filter,&#xA;    .remove-quick-filter {&#xA;        .clickable(0.7);&#xA;    }  &#xA;}  &#xA;&#xA;.list-header-container {&#xA;    th {             &#xA;        padding-top: 5px;        &#xA;&#xA;        .list-context-button {&#xA;            &gt; label {&#xA;                font-weight:lighter !important;&#xA;            }&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;.tool-buttons-container {&#xA;    .available-views option.default {&#xA;        background-color: @color-success;&#xA;    }&#xA;&#xA;    .btn {&#xA;        .toolbutton();&#xA;    }&#xA;}&#xA;&#xA;.filter-row .remove-filter {&#xA;    .clickable(0.7);       &#xA;}&#xA;&#xA;.list-footer-container {&#xA;    float: left;&#xA;    overflow: hidden;&#xA;    &#xA;    .bottom-cap {            &#xA;        &gt; * {&#xA;            border: none !important;&#xA;        }&#xA;    }&#xA;&#xA;    .list-footer {            &#xA;         .list-aggregators-row {                               &#xA;            .aggregator-container {&#xA;                float: left;&#xA;                margin-left: 0px;&#xA;&#xA;                .aggregator-caption {&#xA;                    font-weight: bold;&#xA;                    color: @font-color;&#xA;                }&#xA;&#xA;                .aggregator-value {&#xA;                    font-weight: bold;&#xA;                    color: @color-primary;&#xA;                }&#xA;            }&#xA;                               &#xA;        }&#xA;    }&#xA;}   &#xA;&#xA;.btn-group {&#xA;    .btn {&#xA;        margin-left: 5px;&#xA;    }&#xA;}&#xA;&#xA;.mobile-menu {&#xA;    .toolbutton();&#xA;}   &#xA;&#xA;.group-aggregators-row {&#xA;    background-color: lighten(@color-default, 10%);&#xA;}&#xA; &#xA;.column-titles-container {    &#xA;    background-color: transparent;    &#xA;    &#xA;    .show-quick-filters {&#xA;        .toolbutton();&#xA;        position: relative;&#xA;        right: 3px;  &#xA;    }   &#xA; &#xA;    th {&#xA;        .title {&#xA;            cursor: pointer;&#xA;            display: inline-block;&#xA;            overflow: hidden;&#xA;            text-overflow: ellipsis;&#xA;            white-space: nowrap;&#xA;            margin-top: 6px;&#xA;            width: auto;&#xA;            color: @font-color !important;&#xA;&#xA;            &amp;.not-sortable {&#xA;                cursor: default !important;   &#xA;            }&#xA;&#xA;            &amp;:not(.not-sortable):hover {&#xA;                text-decoration: underline;&#xA;            }    &#xA;        }         &#xA;    }&#xA;&#xA;    .column-title  {&#xA;        .move-column-right {&#xA;            .clickable(0.5);        &#xA;            position: absolute;&#xA;            top: 0px;    &#xA;            padding: 14px 5px;&#xA;            right: 0px;        &#xA;            opacity: 0;&#xA;&#xA;            &amp;:hover {&#xA;                opacity: 1 !important;&#xA;            }&#xA;        }&#xA;&#xA;        .move-column-left {   &#xA;            .clickable(0.5);    &#xA;            position: absolute;&#xA;            top: 0px; &#xA;            left: 0px;   &#xA;            padding: 14px 5px;&#xA;            opacity: 0;&#xA;            &#xA;            &amp;:hover {&#xA;                opacity: 1 !important;&#xA;            }&#xA;        }                    &#xA;&#xA;        .glyphicon-arrow-up,&#xA;        .glyphicon-arrow-down {           &#xA;            top: -4px;&#xA;        }&#xA;&#xA;        .sort-direction-icon {                              &#xA;            color: fadeout(@color-primary, 40%);&#xA;        }           &#xA;    }   &#xA;    &#xA;}&#xA;                   &#xA;.list-column-header .row-number-header,&#xA;.list-data-row .row-number,&#xA;.list-aggregators-row .row-number,&#xA;.list-data-table .no-results-row .row-number {        &#xA;    background-color: transparent;&#xA;    font-weight: bold;&#xA;    text-align: center;&#xA;    color: @font-color;        &#xA;}       &#xA;&#xA;&amp;.resizable-cols {&#xA;    .list-column-header {                &#xA;        .column-title {                                &#xA;            &amp;:hover:not(.row-number-header) {&#xA;                border-right: 2px dashed fadeout(@font-color, 90%) !important;&#xA;                border-left: 2px dashed fadeout(@font-color, 90%) !important;&#xA;&#xA;                .move-column-left,&#xA;                .move-column-right {&#xA;                    opacity: 0.2;&#xA;                }&#xA;            }&#xA;        }        &#xA;    }     &#xA;}&#xA;&#xA;.list-data-row:hover:not(.group-row):not(.selected-row) .row-number {&#xA;   background-color: lighten(@color-default, 10%);&#xA;}&#xA;&#xA;.list-data-table .group-toggle {&#xA;    .clickable(0.85);&#xA;}&#xA;&#xA;.list-data-table .group-aggregators-row[data-level='1'] td {&#xA;    background-color: @color-default;&#xA;}&#xA;&#xA;.list-data-table .group-aggregators-row[data-level='2'] td,&#xA;.list-data-table .group-header[data-level='2'] td {&#xA;    background-color: darken(@color-default, 10%);&#xA;}&#xA;&#xA;.list-data-table .group-aggregators-row[data-level='3'] td,&#xA;.list-data-table .group-header[data-level='3'] td {&#xA;    background-color: darken(@color-default, 20%);&#xA;}&#xA;&#xA;.list-data-table .group-aggregators-row[data-level='4'] td,&#xA;.list-data-table .group-header[data-level='4'] td {&#xA;    background-color: darken(@color-default, 30%);&#xA;}&#xA;&#xA;.list-data-table .group-aggregators-row[data-level='5'] td,&#xA;.list-data-table .group-header[data-level='5'] td {&#xA;    background-color: darken(@color-default, 40%);&#xA;}&#xA;&#xA; tr.selected-row:not(.group-row) td.list-data-cell .circled-num {    &#xA;    background-color: @color-primary;&#xA;    color:white;        &#xA;}&#xA;&#xA;table tr.selected-row.active td.list-data-cell:not(.row-number),    &#xA;table tr.selected-row.group-row:hover td.list-data-cell,    &#xA;table tr.selected-row td.list-data-cell {&#xA;    background-color: fadeout(@color-primary, 90%);&#xA;}&#xA;&#xA;&#xA;.pager-container {&#xA;    font-size: 13px;&#xA;&#xA;    span {&#xA;        color: @font-color;&#xA;        font-weight:lighter;&#xA;    }   &#xA;    &#xA;    .data-total {            &#xA;        color: @color-primary;&#xA;        font-weight: bold;&#xA;    } &#xA;    &#xA;    .btn-group {&#xA;        .btn {&#xA;            .toolbutton();&#xA;        }&#xA;    }   &#xA;    &#xA;    .list-current-page {&#xA;        .input-line();&#xA;        border-left-style: initial;&#xA;        border-right-style: initial;&#xA;        border-width: 1px;&#xA;        color: @color-primary;&#xA;        font-weight: bold;&#xA;    }    &#xA;}" RelatedStyle="" Element="List" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="margin-top: 10px;&#xD;&#xA;margin-bottom: 10px;    &#xD;&#xA;border-color: transparent !important;&#xD;&#xA;&#xD;&#xA;.tab-content {&#xD;&#xA;    padding: 15px !important;&#xD;&#xA;    border-color: transparent !important;        &#xD;&#xA;    margin-bottom: 0px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&gt; .nav-tabs {&#xD;&#xA;    border-bottom: none;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;li { &#xD;&#xA;    &gt; a {&#xD;&#xA;        border: none !important;&#xD;&#xA;        border-color: transparent !important;                         &#xD;&#xA;        color: @font-color;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &amp;.active {&#xD;&#xA;        &gt; a {&#xD;&#xA;            //font-weight: bold;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;.jb-tabs-left {&#xD;&#xA;    .tab-content {&#xD;&#xA;        padding-top: 10px !important;&#xD;&#xA;        width: 90% !important;         &#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;.jb-tabs-right {&#xD;&#xA;    .tab-content {&#xD;&#xA;        padding-top: 10px !important;&#xD;&#xA;        width: 90% !important;           &#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &gt; .nav-tabs {&#xD;&#xA;        right: initial !important;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    li {&#xD;&#xA;        &gt; a {                &#xD;&#xA;            margin-left: 0px !important;&#xD;&#xA;            margin-right: 0px !important;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&amp;.jb-tabs-bottom {&#xD;&#xA;    .tab-content {&#xD;&#xA;        padding-top: 10px !important;                      &#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    li {&#xD;&#xA;        margin-bottom: initial !important;            &#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* left */&#xD;&#xA;.jb-tabs-left {&#xD;&#xA;margin-bottom: 20px;       &#xD;&#xA;&#xD;&#xA;[jb-type='TabHeader'] {&#xD;&#xA;    display: inline-block;&#xD;&#xA;    width: 10%;&#xD;&#xA;    border-bottom: none;    &#xD;&#xA;    float: left;&#xD;&#xA;    right: 7px;&#xD;&#xA;&#xD;&#xA;    &gt; [jb-type='TabHeaderPageTitle'] {&#xD;&#xA;        float: none;  &#xD;&#xA;        margin-bottom: 2px;  &#xD;&#xA;&#xD;&#xA;        &gt; [jb-type='TabHeaderPageTitleText'] {&#xD;&#xA;            float: none;&#xD;&#xA;            border: none;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        &amp;:not(.active) {&#xD;&#xA;            &gt; [jb-type='TabHeaderPageTitleText'] {        &#xD;&#xA;                border-top-right-radius: 4px;&#xD;&#xA;                border-bottom-left-radius: 4px;&#xD;&#xA;                border-bottom-right-radius: 4px;&#xD;&#xA;                border-top-left-radius: 4px;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        &amp;.active {&#xD;&#xA;            &gt; [jb-type='TabHeaderPageTitleText'] {    &#xD;&#xA;                border: 1px solid @font-color;&#xD;&#xA;                border-right: none;&#xD;&#xA;                margin-right: -1px;&#xD;&#xA;                border-top-right-radius: 0px;&#xD;&#xA;                border-bottom-left-radius: 4px;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[jb-type='TabContent'] {&#xD;&#xA;    display: inline-block;&#xD;&#xA;    width: ~&quot;calc(90% - 5px)&quot;;         &#xD;&#xA;    vertical-align: top;&#xD;&#xA;    min-height: 200px;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;/* right */&#xD;&#xA;.jb-tabs-right {&#xD;&#xA;margin-bottom: 20px;       &#xD;&#xA;&#xD;&#xA;[jb-type='TabHeader'] {&#xD;&#xA;    display: inline-block;&#xD;&#xA;    width: 10%;&#xD;&#xA;    border-bottom: none;    &#xD;&#xA;    position: relative;&#xD;&#xA;    right: 4px;&#xD;&#xA;    float: right;&#xD;&#xA;&#xD;&#xA;    &gt; [jb-type='TabHeaderPageTitle'] {&#xD;&#xA;        float: none;  &#xD;&#xA;        margin-bottom: 2px;  &#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &gt; [jb-type='TabHeaderPageTitleText'] {&#xD;&#xA;        float: none;&#xD;&#xA;        border: none;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[jb-type='TabContent'] {&#xD;&#xA;    display: inline-block;&#xD;&#xA;    width: ~&quot;calc(90% - 5px)&quot;;    &#xD;&#xA;    vertical-align: top;&#xD;&#xA;    min-height: 200px;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* bottom */&#xD;&#xA;.jb-tabs-bottom {&#xD;&#xA;[jb-type='TabContent'] {    &#xD;&#xA;    margin-bottom: 0px !important;    &#xD;&#xA;}&#xD;&#xA; &#xD;&#xA;[jb-type='TabHeader'] {&#xD;&#xA;    margin-bottom: 20px !important;     &#xD;&#xA;}" RelatedStyle="" Element="TabContainer" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="nav nav-tabs" Css="" RelatedStyle="" Element="TabContainerHeader" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="tab-content" Css="background-color: white;" RelatedStyle="" Element="TabContainerBody" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="tab-pane fade" Css="" RelatedStyle="" Element="TabPage" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="active" Css="" RelatedStyle="" Element="TabPageActive" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TabPageInactive" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="HyperLink" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-weight: normal;&#xA;&#xA;&amp;.round-icon {&#xA;    .with-shadow;&#xA;    font-size: 25px;&#xA;    color: white;&#xA;    background-color: @color-primary;&#xA;    padding: 10px;&#xA;    border-radius: 140px;&#xA;    margin-right: 5px;&#xA;    position: relative;&#xA;    top: 5px;&#xA;}" RelatedStyle="" Element="Label" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn" Css="cursor: pointer;&#xA;outline: none !important;&#xA;border: none !important;&#xA;&#xA;&gt; * {&#xA;    position: initial !important; &#xA;    color: inherit !important; &#xA;    cursor: pointer !important;&#xA;}&#xA;&#xA;label {&#xA;    margin-bottom: 0px;&#xA;}&#xA;&#xA;label.glyphicon {&#xA;    min-width: initial !important;&#xA;}&#xA;&#xA;[jb-type='Iconism'] {&#xA;    position: relative !important;&#xA;    top: 2px;&#xA;    &#xA;    + [jb-type='Label'] {&#xA;        margin-left: 10px !important;&#xA;    }&#xA;}&#xA;&#xA;// link&#xA;&amp;.jb-link-btn {&#xA;    box-shadow: initial !important;&#xA;    background-color: transparent !important;&#xA;&#xA;    label {&#xA;        color: @color-primary !important;&#xA;    }&#xA;&#xA;    &amp;:hover {&#xA;        label {&#xA;            color: @color-primary !important;&#xA;            text-decoration: underline;&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;// circle &#xA;&amp;.btn-circle {&#xA;    width: 50px;&#xA;    height: 50px;&#xA;    padding: 10px 16px;&#xA;    border-radius: 25px;&#xA;    font-size: 18px;&#xA;    line-height: 1.33;&#xA;&#xA;    label {&#xA;        font-weight: lighter;&#xA;&#xA;        &amp;.glyphicon {&#xA;            top: -1px;&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;&amp;.btn-circle-sm {&#xA;    width: 30px;&#xA;    height: 30px;&#xA;    padding: 6px 0;&#xA;    border-radius: 15px;&#xA;    text-align: center;&#xA;    font-size: 12px;&#xA;    line-height: 1.428571429;&#xA;&#xA;    label {&#xA;        font-weight: lighter;&#xA;&#xA;        &amp;.glyphicon {&#xA;            top: 0px;&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;&amp;.transparent {&#xA;    //.clickable(0.5);&#xA;    background-color: transparent !important;&#xA;    box-shadow: initial !important;&#xA;}" RelatedStyle="" Element="Button" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-default" Css="" RelatedStyle="" Element="Button" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-primary" Css="" RelatedStyle="" Element="Button" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-info" Css="" RelatedStyle="" Element="Button" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-sm" Css="" RelatedStyle="" Element="Button" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-success" Css="" RelatedStyle="" Element="Button" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-lg" Css="" RelatedStyle="" Element="Button" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-xs" Css="" RelatedStyle="" Element="Button" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="padding: 20px;&#xA;font-size: @font-xl;" RelatedStyle="" Element="Button" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-warning" Css="color: black !important;" RelatedStyle="" Element="Button" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="btn-danger" Css="" RelatedStyle="" Element="Button" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSetBody" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSetBody" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextArea" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Select" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Select" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="HyperLink" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSet" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Button" Size="Normal" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Select" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 1;" RelatedStyle="" Element="CheckBox" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;&#xA;padding-top: 0px;&#xA;padding-bottom: 0px;&#xA;padding-left: 5px;&#xA;height: 20px;" RelatedStyle="" Element="TextBox" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 40px;&#xA;font-size: @font-lg;" RelatedStyle="" Element="TextBox" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 2;" RelatedStyle="" Element="Radio" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 2.5;" RelatedStyle="" Element="CheckBox" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Select" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-lg;" RelatedStyle="" Element="RichText" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="ImageBox" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="HyperLink" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-lg;" RelatedStyle="" Element="TextArea" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="BodyContainer" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;&#xA;padding-top: 4px;&#xA;padding-bottom: 4px;&#xA;padding-left: 5px;&#xA;height: 30px;" RelatedStyle="" Element="TextBox" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Label" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextArea" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="RichText" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="ImageBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Layout" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="true" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="border: 1px solid @color-default;" RelatedStyle="" Element="Table" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: inherit;" RelatedStyle="" Element="Table" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="true" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="Table" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Map" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="tr &gt; td &gt; [jb-type='Label']{&#xA;    font-weight: bold;&#xA;}" RelatedStyle="" Element="TableHeader" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="padding: 5px" RelatedStyle="" Element="TableCell" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Select" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="TextBox" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 50px;&#xA;font-size: @font-xl;" RelatedStyle="" Element="TextBox" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextBox" Size="Normal" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="TextBox" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="TextBox" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TextBox" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSetFooter" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSetFooter" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSetFooter" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="Table" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;&#xA;padding: 3px;" RelatedStyle="" Element="TextArea" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;" RelatedStyle="" Element="TextArea" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-xl;" RelatedStyle="" Element="TextArea" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 1.5;" RelatedStyle="" Element="CheckBox" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 3;" RelatedStyle="" Element="CheckBox" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="RichText" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="RichText" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="RichText" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;&#xA;padding: 3px;" RelatedStyle="" Element="RichText" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-sm;" RelatedStyle="" Element="RichText" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="RichText" Size="Normal" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="font-size: @font-xl;" RelatedStyle="" Element="RichText" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="CheckBox" Size="Normal" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 1;" RelatedStyle="" Element="Radio" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 1.2;" RelatedStyle="" Element="Radio" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Radio" Size="Normal" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="zoom: 3;" RelatedStyle="" Element="Radio" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 5px;&#xA;font-size: 0px;" RelatedStyle="" Element="ProgressBar" Size="ExtraSmall" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 10px;&#xA;font-size: 9px;" RelatedStyle="" Element="ProgressBar" Size="Small" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 30px;&#xA;font-size: 22px;" RelatedStyle="" Element="ProgressBar" Size="Large" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="height: 50px;&#xA;font-size: 35px;" RelatedStyle="" Element="ProgressBar" Size="ExtraLarge" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-default;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-primary;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-info;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-success;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-warning;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="background-color: inherit;&#xA;&#xA;.progress-bar {&#xA;   background-color: @color-danger;&#xA;}" RelatedStyle="" Element="ProgressBar" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Chart" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="border: 1px solid @color-info;" RelatedStyle="" Element="Table" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableHeader" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableHeader" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="Table" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableHeader" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="TableFooter" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="border: 1px solid @color-warning;" RelatedStyle="" Element="Table" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableHeader" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;&#xA;font-weight: normal;" RelatedStyle="" Element="TableHeader" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;&#xA;font-weight: normal;" RelatedStyle="" Element="TableHeader" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableFooter" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableBody" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableCell" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="TableRow" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Modal" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Modal" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="Modal" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="FieldSet" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSet" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="FieldSet" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="" RelatedStyle="" Element="FieldSet" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="" Css="color: white;" RelatedStyle="" Element="FieldSet" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-smooth" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-primary p-primary-o" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o  p-danger" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-switch p-smooth" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-info" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-primary p-primary-o" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o  p-danger" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-round p-smooth" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-info" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-primary p-primary-o" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Round" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o  p-danger" Css="" RelatedStyle="" Element="CheckBox" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-round p-smooth" Css="" RelatedStyle="" Element="Radio" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-primary-o p-primary" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o p-danger" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="Default" DefaultSize="None" Classes="pretty p-default p-curve p-smooth" Css="" RelatedStyle="" Element="Radio" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state p-primary-o p-primary" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Curve" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o p-danger" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Danger" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="Default" DefaultSize="None" Classes="pretty p-switch p-fill p-smooth" Css="" RelatedStyle="" Element="Radio" Size="None" Color="None" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Default" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-primary-o p-primary" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Primary" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-success-o p-success" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Success" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-info-o p-info" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Info" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-warning-o p-warning" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Warning" />
+    <Mapping IsCustom="false" IgnoreGlobal="false" CustomClass="Switch" DefaultColor="None" DefaultSize="None" Classes="state p-danger-o p-danger" Css="" RelatedStyle="" Element="Radio" Size="None" Color="Danger" />
+  </Mappings>
+  <Variables>
+    <Variable Name="@main-font" Value="Roboto" Unit="" Caption="Main Font" Category="Typography" Type="FontFamily" />
+    <Variable Name="@font-color" Value="rgb(58, 58, 58)" Unit="" Caption="Font Color" Category="Typography" Type="Color" />
+    <Variable Name="@font-xs" Value="6" Unit="px" Caption="Extra Small Size" Category="Typography" Type="Dimension" />
+    <Variable Name="@font-sm" Value="12" Unit="px" Caption="Small Size" Category="Typography" Type="Dimension" />
+    <Variable Name="@font-med" Value="14" Unit="px" Caption="Normal Size" Category="Typography" Type="Dimension" />
+    <Variable Name="@font-lg" Value="18" Unit="px" Caption="Large Size" Category="Typography" Type="Dimension" />
+    <Variable Name="@font-xl" Value="35" Unit="px" Caption="Extra Large Size" Category="Typography" Type="Dimension" />
+    <Variable Name="@bg-color" Value="rgb(244, 243, 243)" Unit="" Caption="Background Color" Category="Colors" Type="Color" />
+    <Variable Name="@containers-color" Value="rgb(255, 255, 255)" Unit="" Caption="Containers Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-default" Value="rgb(209, 209, 206)" Unit="" Caption="Default Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-primary" Value="rgb(76, 146, 216)" Unit="" Caption="Primary Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-success" Value="rgb(50, 158, 50)" Unit="" Caption="Success Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-info" Value="rgb(88, 176, 188)" Unit="" Caption="Info Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-warning" Value="rgb(234, 184, 64)" Unit="" Caption="Warning Color" Category="Colors" Type="Color" />
+    <Variable Name="@color-danger" Value="rgb(225, 78, 78)" Unit="" Caption="Danger Color" Category="Colors" Type="Color" />
+    <Variable Name="@default-radius" Value="2" Unit="px" Caption="Radius" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@default-shadow" Value="0" Unit="" Caption="Shadows" Category="LookAndFeel" Type="Raw" />
+    <Variable Name="@default-transition" Value="" Unit="" Caption="Transitions" Category="LookAndFeel" Type="Raw" />
+    <Variable Name="@bluish-custom" Value="rgb(101, 147, 211)" Unit="px" Caption="Pale blue" Category="Custom" Type="Color" />
+    <Variable Name="@input-height" Value="" Unit="px" Caption="Input Height" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@input-padding-h" Value="" Unit="px" Caption="Input Horizontal Padding" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@input-padding-v" Value="" Unit="px" Caption="Input Vertical Padding" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@input-font-size" Value="" Unit="px" Caption="Input Font Size" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@input-color" Value="" Unit="" Caption="Input Color" Category="LookAndFeel" Type="Color" />
+    <Variable Name="@input-bg" Value="" Unit="" Caption="Input Background Color" Category="LookAndFeel" Type="Color" />
+    <Variable Name="@input-border-color" Value="rgb(212, 212, 212)" Unit="" Caption="Input Border Color" Category="LookAndFeel" Type="Color" />
+    <Variable Name="@input-border-width" Value="" Unit="px" Caption="Input Border Width" Category="LookAndFeel" Type="Dimension" />
+    <Variable Name="@Body" Value="~&quot;[jb-control='Body']&quot;" Unit="" Caption="Selector for Body" Category="Controls" Type="Raw" />
+    <Variable Name="@BodyContainer" Value="~&quot;[jb-control='BodyContainer']&quot;" Unit="" Caption="Selector for BodyContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@Button" Value="~&quot;[jb-control='Button']&quot;" Unit="" Caption="Selector for Button" Category="Controls" Type="Raw" />
+    <Variable Name="@NewMapControl" Value="~&quot;[jb-control='NewMapControl']&quot;" Unit="" Caption="Selector for NewMapControl" Category="Controls" Type="Raw" />
+    <Variable Name="@ProgressBar" Value="~&quot;[jb-control='ProgressBar']&quot;" Unit="" Caption="Selector for ProgressBar" Category="Controls" Type="Raw" />
+    <Variable Name="@CustomControlInstance" Value="~&quot;[jb-control='CustomControlInstance']&quot;" Unit="" Caption="Selector for CustomControlInstance" Category="Controls" Type="Raw" />
+    <Variable Name="@Chart" Value="~&quot;[jb-control='Chart']&quot;" Unit="" Caption="Selector for Chart" Category="Controls" Type="Raw" />
+    <Variable Name="@HyperLink" Value="~&quot;[jb-control='HyperLink']&quot;" Unit="" Caption="Selector for HyperLink" Category="Controls" Type="Raw" />
+    <Variable Name="@Modal" Value="~&quot;[jb-control='Modal']&quot;" Unit="" Caption="Selector for Modal" Category="Controls" Type="Raw" />
+    <Variable Name="@ModalContent" Value="~&quot;[jb-control='ModalContent']&quot;" Unit="" Caption="Selector for ModalContent" Category="Controls" Type="Raw" />
+    <Variable Name="@ModalHeader" Value="~&quot;[jb-control='ModalHeader']&quot;" Unit="" Caption="Selector for ModalHeader" Category="Controls" Type="Raw" />
+    <Variable Name="@ModalBody" Value="~&quot;[jb-control='ModalBody']&quot;" Unit="" Caption="Selector for ModalBody" Category="Controls" Type="Raw" />
+    <Variable Name="@ModalFooter" Value="~&quot;[jb-control='ModalFooter']&quot;" Unit="" Caption="Selector for ModalFooter" Category="Controls" Type="Raw" />
+    <Variable Name="@Cell" Value="~&quot;[jb-control='Cell']&quot;" Unit="" Caption="Selector for Cell" Category="Controls" Type="Raw" />
+    <Variable Name="@Column" Value="~&quot;[jb-control='Column']&quot;" Unit="" Caption="Selector for Column" Category="Controls" Type="Raw" />
+    <Variable Name="@Control" Value="~&quot;[jb-control='Control']&quot;" Unit="" Caption="Selector for Control" Category="Controls" Type="Raw" />
+    <Variable Name="@ControlContainer" Value="~&quot;[jb-control='ControlContainer']&quot;" Unit="" Caption="Selector for ControlContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@FieldSetBody" Value="~&quot;[jb-control='FieldSetBody']&quot;" Unit="" Caption="Selector for FieldSetBody" Category="Controls" Type="Raw" />
+    <Variable Name="@FieldSet" Value="~&quot;[jb-control='FieldSet']&quot;" Unit="" Caption="Selector for FieldSet" Category="Controls" Type="Raw" />
+    <Variable Name="@FieldSetFooter" Value="~&quot;[jb-control='FieldSetFooter']&quot;" Unit="" Caption="Selector for FieldSetFooter" Category="Controls" Type="Raw" />
+    <Variable Name="@FieldSetHeader" Value="~&quot;[jb-control='FieldSetHeader']&quot;" Unit="" Caption="Selector for FieldSetHeader" Category="Controls" Type="Raw" />
+    <Variable Name="@FieldSetToggleStateIcon" Value="~&quot;[jb-control='FieldSetToggleStateIcon']&quot;" Unit="" Caption="Selector for FieldSetToggleStateIcon" Category="Controls" Type="Raw" />
+    <Variable Name="@HiddenField" Value="~&quot;[jb-control='HiddenField']&quot;" Unit="" Caption="Selector for HiddenField" Category="Controls" Type="Raw" />
+    <Variable Name="@HtmlControl" Value="~&quot;[jb-control='HtmlControl']&quot;" Unit="" Caption="Selector for HtmlControl" Category="Controls" Type="Raw" />
+    <Variable Name="@Label" Value="~&quot;[jb-control='Label']&quot;" Unit="" Caption="Selector for Label" Category="Controls" Type="Raw" />
+    <Variable Name="@Iconism" Value="~&quot;[jb-control='Iconism']&quot;" Unit="" Caption="Selector for Iconism" Category="Controls" Type="Raw" />
+    <Variable Name="@List" Value="~&quot;[jb-control='List']&quot;" Unit="" Caption="Selector for List" Category="Controls" Type="Raw" />
+    <Variable Name="@ListHeader" Value="~&quot;[jb-control='ListHeader']&quot;" Unit="" Caption="Selector for ListHeader" Category="Controls" Type="Raw" />
+    <Variable Name="@MapControl" Value="~&quot;[jb-control='MapControl']&quot;" Unit="" Caption="Selector for MapControl" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuControl" Value="~&quot;[jb-control='MenuControl']&quot;" Unit="" Caption="Selector for MenuControl" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItemsContainer" Value="~&quot;[jb-control='MenuItemsContainer']&quot;" Unit="" Caption="Selector for MenuItemsContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItem" Value="~&quot;[jb-control='MenuItem']&quot;" Unit="" Caption="Selector for MenuItem" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItemLabel" Value="~&quot;[jb-control='MenuItemLabel']&quot;" Unit="" Caption="Selector for MenuItemLabel" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItemIcon" Value="~&quot;[jb-control='MenuItemIcon']&quot;" Unit="" Caption="Selector for MenuItemIcon" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItemLabelContainer" Value="~&quot;[jb-control='MenuItemLabelContainer']&quot;" Unit="" Caption="Selector for MenuItemLabelContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@MenuItemArrow" Value="~&quot;[jb-control='MenuItemArrow']&quot;" Unit="" Caption="Selector for MenuItemArrow" Category="Controls" Type="Raw" />
+    <Variable Name="@OptionButtonEntryContainer" Value="~&quot;[jb-control='OptionButtonEntryContainer']&quot;" Unit="" Caption="Selector for OptionButtonEntryContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@OptionButtonEntry" Value="~&quot;[jb-control='OptionButtonEntry']&quot;" Unit="" Caption="Selector for OptionButtonEntry" Category="Controls" Type="Raw" />
+    <Variable Name="@OptionButtonEntryCaption" Value="~&quot;[jb-control='OptionButtonEntryCaption']&quot;" Unit="" Caption="Selector for OptionButtonEntryCaption" Category="Controls" Type="Raw" />
+    <Variable Name="@PartialView" Value="~&quot;[jb-control='PartialView']&quot;" Unit="" Caption="Selector for PartialView" Category="Controls" Type="Raw" />
+    <Variable Name="@Row" Value="~&quot;[jb-control='Row']&quot;" Unit="" Caption="Selector for Row" Category="Controls" Type="Raw" />
+    <Variable Name="@TabContainer" Value="~&quot;[jb-control='TabContainer']&quot;" Unit="" Caption="Selector for TabContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@TabHeader" Value="~&quot;[jb-control='TabHeader']&quot;" Unit="" Caption="Selector for TabHeader" Category="Controls" Type="Raw" />
+    <Variable Name="@TabHeaderPageTitle" Value="~&quot;[jb-control='TabHeaderPageTitle']&quot;" Unit="" Caption="Selector for TabHeaderPageTitle" Category="Controls" Type="Raw" />
+    <Variable Name="@TabHeaderPageTitleText" Value="~&quot;[jb-control='TabHeaderPageTitleText']&quot;" Unit="" Caption="Selector for TabHeaderPageTitleText" Category="Controls" Type="Raw" />
+    <Variable Name="@TabContent" Value="~&quot;[jb-control='TabContent']&quot;" Unit="" Caption="Selector for TabContent" Category="Controls" Type="Raw" />
+    <Variable Name="@Pager" Value="~&quot;[jb-control='Pager']&quot;" Unit="" Caption="Selector for Pager" Category="Controls" Type="Raw" />
+    <Variable Name="@PagerEntry" Value="~&quot;[jb-control='PagerEntry']&quot;" Unit="" Caption="Selector for PagerEntry" Category="Controls" Type="Raw" />
+    <Variable Name="@PagerEntryContent" Value="~&quot;[jb-control='PagerEntryContent']&quot;" Unit="" Caption="Selector for PagerEntryContent" Category="Controls" Type="Raw" />
+    <Variable Name="@ResponsiveRow" Value="~&quot;[jb-control='ResponsiveRow']&quot;" Unit="" Caption="Selector for ResponsiveRow" Category="Controls" Type="Raw" />
+    <Variable Name="@ResponsiveTable" Value="~&quot;[jb-control='ResponsiveTable']&quot;" Unit="" Caption="Selector for ResponsiveTable" Category="Controls" Type="Raw" />
+    <Variable Name="@ResponsiveColumn" Value="~&quot;[jb-control='ResponsiveColumn']&quot;" Unit="" Caption="Selector for ResponsiveColumn" Category="Controls" Type="Raw" />
+    <Variable Name="@Table" Value="~&quot;[jb-control='Table']&quot;" Unit="" Caption="Selector for Table" Category="Controls" Type="Raw" />
+    <Variable Name="@TabPage" Value="~&quot;[jb-control='TabPage']&quot;" Unit="" Caption="Selector for TabPage" Category="Controls" Type="Raw" />
+    <Variable Name="@tBody" Value="~&quot;[jb-control='tBody']&quot;" Unit="" Caption="Selector for tBody" Category="Controls" Type="Raw" />
+    <Variable Name="@InputControl" Value="~&quot;[jb-control='InputControl']&quot;" Unit="" Caption="Selector for InputControl" Category="Controls" Type="Raw" />
+    <Variable Name="@HtmlContainer" Value="~&quot;[jb-control='HtmlContainer']&quot;" Unit="" Caption="Selector for HtmlContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@tFooter" Value="~&quot;[jb-control='tFooter']&quot;" Unit="" Caption="Selector for tFooter" Category="Controls" Type="Raw" />
+    <Variable Name="@tHeader" Value="~&quot;[jb-control='tHeader']&quot;" Unit="" Caption="Selector for tHeader" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeControl" Value="~&quot;[jb-control='TreeControl']&quot;" Unit="" Caption="Selector for TreeControl" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNode" Value="~&quot;[jb-control='TreeNode']&quot;" Unit="" Caption="Selector for TreeNode" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNodeItem" Value="~&quot;[jb-control='TreeNodeItem']&quot;" Unit="" Caption="Selector for TreeNodeItem" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNodeLabelContainer" Value="~&quot;[jb-control='TreeNodeLabelContainer']&quot;" Unit="" Caption="Selector for TreeNodeLabelContainer" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNodeLabel" Value="~&quot;[jb-control='TreeNodeLabel']&quot;" Unit="" Caption="Selector for TreeNodeLabel" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNodeIcon" Value="~&quot;[jb-control='TreeNodeIcon']&quot;" Unit="" Caption="Selector for TreeNodeIcon" Category="Controls" Type="Raw" />
+    <Variable Name="@TreeNodeArrow" Value="~&quot;[jb-control='TreeNodeArrow']&quot;" Unit="" Caption="Selector for TreeNodeArrow" Category="Controls" Type="Raw" />
+  </Variables>
+  <Fonts>
+    <Font Url="https://fonts.googleapis.com/css?family=Roboto" Family="Roboto" />
+    <Font Url="https://fonts.googleapis.com/css?family=Indie+Flower" Family="Indie Flower" />
+    <Font Url="https://fonts.googleapis.com/css?family=Hind" Family="Hind" />
+    <Font Url="https://fonts.googleapis.com/css?family=Poppins" Family="Poppins" />
+  </Fonts>
+  <Icons>
+    <Icon Name="asterisk" Element="Icon" Classes="glyphicon glyphicon-asterisk" TagName="i" Css="" />
+    <Icon Name="plus" Element="Icon" Classes="glyphicon glyphicon-plus" TagName="i" Css="" />
+    <Icon Name="euro" Element="Icon" Classes="glyphicon glyphicon-euro" TagName="i" Css="" />
+    <Icon Name="minus" Element="Icon" Classes="glyphicon glyphicon-minus" TagName="i" Css="" />
+    <Icon Name="cloud" Element="Icon" Classes="glyphicon glyphicon-cloud" TagName="i" Css="" />
+    <Icon Name="envelope" Element="Icon" Classes="glyphicon glyphicon-envelope" TagName="i" Css="" />
+    <Icon Name="pencil" Element="Icon" Classes="glyphicon glyphicon-pencil" TagName="i" Css="" />
+    <Icon Name="glass" Element="Icon" Classes="glyphicon glyphicon-glass" TagName="i" Css="" />
+    <Icon Name="music" Element="Icon" Classes="glyphicon glyphicon-music" TagName="i" Css="" />
+    <Icon Name="search" Element="Icon" Classes="glyphicon glyphicon-search" TagName="i" Css="" />
+    <Icon Name="heart" Element="Icon" Classes="glyphicon glyphicon-heart" TagName="i" Css="" />
+    <Icon Name="star" Element="Icon" Classes="glyphicon glyphicon-star" TagName="i" Css="" />
+    <Icon Name="star-empty" Element="Icon" Classes="glyphicon glyphicon-star-empty" TagName="i" Css="" />
+    <Icon Name="user" Element="Icon" Classes="glyphicon glyphicon-user" TagName="i" Css="" />
+    <Icon Name="film" Element="Icon" Classes="glyphicon glyphicon-film" TagName="i" Css="" />
+    <Icon Name="th-large" Element="Icon" Classes="glyphicon glyphicon-th-large" TagName="i" Css="" />
+    <Icon Name="th" Element="Icon" Classes="glyphicon glyphicon-th" TagName="i" Css="" />
+    <Icon Name="th-list" Element="Icon" Classes="glyphicon glyphicon-th-list" TagName="i" Css="" />
+    <Icon Name="ok" Element="Icon" Classes="glyphicon glyphicon-ok" TagName="i" Css="" />
+    <Icon Name="remove" Element="Icon" Classes="glyphicon glyphicon-remove" TagName="i" Css="" />
+    <Icon Name="zoom-in" Element="Icon" Classes="glyphicon glyphicon-zoom-in" TagName="i" Css="" />
+    <Icon Name="zoom-out" Element="Icon" Classes="glyphicon glyphicon-zoom-out" TagName="i" Css="" />
+    <Icon Name="off" Element="Icon" Classes="glyphicon glyphicon-off" TagName="i" Css="" />
+    <Icon Name="signal" Element="Icon" Classes="glyphicon glyphicon-signal" TagName="i" Css="" />
+    <Icon Name="cog" Element="Icon" Classes="glyphicon glyphicon-cog" TagName="i" Css="" />
+    <Icon Name="trash" Element="Icon" Classes="glyphicon glyphicon-trash" TagName="i" Css="" />
+    <Icon Name="home" Element="Icon" Classes="glyphicon glyphicon-home" TagName="i" Css="" />
+    <Icon Name="file" Element="Icon" Classes="glyphicon glyphicon-file" TagName="i" Css="" />
+    <Icon Name="time" Element="Icon" Classes="glyphicon glyphicon-time" TagName="i" Css="" />
+    <Icon Name="road" Element="Icon" Classes="glyphicon glyphicon-road" TagName="i" Css="" />
+    <Icon Name="download-alt" Element="Icon" Classes="glyphicon glyphicon-download-alt" TagName="i" Css="" />
+    <Icon Name="download" Element="Icon" Classes="glyphicon glyphicon-download" TagName="i" Css="" />
+    <Icon Name="upload" Element="Icon" Classes="glyphicon glyphicon-upload" TagName="i" Css="" />
+    <Icon Name="inbox" Element="Icon" Classes="glyphicon glyphicon-inbox" TagName="i" Css="" />
+    <Icon Name="play-circle" Element="Icon" Classes="glyphicon glyphicon-play-circle" TagName="i" Css="" />
+    <Icon Name="repeat" Element="Icon" Classes="glyphicon glyphicon-repeat" TagName="i" Css="" />
+    <Icon Name="refresh" Element="Icon" Classes="glyphicon glyphicon-refresh" TagName="i" Css="" />
+    <Icon Name="list-alt" Element="Icon" Classes="glyphicon glyphicon-list-alt" TagName="i" Css="" />
+    <Icon Name="lock" Element="Icon" Classes="glyphicon glyphicon-lock" TagName="i" Css="" />
+    <Icon Name="flag" Element="Icon" Classes="glyphicon glyphicon-flag" TagName="i" Css="" />
+    <Icon Name="headphones" Element="Icon" Classes="glyphicon glyphicon-headphones" TagName="i" Css="" />
+    <Icon Name="volume-off" Element="Icon" Classes="glyphicon glyphicon-volume-off" TagName="i" Css="" />
+    <Icon Name="volume-down" Element="Icon" Classes="glyphicon glyphicon-volume-down" TagName="i" Css="" />
+    <Icon Name="volume-up" Element="Icon" Classes="glyphicon glyphicon-volume-up" TagName="i" Css="" />
+    <Icon Name="qrcode" Element="Icon" Classes="glyphicon glyphicon-qrcode" TagName="i" Css="" />
+    <Icon Name="barcode" Element="Icon" Classes="glyphicon glyphicon-barcode" TagName="i" Css="" />
+    <Icon Name="tag" Element="Icon" Classes="glyphicon glyphicon-tag" TagName="i" Css="" />
+    <Icon Name="tags" Element="Icon" Classes="glyphicon glyphicon-tags" TagName="i" Css="" />
+    <Icon Name="book" Element="Icon" Classes="glyphicon glyphicon-book" TagName="i" Css="" />
+    <Icon Name="bookmark" Element="Icon" Classes="glyphicon glyphicon-bookmark" TagName="i" Css="" />
+    <Icon Name="print" Element="Icon" Classes="glyphicon glyphicon-print" TagName="i" Css="" />
+    <Icon Name="camera" Element="Icon" Classes="glyphicon glyphicon-camera" TagName="i" Css="" />
+    <Icon Name="font" Element="Icon" Classes="glyphicon glyphicon-font" TagName="i" Css="" />
+    <Icon Name="bold" Element="Icon" Classes="glyphicon glyphicon-bold" TagName="i" Css="" />
+    <Icon Name="italic" Element="Icon" Classes="glyphicon glyphicon-italic" TagName="i" Css="" />
+    <Icon Name="text-height" Element="Icon" Classes="glyphicon glyphicon-text-height" TagName="i" Css="" />
+    <Icon Name="text-width" Element="Icon" Classes="glyphicon glyphicon-text-width" TagName="i" Css="" />
+    <Icon Name="align-left" Element="Icon" Classes="glyphicon glyphicon-align-left" TagName="i" Css="" />
+    <Icon Name="align-center" Element="Icon" Classes="glyphicon glyphicon-align-center" TagName="i" Css="" />
+    <Icon Name="align-right" Element="Icon" Classes="glyphicon glyphicon-align-right" TagName="i" Css="" />
+    <Icon Name="align-justify" Element="Icon" Classes="glyphicon glyphicon-align-justify" TagName="i" Css="" />
+    <Icon Name="list" Element="Icon" Classes="glyphicon glyphicon-list" TagName="i" Css="" />
+    <Icon Name="indent-left" Element="Icon" Classes="glyphicon glyphicon-indent-left" TagName="i" Css="" />
+    <Icon Name="indent-right" Element="Icon" Classes="glyphicon glyphicon-indent-right" TagName="i" Css="" />
+    <Icon Name="facetime-video" Element="Icon" Classes="glyphicon glyphicon-facetime-video" TagName="i" Css="" />
+    <Icon Name="picture" Element="Icon" Classes="glyphicon glyphicon-picture" TagName="i" Css="" />
+    <Icon Name="map-marker" Element="Icon" Classes="glyphicon glyphicon-map-marker" TagName="i" Css="" />
+    <Icon Name="adjust" Element="Icon" Classes="glyphicon glyphicon-adjust" TagName="i" Css="" />
+    <Icon Name="tint" Element="Icon" Classes="glyphicon glyphicon-tint" TagName="i" Css="" />
+    <Icon Name="edit" Element="Icon" Classes="glyphicon glyphicon-edit" TagName="i" Css="" />
+    <Icon Name="share" Element="Icon" Classes="glyphicon glyphicon-share" TagName="i" Css="" />
+    <Icon Name="check" Element="Icon" Classes="glyphicon glyphicon-check" TagName="i" Css="" />
+    <Icon Name="move" Element="Icon" Classes="glyphicon glyphicon-move" TagName="i" Css="" />
+    <Icon Name="step-backward" Element="Icon" Classes="glyphicon glyphicon-step-backward" TagName="i" Css="" />
+    <Icon Name="fast-backward" Element="Icon" Classes="glyphicon glyphicon-fast-backward" TagName="i" Css="" />
+    <Icon Name="backward" Element="Icon" Classes="glyphicon glyphicon-backward" TagName="i" Css="" />
+    <Icon Name="play" Element="Icon" Classes="glyphicon glyphicon-play" TagName="i" Css="" />
+    <Icon Name="pause" Element="Icon" Classes="glyphicon glyphicon-pause" TagName="i" Css="" />
+    <Icon Name="stop" Element="Icon" Classes="glyphicon glyphicon-stop" TagName="i" Css="" />
+    <Icon Name="forward" Element="Icon" Classes="glyphicon glyphicon-forward" TagName="i" Css="" />
+    <Icon Name="fast-forward" Element="Icon" Classes="glyphicon glyphicon-fast-forward" TagName="i" Css="" />
+    <Icon Name="step-forward" Element="Icon" Classes="glyphicon glyphicon-step-forward" TagName="i" Css="" />
+    <Icon Name="eject" Element="Icon" Classes="glyphicon glyphicon-eject" TagName="i" Css="" />
+    <Icon Name="chevron-left" Element="Icon" Classes="glyphicon glyphicon-chevron-left" TagName="i" Css="" />
+    <Icon Name="chevron-right" Element="Icon" Classes="glyphicon glyphicon-chevron-right" TagName="i" Css="" />
+    <Icon Name="plus-sign" Element="Icon" Classes="glyphicon glyphicon-plus-sign" TagName="i" Css="" />
+    <Icon Name="minus-sign" Element="Icon" Classes="glyphicon glyphicon-minus-sign" TagName="i" Css="" />
+    <Icon Name="remove-sign" Element="Icon" Classes="glyphicon glyphicon-remove-sign" TagName="i" Css="" />
+    <Icon Name="ok-sign" Element="Icon" Classes="glyphicon glyphicon-ok-sign" TagName="i" Css="" />
+    <Icon Name="question-sign" Element="Icon" Classes="glyphicon glyphicon-question-sign" TagName="i" Css="" />
+    <Icon Name="info-sign" Element="Icon" Classes="glyphicon glyphicon-info-sign" TagName="i" Css="" />
+    <Icon Name="screenshot" Element="Icon" Classes="glyphicon glyphicon-screenshot" TagName="i" Css="" />
+    <Icon Name="remove-circle" Element="Icon" Classes="glyphicon glyphicon-remove-circle" TagName="i" Css="" />
+    <Icon Name="ok-circle" Element="Icon" Classes="glyphicon glyphicon-ok-circle" TagName="i" Css="" />
+    <Icon Name="ban-circle" Element="Icon" Classes="glyphicon glyphicon-ban-circle" TagName="i" Css="" />
+    <Icon Name="arrow-left" Element="Icon" Classes="glyphicon glyphicon-arrow-left" TagName="i" Css="" />
+    <Icon Name="arrow-right" Element="Icon" Classes="glyphicon glyphicon-arrow-right" TagName="i" Css="" />
+    <Icon Name="arrow-up" Element="Icon" Classes="glyphicon glyphicon-arrow-up" TagName="i" Css="" />
+    <Icon Name="arrow-down" Element="Icon" Classes="glyphicon glyphicon-arrow-down" TagName="i" Css="" />
+    <Icon Name="share-alt" Element="Icon" Classes="glyphicon glyphicon-share-alt" TagName="i" Css="" />
+    <Icon Name="resize-full" Element="Icon" Classes="glyphicon glyphicon-resize-full" TagName="i" Css="" />
+    <Icon Name="resize-small" Element="Icon" Classes="glyphicon glyphicon-resize-small" TagName="i" Css="" />
+    <Icon Name="exclamation-sign" Element="Icon" Classes="glyphicon glyphicon-exclamation-sign" TagName="i" Css="" />
+    <Icon Name="gift" Element="Icon" Classes="glyphicon glyphicon-gift" TagName="i" Css="" />
+    <Icon Name="leaf" Element="Icon" Classes="glyphicon glyphicon-leaf" TagName="i" Css="" />
+    <Icon Name="fire" Element="Icon" Classes="glyphicon glyphicon-fire" TagName="i" Css="" />
+    <Icon Name="eye-open" Element="Icon" Classes="glyphicon glyphicon-eye-open" TagName="i" Css="" />
+    <Icon Name="eye-close" Element="Icon" Classes="glyphicon glyphicon-eye-close" TagName="i" Css="" />
+    <Icon Name="warning-sign" Element="Icon" Classes="glyphicon glyphicon-warning-sign" TagName="i" Css="" />
+    <Icon Name="plane" Element="Icon" Classes="glyphicon glyphicon-plane" TagName="i" Css="" />
+    <Icon Name="calendar" Element="Icon" Classes="glyphicon glyphicon-calendar" TagName="i" Css="" />
+    <Icon Name="random" Element="Icon" Classes="glyphicon glyphicon-random" TagName="i" Css="" />
+    <Icon Name="comment" Element="Icon" Classes="glyphicon glyphicon-comment" TagName="i" Css="" />
+    <Icon Name="magnet" Element="Icon" Classes="glyphicon glyphicon-magnet" TagName="i" Css="" />
+    <Icon Name="chevron-up" Element="Icon" Classes="glyphicon glyphicon-chevron-up" TagName="i" Css="" />
+    <Icon Name="chevron-down" Element="Icon" Classes="glyphicon glyphicon-chevron-down" TagName="i" Css="" />
+    <Icon Name="retweet" Element="Icon" Classes="glyphicon glyphicon-retweet" TagName="i" Css="" />
+    <Icon Name="shopping-cart" Element="Icon" Classes="glyphicon glyphicon-shopping-cart" TagName="i" Css="" />
+    <Icon Name="folder-close" Element="Icon" Classes="glyphicon glyphicon-folder-close" TagName="i" Css="" />
+    <Icon Name="folder-open" Element="Icon" Classes="glyphicon glyphicon-folder-open" TagName="i" Css="" />
+    <Icon Name="resize-vertical" Element="Icon" Classes="glyphicon glyphicon-resize-vertical" TagName="i" Css="" />
+    <Icon Name="resize-horizontal" Element="Icon" Classes="glyphicon glyphicon-resize-horizontal" TagName="i" Css="" />
+    <Icon Name="hdd" Element="Icon" Classes="glyphicon glyphicon-hdd" TagName="i" Css="" />
+    <Icon Name="bullhorn" Element="Icon" Classes="glyphicon glyphicon-bullhorn" TagName="i" Css="" />
+    <Icon Name="bell" Element="Icon" Classes="glyphicon glyphicon-bell" TagName="i" Css="" />
+    <Icon Name="certificate" Element="Icon" Classes="glyphicon glyphicon-certificate" TagName="i" Css="" />
+    <Icon Name="thumbs-up" Element="Icon" Classes="glyphicon glyphicon-thumbs-up" TagName="i" Css="" />
+    <Icon Name="thumbs-down" Element="Icon" Classes="glyphicon glyphicon-thumbs-down" TagName="i" Css="" />
+    <Icon Name="hand-right" Element="Icon" Classes="glyphicon glyphicon-hand-right" TagName="i" Css="" />
+    <Icon Name="hand-left" Element="Icon" Classes="glyphicon glyphicon-hand-left" TagName="i" Css="" />
+    <Icon Name="hand-up" Element="Icon" Classes="glyphicon glyphicon-hand-up" TagName="i" Css="" />
+    <Icon Name="hand-down" Element="Icon" Classes="glyphicon glyphicon-hand-down" TagName="i" Css="" />
+    <Icon Name="circle-arrow-right" Element="Icon" Classes="glyphicon glyphicon-circle-arrow-right" TagName="i" Css="" />
+    <Icon Name="circle-arrow-left" Element="Icon" Classes="glyphicon glyphicon-circle-arrow-left" TagName="i" Css="" />
+    <Icon Name="circle-arrow-up" Element="Icon" Classes="glyphicon glyphicon-circle-arrow-up" TagName="i" Css="" />
+    <Icon Name="circle-arrow-down" Element="Icon" Classes="glyphicon glyphicon-circle-arrow-down" TagName="i" Css="" />
+    <Icon Name="globe" Element="Icon" Classes="glyphicon glyphicon-globe" TagName="i" Css="" />
+    <Icon Name="wrench" Element="Icon" Classes="glyphicon glyphicon-wrench" TagName="i" Css="" />
+    <Icon Name="tasks" Element="Icon" Classes="glyphicon glyphicon-tasks" TagName="i" Css="" />
+    <Icon Name="filter" Element="Icon" Classes="glyphicon glyphicon-filter" TagName="i" Css="" />
+    <Icon Name="briefcase" Element="Icon" Classes="glyphicon glyphicon-briefcase" TagName="i" Css="" />
+    <Icon Name="fullscreen" Element="Icon" Classes="glyphicon glyphicon-fullscreen" TagName="i" Css="" />
+    <Icon Name="dashboard" Element="Icon" Classes="glyphicon glyphicon-dashboard" TagName="i" Css="" />
+    <Icon Name="paperclip" Element="Icon" Classes="glyphicon glyphicon-paperclip" TagName="i" Css="" />
+    <Icon Name="heart-empty" Element="Icon" Classes="glyphicon glyphicon-heart-empty" TagName="i" Css="" />
+    <Icon Name="link" Element="Icon" Classes="glyphicon glyphicon-link" TagName="i" Css="" />
+    <Icon Name="phone" Element="Icon" Classes="glyphicon glyphicon-phone" TagName="i" Css="" />
+    <Icon Name="pushpin" Element="Icon" Classes="glyphicon glyphicon-pushpin" TagName="i" Css="" />
+    <Icon Name="usd" Element="Icon" Classes="glyphicon glyphicon-usd" TagName="i" Css="" />
+    <Icon Name="gbp" Element="Icon" Classes="glyphicon glyphicon-gbp" TagName="i" Css="" />
+    <Icon Name="sort" Element="Icon" Classes="glyphicon glyphicon-sort" TagName="i" Css="" />
+    <Icon Name="sort-by-alphabet" Element="Icon" Classes="glyphicon glyphicon-sort-by-alphabet" TagName="i" Css="" />
+    <Icon Name="sort-by-alphabet-alt" Element="Icon" Classes="glyphicon glyphicon-sort-by-alphabet-alt" TagName="i" Css="" />
+    <Icon Name="sort-by-order" Element="Icon" Classes="glyphicon glyphicon-sort-by-order" TagName="i" Css="" />
+    <Icon Name="sort-by-order-alt" Element="Icon" Classes="glyphicon glyphicon-sort-by-order-alt" TagName="i" Css="" />
+    <Icon Name="sort-by-attributes" Element="Icon" Classes="glyphicon glyphicon-sort-by-attributes" TagName="i" Css="" />
+    <Icon Name="sort-by-attributes-alt" Element="Icon" Classes="glyphicon glyphicon-sort-by-attributes-alt" TagName="i" Css="" />
+    <Icon Name="unchecked" Element="Icon" Classes="glyphicon glyphicon-unchecked" TagName="i" Css="" />
+    <Icon Name="expand" Element="Icon" Classes="glyphicon glyphicon-expand" TagName="i" Css="" />
+    <Icon Name="collapse-down" Element="Icon" Classes="glyphicon glyphicon-collapse-down" TagName="i" Css="" />
+    <Icon Name="collapse-up" Element="Icon" Classes="glyphicon glyphicon-collapse-up" TagName="i" Css="" />
+    <Icon Name="log-in" Element="Icon" Classes="glyphicon glyphicon-log-in" TagName="i" Css="" />
+    <Icon Name="flash" Element="Icon" Classes="glyphicon glyphicon-flash" TagName="i" Css="" />
+    <Icon Name="log-out" Element="Icon" Classes="glyphicon glyphicon-log-out" TagName="i" Css="" />
+    <Icon Name="new-window" Element="Icon" Classes="glyphicon glyphicon-new-window" TagName="i" Css="" />
+    <Icon Name="record" Element="Icon" Classes="glyphicon glyphicon-record" TagName="i" Css="" />
+    <Icon Name="save" Element="Icon" Classes="glyphicon glyphicon-save" TagName="i" Css="" />
+    <Icon Name="open" Element="Icon" Classes="glyphicon glyphicon-open" TagName="i" Css="" />
+    <Icon Name="saved" Element="Icon" Classes="glyphicon glyphicon-saved" TagName="i" Css="" />
+    <Icon Name="import" Element="Icon" Classes="glyphicon glyphicon-import" TagName="i" Css="" />
+    <Icon Name="export" Element="Icon" Classes="glyphicon glyphicon-export" TagName="i" Css="" />
+    <Icon Name="send" Element="Icon" Classes="glyphicon glyphicon-send" TagName="i" Css="" />
+    <Icon Name="floppy-disk" Element="Icon" Classes="glyphicon glyphicon-floppy-disk" TagName="i" Css="" />
+    <Icon Name="floppy-saved" Element="Icon" Classes="glyphicon glyphicon-floppy-saved" TagName="i" Css="" />
+    <Icon Name="floppy-remove" Element="Icon" Classes="glyphicon glyphicon-floppy-remove" TagName="i" Css="" />
+    <Icon Name="floppy-save" Element="Icon" Classes="glyphicon glyphicon-floppy-save" TagName="i" Css="" />
+    <Icon Name="floppy-open" Element="Icon" Classes="glyphicon glyphicon-floppy-open" TagName="i" Css="" />
+    <Icon Name="credit-card" Element="Icon" Classes="glyphicon glyphicon-credit-card" TagName="i" Css="" />
+    <Icon Name="transfer" Element="Icon" Classes="glyphicon glyphicon-transfer" TagName="i" Css="" />
+    <Icon Name="cutlery" Element="Icon" Classes="glyphicon glyphicon-cutlery" TagName="i" Css="" />
+    <Icon Name="header" Element="Icon" Classes="glyphicon glyphicon-header" TagName="i" Css="" />
+    <Icon Name="compressed" Element="Icon" Classes="glyphicon glyphicon-compressed" TagName="i" Css="" />
+    <Icon Name="earphone" Element="Icon" Classes="glyphicon glyphicon-earphone" TagName="i" Css="" />
+    <Icon Name="phone-alt" Element="Icon" Classes="glyphicon glyphicon-phone-alt" TagName="i" Css="" />
+    <Icon Name="tower" Element="Icon" Classes="glyphicon glyphicon-tower" TagName="i" Css="" />
+    <Icon Name="stats" Element="Icon" Classes="glyphicon glyphicon-stats" TagName="i" Css="" />
+    <Icon Name="sd-video" Element="Icon" Classes="glyphicon glyphicon-sd-video" TagName="i" Css="" />
+    <Icon Name="hd-video" Element="Icon" Classes="glyphicon glyphicon-hd-video" TagName="i" Css="" />
+    <Icon Name="subtitles" Element="Icon" Classes="glyphicon glyphicon-subtitles" TagName="i" Css="" />
+    <Icon Name="sound-stereo" Element="Icon" Classes="glyphicon glyphicon-sound-stereo" TagName="i" Css="" />
+    <Icon Name="sound-dolby" Element="Icon" Classes="glyphicon glyphicon-sound-dolby" TagName="i" Css="" />
+    <Icon Name="sound-5-1" Element="Icon" Classes="glyphicon glyphicon-sound-5-1" TagName="i" Css="" />
+    <Icon Name="sound-6-1" Element="Icon" Classes="glyphicon glyphicon-sound-6-1" TagName="i" Css="" />
+    <Icon Name="sound-7-1" Element="Icon" Classes="glyphicon glyphicon-sound-7-1" TagName="i" Css="" />
+    <Icon Name="copyright-mark" Element="Icon" Classes="glyphicon glyphicon-copyright-mark" TagName="i" Css="" />
+    <Icon Name="registration-mark" Element="Icon" Classes="glyphicon glyphicon-registration-mark" TagName="i" Css="" />
+    <Icon Name="cloud-download" Element="Icon" Classes="glyphicon glyphicon-cloud-download" TagName="i" Css="" />
+    <Icon Name="cloud-upload" Element="Icon" Classes="glyphicon glyphicon-cloud-upload" TagName="i" Css="" />
+    <Icon Name="tree-conifer" Element="Icon" Classes="glyphicon glyphicon-tree-conifer" TagName="i" Css="" />
+    <Icon Name="tree-deciduous" Element="Icon" Classes="glyphicon glyphicon-tree-deciduous" TagName="i" Css="" />
+    <Icon Name="cd" Element="Icon" Classes="glyphicon glyphicon-cd" TagName="i" Css="" />
+    <Icon Name="save-file" Element="Icon" Classes="glyphicon glyphicon-save-file" TagName="i" Css="" />
+    <Icon Name="open-file" Element="Icon" Classes="glyphicon glyphicon-open-file" TagName="i" Css="" />
+    <Icon Name="level-up" Element="Icon" Classes="glyphicon glyphicon-level-up" TagName="i" Css="" />
+    <Icon Name="copy" Element="Icon" Classes="glyphicon glyphicon-copy" TagName="i" Css="" />
+    <Icon Name="paste" Element="Icon" Classes="glyphicon glyphicon-paste" TagName="i" Css="" />
+    <Icon Name="alert" Element="Icon" Classes="glyphicon glyphicon-alert" TagName="i" Css="" />
+    <Icon Name="equalizer" Element="Icon" Classes="glyphicon glyphicon-equalizer" TagName="i" Css="" />
+    <Icon Name="king" Element="Icon" Classes="glyphicon glyphicon-king" TagName="i" Css="" />
+    <Icon Name="queen" Element="Icon" Classes="glyphicon glyphicon-queen" TagName="i" Css="" />
+    <Icon Name="pawn" Element="Icon" Classes="glyphicon glyphicon-pawn" TagName="i" Css="" />
+    <Icon Name="bishop" Element="Icon" Classes="glyphicon glyphicon-bishop" TagName="i" Css="" />
+    <Icon Name="knight" Element="Icon" Classes="glyphicon glyphicon-knight" TagName="i" Css="" />
+    <Icon Name="baby-formula" Element="Icon" Classes="glyphicon glyphicon-baby-formula" TagName="i" Css="" />
+    <Icon Name="tent" Element="Icon" Classes="glyphicon glyphicon-tent" TagName="i" Css="" />
+    <Icon Name="blackboard" Element="Icon" Classes="glyphicon glyphicon-blackboard" TagName="i" Css="" />
+    <Icon Name="bed" Element="Icon" Classes="glyphicon glyphicon-bed" TagName="i" Css="" />
+    <Icon Name="apple" Element="Icon" Classes="glyphicon glyphicon-apple" TagName="i" Css="" />
+    <Icon Name="erase" Element="Icon" Classes="glyphicon glyphicon-erase" TagName="i" Css="" />
+    <Icon Name="hourglass" Element="Icon" Classes="glyphicon glyphicon-hourglass" TagName="i" Css="" />
+    <Icon Name="lamp" Element="Icon" Classes="glyphicon glyphicon-lamp" TagName="i" Css="" />
+    <Icon Name="duplicate" Element="Icon" Classes="glyphicon glyphicon-duplicate" TagName="i" Css="" />
+    <Icon Name="piggy-bank" Element="Icon" Classes="glyphicon glyphicon-piggy-bank" TagName="i" Css="" />
+    <Icon Name="scissors" Element="Icon" Classes="glyphicon glyphicon-scissors" TagName="i" Css="" />
+    <Icon Name="bitcoin" Element="Icon" Classes="glyphicon glyphicon-bitcoin" TagName="i" Css="" />
+    <Icon Name="btc" Element="Icon" Classes="glyphicon glyphicon-btc" TagName="i" Css="" />
+    <Icon Name="xbt" Element="Icon" Classes="glyphicon glyphicon-xbt" TagName="i" Css="" />
+    <Icon Name="yen" Element="Icon" Classes="glyphicon glyphicon-yen" TagName="i" Css="" />
+    <Icon Name="jpy" Element="Icon" Classes="glyphicon glyphicon-jpy" TagName="i" Css="" />
+    <Icon Name="ruble" Element="Icon" Classes="glyphicon glyphicon-ruble" TagName="i" Css="" />
+    <Icon Name="rub" Element="Icon" Classes="glyphicon glyphicon-rub" TagName="i" Css="" />
+    <Icon Name="scale" Element="Icon" Classes="glyphicon glyphicon-scale" TagName="i" Css="" />
+    <Icon Name="ice-lolly" Element="Icon" Classes="glyphicon glyphicon-ice-lolly" TagName="i" Css="" />
+    <Icon Name="ice-lolly-tasted" Element="Icon" Classes="glyphicon glyphicon-ice-lolly-tasted" TagName="i" Css="" />
+    <Icon Name="education" Element="Icon" Classes="glyphicon glyphicon-education" TagName="i" Css="" />
+    <Icon Name="option-horizontal" Element="Icon" Classes="glyphicon glyphicon-option-horizontal" TagName="i" Css="" />
+    <Icon Name="option-vertical" Element="Icon" Classes="glyphicon glyphicon-option-vertical" TagName="i" Css="" />
+    <Icon Name="menu-hamburger" Element="Icon" Classes="glyphicon glyphicon-menu-hamburger" TagName="i" Css="" />
+    <Icon Name="modal-window" Element="Icon" Classes="glyphicon glyphicon-modal-window" TagName="i" Css="" />
+    <Icon Name="oil" Element="Icon" Classes="glyphicon glyphicon-oil" TagName="i" Css="" />
+    <Icon Name="grain" Element="Icon" Classes="glyphicon glyphicon-grain" TagName="i" Css="" />
+    <Icon Name="sunglasses" Element="Icon" Classes="glyphicon glyphicon-sunglasses" TagName="i" Css="" />
+    <Icon Name="text-size" Element="Icon" Classes="glyphicon glyphicon-text-size" TagName="i" Css="" />
+    <Icon Name="text-color" Element="Icon" Classes="glyphicon glyphicon-text-color" TagName="i" Css="" />
+    <Icon Name="text-background" Element="Icon" Classes="glyphicon glyphicon-text-background" TagName="i" Css="" />
+    <Icon Name="object-align-top" Element="Icon" Classes="glyphicon glyphicon-object-align-top" TagName="i" Css="" />
+    <Icon Name="object-align-bottom" Element="Icon" Classes="glyphicon glyphicon-object-align-bottom" TagName="i" Css="" />
+    <Icon Name="object-align-horizontal" Element="Icon" Classes="glyphicon glyphicon-object-align-horizontal" TagName="i" Css="" />
+    <Icon Name="object-align-left" Element="Icon" Classes="glyphicon glyphicon-object-align-left" TagName="i" Css="" />
+    <Icon Name="object-align-vertical" Element="Icon" Classes="glyphicon glyphicon-object-align-vertical" TagName="i" Css="" />
+    <Icon Name="object-align-right" Element="Icon" Classes="glyphicon glyphicon-object-align-right" TagName="i" Css="" />
+    <Icon Name="triangle-right" Element="Icon" Classes="glyphicon glyphicon-triangle-right" TagName="i" Css="" />
+    <Icon Name="triangle-left" Element="Icon" Classes="glyphicon glyphicon-triangle-left" TagName="i" Css="" />
+    <Icon Name="triangle-bottom" Element="Icon" Classes="glyphicon glyphicon-triangle-bottom" TagName="i" Css="" />
+    <Icon Name="triangle-top" Element="Icon" Classes="glyphicon glyphicon-triangle-top" TagName="i" Css="" />
+    <Icon Name="console" Element="Icon" Classes="glyphicon glyphicon-console" TagName="i" Css="" />
+    <Icon Name="superscript" Element="Icon" Classes="glyphicon glyphicon-superscript" TagName="i" Css="" />
+    <Icon Name="subscript" Element="Icon" Classes="glyphicon glyphicon-subscript" TagName="i" Css="" />
+    <Icon Name="menu-left" Element="Icon" Classes="glyphicon glyphicon-menu-left" TagName="i" Css="" />
+    <Icon Name="menu-right" Element="Icon" Classes="glyphicon glyphicon-menu-right" TagName="i" Css="" />
+    <Icon Name="menu-down" Element="Icon" Classes="glyphicon glyphicon-menu-down" TagName="i" Css="" />
+    <Icon Name="menu-up" Element="Icon" Classes="glyphicon glyphicon-menu-up" TagName="i" Css="" />
+  </Icons>
+</Theme>

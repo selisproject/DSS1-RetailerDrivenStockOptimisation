@@ -1,0 +1,26 @@
+[jb-type='AddItemLabel']{
+color: grey;
+}
+
+table {
+    font-size:inherit;
+}
+
+.chart-toolbar {
+	display: none;
+}
+
+.master-page-title {
+    font-size: 24px !important;
+}
+
+.filters-list
+{
+    
+}
+
+.filters-list .data-list-control:not(.compact-list) .dataTables_wrapper:not(.compact-list) .row:nth-child(1), 
+.filters-list .data-list-control:not(.compact-list) .dataTables_wrapper:not(.compact-list) .row:nth-child(3) {
+    display: none;
+}
+

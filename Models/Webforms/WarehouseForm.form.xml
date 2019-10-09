@@ -1,0 +1,1481 @@
+/*
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.*/
+
+{
+  "$type": "CLMS.AppDev.DomainModel.Models.Form, CLMS.AppDev.DomainModel",
+  "Actions": [
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormControllerAction, CLMS.AppDev.DomainModel",
+      "Code": "function void AddWarehouse()\r\n{\r\n    Model.Title = LocalResources.RES_PAGETITLE_AddWarehouse;\r\n}",
+      "Name": "AddWarehouse",
+      "Permissions": [],
+      "AllowAnonymous": true,
+      "AllowAllAuthenticatedUsers": true,
+      "AccessLog": false,
+      "IsEntryPoint": true,
+      "CausesValidation": false,
+      "EventName": null
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormControllerAction, CLMS.AppDev.DomainModel",
+      "Code": "function void EditWarehouse(\r\n\tint id\r\n)\r\n{ \r\n    Model.Warehouse = Domain.Warehouse.GetByKey(id);\r\n    Model.Title = LocalResources.RES_PAGETITLE_EditWarehouse;\r\n}",
+      "Name": "EditWarehouse",
+      "Permissions": [],
+      "AllowAnonymous": true,
+      "AllowAllAuthenticatedUsers": true,
+      "AccessLog": false,
+      "IsEntryPoint": true,
+      "CausesValidation": false,
+      "EventName": null
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormControllerAction, CLMS.AppDev.DomainModel",
+      "Code": "function void SaveWarehouse()\r\n{\r\n    Model.Warehouse.Save();\r\n    Model.Title = LocalResources.RES_PAGETITLE_SaveWarehouse;\r\n    CloseForm();\r\n}",
+      "Name": "SaveWarehouse",
+      "Permissions": [],
+      "AllowAnonymous": true,
+      "AllowAllAuthenticatedUsers": true,
+      "AccessLog": true,
+      "IsEntryPoint": false,
+      "CausesValidation": true,
+      "EventName": null
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormControllerAction, CLMS.AppDev.DomainModel",
+      "Code": "function void DeleteWarehouse()\r\n{\r\n    Model.Warehouse.Delete();\r\n    Model.Title = LocalResources.RES_PAGETITLE_DeleteWarehouse;\r\n    CloseForm();\r\n}",
+      "Name": "DeleteWarehouse",
+      "Permissions": [],
+      "AllowAnonymous": true,
+      "AllowAllAuthenticatedUsers": true,
+      "AccessLog": true,
+      "IsEntryPoint": false,
+      "CausesValidation": false,
+      "EventName": null
+    }
+  ],
+  "Resources": [
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PAGETITLE_AddWarehouse",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Add Warehouse"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PAGETITLE_EditWarehouse",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Edit Warehouse"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PAGETITLE_SaveWarehouse",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Save Warehouse"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PAGETITLE_DeleteWarehouse",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Delete Warehouse"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Canvas",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_WarehouseMainFieldSet",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_iconWarehouseuniqueDetails",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_lblWarehouseuniqueDetails",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Add a new Warehouse"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_lblWarehouseuniqueDetails",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_WarehouseTable",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_lblCode",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Code"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_lblCode",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PLACEHOLDER_txtCode0",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_txtCode0",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_lblDescription",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Description"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_lblDescription",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_PLACEHOLDER_txtDescription1",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_txtDescription1",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_LabelcmdWarehouseSave",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Save"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_LabelcmdWarehouseSave",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_LabelcmdWarehouseDelete",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Delete"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_LabelcmdWarehouseDelete",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_LABEL_LabelcmdWarehouseExit",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": "Exit"
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_LabelcmdWarehouseExit",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_FieldSetHeader",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_FieldSetContainer",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Row",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Cell",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Cell1",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Cell2",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Cell3",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.Resource, CLMS.AppDev.DomainModel",
+      "Name": null,
+      "Type": "S",
+      "Key": "RES_TOOLTIP_Cell4",
+      "Languages": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.Language, CLMS.AppDev.DomainModel",
+          "Name": "en-us",
+          "Value": null
+        }
+      ]
+    }
+  ],
+  "ViewModel": [
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormViewModelItem, CLMS.AppDev.DomainModel",
+      "Type": 1,
+      "Name": "Warehouse",
+      "Datatype": "Warehouse",
+      "Children": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.FormViewModelItem, CLMS.AppDev.DomainModel",
+          "Type": 0,
+          "Name": "Id",
+          "Datatype": "int",
+          "Children": [],
+          "IsRequired": false,
+          "Hidden": false,
+          "Readonly": false,
+          "Precision": 8,
+          "Length": "100",
+          "Scale": 2,
+          "IsCollection": false,
+          "IsPk": true
+        },
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.FormViewModelItem, CLMS.AppDev.DomainModel",
+          "Type": 0,
+          "Name": "Code",
+          "Datatype": "string",
+          "Children": [],
+          "IsRequired": false,
+          "Hidden": false,
+          "Readonly": false,
+          "Precision": 8,
+          "Length": "100",
+          "Scale": 2,
+          "IsCollection": false,
+          "IsPk": false
+        },
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.FormViewModelItem, CLMS.AppDev.DomainModel",
+          "Type": 0,
+          "Name": "Description",
+          "Datatype": "string",
+          "Children": [],
+          "IsRequired": false,
+          "Hidden": false,
+          "Readonly": false,
+          "Precision": 8,
+          "Length": "100",
+          "Scale": 2,
+          "IsCollection": false,
+          "IsPk": false
+        }
+      ],
+      "IsRequired": false,
+      "Hidden": false,
+      "Readonly": false,
+      "Precision": 0,
+      "Length": null,
+      "Scale": 0,
+      "IsCollection": false,
+      "IsPk": false
+    }
+  ],
+  "DataSets": [],
+  "ConditionalFormattings": [
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.FormConditionalFormatting, CLMS.AppDev.DomainModel",
+      "Name": "HideIfNew",
+      "Condiiton": "function bool Condition() {\r\n    return Controller.AddWarehouse.IsActive();\r\n}",
+      "OnEvent": "2",
+      "Actions": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.FormConditionalFormattingAction, CLMS.AppDev.DomainModel",
+          "Type": 2,
+          "CssStyle": null,
+          "CssAddClass": null,
+          "Controls": [
+            "cmdDeleteWarehouse"
+          ]
+        }
+      ],
+      "ElseActions": [],
+      "Context": null
+    }
+  ],
+  "DataValidations": [],
+  "CalculatedExpressions": [],
+  "Controls": [
+    {
+      "$type": "CLMS.AppDev.DomainModel.Models.BodyControl, CLMS.AppDev.DomainModel",
+      "Name": "Canvas",
+      "CssStyle": "",
+      "CssClass": "",
+      "Tooltip": null,
+      "Datasource": null,
+      "DataSetOrderByMember": null,
+      "DoesNotMakeFormDirty": false,
+      "FontSizeRole": 0,
+      "ElementSizeRole": 0,
+      "ColorRole": 0,
+      "FilterOperator": 0,
+      "RowOperator": 0,
+      "Ovewrite": false,
+      "ApplyOnBlur": false,
+      "HiddenInMobileView": false,
+      "OnClick": null,
+      "OnDoubleClick": null,
+      "OnChange": null,
+      "OnMouseEnter": null,
+      "OnMouseLeave": null,
+      "Controls": [
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.FieldSetControl, CLMS.AppDev.DomainModel",
+          "Header": {
+            "$type": "CLMS.AppDev.DomainModel.Models.FieldSetHeaderControl, CLMS.AppDev.DomainModel",
+            "Name": "FieldSetHeader",
+            "CssStyle": "",
+            "CssClass": "",
+            "Tooltip": null,
+            "Datasource": null,
+            "DataSetOrderByMember": null,
+            "DoesNotMakeFormDirty": false,
+            "FontSizeRole": 0,
+            "ElementSizeRole": 0,
+            "ColorRole": 0,
+            "FilterOperator": 0,
+            "RowOperator": 0,
+            "Ovewrite": false,
+            "ApplyOnBlur": false,
+            "HiddenInMobileView": false,
+            "OnClick": null,
+            "OnDoubleClick": null,
+            "OnChange": null,
+            "OnMouseEnter": null,
+            "OnMouseLeave": null,
+            "Controls": [
+              {
+                "$type": "CLMS.AppDev.DomainModel.Models.IconControl, CLMS.AppDev.DomainModel",
+                "Icon": "ok",
+                "ThemeIcon": null,
+                "InCircle": true,
+                "Name": "iconWarehouseuniqueDetails",
+                "CssStyle": "margin-right: 10px;",
+                "CssClass": "",
+                "Tooltip": null,
+                "Datasource": null,
+                "DataSetOrderByMember": null,
+                "DoesNotMakeFormDirty": false,
+                "FontSizeRole": 0,
+                "ElementSizeRole": 0,
+                "ColorRole": 2,
+                "FilterOperator": 0,
+                "RowOperator": 0,
+                "Ovewrite": false,
+                "ApplyOnBlur": false,
+                "HiddenInMobileView": false,
+                "OnClick": null,
+                "OnDoubleClick": null,
+                "OnChange": null,
+                "OnMouseEnter": null,
+                "OnMouseLeave": null,
+                "Controls": [],
+                "ParentNode": null
+              },
+              {
+                "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+                "Value": "Add a new Warehouse",
+                "FormatString": null,
+                "RenderAsHtml": false,
+                "Name": "lblWarehouseuniqueDetails",
+                "CssStyle": "",
+                "CssClass": "",
+                "Tooltip": null,
+                "Datasource": null,
+                "DataSetOrderByMember": null,
+                "DoesNotMakeFormDirty": false,
+                "FontSizeRole": 4,
+                "ElementSizeRole": 0,
+                "ColorRole": 0,
+                "FilterOperator": 0,
+                "RowOperator": 0,
+                "Ovewrite": false,
+                "ApplyOnBlur": false,
+                "HiddenInMobileView": false,
+                "OnClick": null,
+                "OnDoubleClick": null,
+                "OnChange": null,
+                "OnMouseEnter": null,
+                "OnMouseLeave": null,
+                "Controls": [],
+                "ParentNode": null
+              }
+            ],
+            "ParentNode": null
+          },
+          "Container": {
+            "$type": "CLMS.AppDev.DomainModel.Models.FieldSetContainer, CLMS.AppDev.DomainModel",
+            "Name": "FieldSetContainer",
+            "CssStyle": "",
+            "CssClass": "",
+            "Tooltip": null,
+            "Datasource": null,
+            "DataSetOrderByMember": null,
+            "DoesNotMakeFormDirty": false,
+            "FontSizeRole": 0,
+            "ElementSizeRole": 0,
+            "ColorRole": 0,
+            "FilterOperator": 0,
+            "RowOperator": 0,
+            "Ovewrite": false,
+            "ApplyOnBlur": false,
+            "HiddenInMobileView": false,
+            "OnClick": null,
+            "OnDoubleClick": null,
+            "OnChange": null,
+            "OnMouseEnter": null,
+            "OnMouseLeave": null,
+            "Controls": [
+              {
+                "$type": "CLMS.AppDev.DomainModel.Models.TableControl, CLMS.AppDev.DomainModel",
+                "Id": null,
+                "IsResponsive": true,
+                "IsGrid": false,
+                "IsDataSourceGrid": false,
+                "ResponsiveThreshold": 0,
+                "PageSize": 0,
+                "PagerPosition": 0,
+                "IncludePaging": false,
+                "AddRowPermmited": false,
+                "DeleteRowPermmited": false,
+                "DeleteMultiRowPermmited": false,
+                "ShowWarningPermmited": false,
+                "ShowMultiWarningPermmited": false,
+                "Sorting": null,
+                "IncludeAlternateRowsStyle": false,
+                "IncludeNumbering": false,
+                "Filtering": null,
+                "FilteringType": 0,
+                "WarningMessage": null,
+                "MultiWarningMessage": null,
+                "HeadRows": [],
+                "BodyRows": [
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.RowControl, CLMS.AppDev.DomainModel",
+                    "Cells": [
+                      {
+                        "$type": "CLMS.AppDev.DomainModel.Models.CellControl, CLMS.AppDev.DomainModel",
+                        "ColSpan": 2,
+                        "RowSpan": 0,
+                        "Name": "Cell",
+                        "CssStyle": "",
+                        "CssClass": "",
+                        "Tooltip": null,
+                        "Datasource": null,
+                        "DataSetOrderByMember": null,
+                        "DoesNotMakeFormDirty": false,
+                        "FontSizeRole": 0,
+                        "ElementSizeRole": 0,
+                        "ColorRole": 0,
+                        "FilterOperator": 0,
+                        "RowOperator": 0,
+                        "Ovewrite": false,
+                        "ApplyOnBlur": false,
+                        "HiddenInMobileView": false,
+                        "OnClick": null,
+                        "OnDoubleClick": null,
+                        "OnChange": null,
+                        "OnMouseEnter": null,
+                        "OnMouseLeave": null,
+                        "Controls": [
+                          {
+                            "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+                            "Value": "Code",
+                            "FormatString": null,
+                            "RenderAsHtml": false,
+                            "Name": "lblCode",
+                            "CssStyle": "",
+                            "CssClass": "",
+                            "Tooltip": null,
+                            "Datasource": null,
+                            "DataSetOrderByMember": null,
+                            "DoesNotMakeFormDirty": false,
+                            "FontSizeRole": 0,
+                            "ElementSizeRole": 0,
+                            "ColorRole": 0,
+                            "FilterOperator": 0,
+                            "RowOperator": 0,
+                            "Ovewrite": false,
+                            "ApplyOnBlur": false,
+                            "HiddenInMobileView": false,
+                            "OnClick": null,
+                            "OnDoubleClick": null,
+                            "OnChange": null,
+                            "OnMouseEnter": null,
+                            "OnMouseLeave": null,
+                            "Controls": [],
+                            "ParentNode": null
+                          }
+                        ],
+                        "ParentNode": null
+                      },
+                      {
+                        "$type": "CLMS.AppDev.DomainModel.Models.CellControl, CLMS.AppDev.DomainModel",
+                        "ColSpan": 3,
+                        "RowSpan": 0,
+                        "Name": "Cell1",
+                        "CssStyle": "",
+                        "CssClass": "",
+                        "Tooltip": null,
+                        "Datasource": null,
+                        "DataSetOrderByMember": null,
+                        "DoesNotMakeFormDirty": false,
+                        "FontSizeRole": 0,
+                        "ElementSizeRole": 0,
+                        "ColorRole": 0,
+                        "FilterOperator": 0,
+                        "RowOperator": 0,
+                        "Ovewrite": false,
+                        "ApplyOnBlur": false,
+                        "HiddenInMobileView": false,
+                        "OnClick": null,
+                        "OnDoubleClick": null,
+                        "OnChange": null,
+                        "OnMouseEnter": null,
+                        "OnMouseLeave": null,
+                        "Controls": [
+                          {
+                            "$type": "CLMS.AppDev.DomainModel.Models.TextBoxControl, CLMS.AppDev.DomainModel",
+                            "ReadOnly": false,
+                            "Required": false,
+                            "MaskString": null,
+                            "FilterForColumn": null,
+                            "FilterForList": null,
+                            "PlaceHolder": null,
+                            "Name": "txtCode0",
+                            "CssStyle": "",
+                            "CssClass": "",
+                            "Tooltip": null,
+                            "Datasource": "Warehouse.Code",
+                            "DataSetOrderByMember": null,
+                            "DoesNotMakeFormDirty": false,
+                            "FontSizeRole": 0,
+                            "ElementSizeRole": 0,
+                            "ColorRole": 0,
+                            "FilterOperator": 0,
+                            "RowOperator": 0,
+                            "Ovewrite": false,
+                            "ApplyOnBlur": false,
+                            "HiddenInMobileView": false,
+                            "OnClick": null,
+                            "OnDoubleClick": null,
+                            "OnChange": null,
+                            "OnMouseEnter": null,
+                            "OnMouseLeave": null,
+                            "Controls": [],
+                            "ParentNode": null
+                          }
+                        ],
+                        "ParentNode": null
+                      },
+                      {
+                        "$type": "CLMS.AppDev.DomainModel.Models.CellControl, CLMS.AppDev.DomainModel",
+                        "ColSpan": 2,
+                        "RowSpan": 0,
+                        "Name": "Cell2",
+                        "CssStyle": "",
+                        "CssClass": "",
+                        "Tooltip": null,
+                        "Datasource": null,
+                        "DataSetOrderByMember": null,
+                        "DoesNotMakeFormDirty": false,
+                        "FontSizeRole": 0,
+                        "ElementSizeRole": 0,
+                        "ColorRole": 0,
+                        "FilterOperator": 0,
+                        "RowOperator": 0,
+                        "Ovewrite": false,
+                        "ApplyOnBlur": false,
+                        "HiddenInMobileView": false,
+                        "OnClick": null,
+                        "OnDoubleClick": null,
+                        "OnChange": null,
+                        "OnMouseEnter": null,
+                        "OnMouseLeave": null,
+                        "Controls": [],
+                        "ParentNode": null
+                      },
+                      {
+                        "$type": "CLMS.AppDev.DomainModel.Models.CellControl, CLMS.AppDev.DomainModel",
+                        "ColSpan": 2,
+                        "RowSpan": 0,
+                        "Name": "Cell3",
+                        "CssStyle": "",
+                        "CssClass": "",
+                        "Tooltip": null,
+                        "Datasource": null,
+                        "DataSetOrderByMember": null,
+                        "DoesNotMakeFormDirty": false,
+                        "FontSizeRole": 0,
+                        "ElementSizeRole": 0,
+                        "ColorRole": 0,
+                        "FilterOperator": 0,
+                        "RowOperator": 0,
+                        "Ovewrite": false,
+                        "ApplyOnBlur": false,
+                        "HiddenInMobileView": false,
+                        "OnClick": null,
+                        "OnDoubleClick": null,
+                        "OnChange": null,
+                        "OnMouseEnter": null,
+                        "OnMouseLeave": null,
+                        "Controls": [
+                          {
+                            "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+                            "Value": "Description",
+                            "FormatString": null,
+                            "RenderAsHtml": false,
+                            "Name": "lblDescription",
+                            "CssStyle": "",
+                            "CssClass": "",
+                            "Tooltip": null,
+                            "Datasource": null,
+                            "DataSetOrderByMember": null,
+                            "DoesNotMakeFormDirty": false,
+                            "FontSizeRole": 0,
+                            "ElementSizeRole": 0,
+                            "ColorRole": 0,
+                            "FilterOperator": 0,
+                            "RowOperator": 0,
+                            "Ovewrite": false,
+                            "ApplyOnBlur": false,
+                            "HiddenInMobileView": false,
+                            "OnClick": null,
+                            "OnDoubleClick": null,
+                            "OnChange": null,
+                            "OnMouseEnter": null,
+                            "OnMouseLeave": null,
+                            "Controls": [],
+                            "ParentNode": null
+                          }
+                        ],
+                        "ParentNode": null
+                      },
+                      {
+                        "$type": "CLMS.AppDev.DomainModel.Models.CellControl, CLMS.AppDev.DomainModel",
+                        "ColSpan": 3,
+                        "RowSpan": 0,
+                        "Name": "Cell4",
+                        "CssStyle": "",
+                        "CssClass": "",
+                        "Tooltip": null,
+                        "Datasource": null,
+                        "DataSetOrderByMember": null,
+                        "DoesNotMakeFormDirty": false,
+                        "FontSizeRole": 0,
+                        "ElementSizeRole": 0,
+                        "ColorRole": 0,
+                        "FilterOperator": 0,
+                        "RowOperator": 0,
+                        "Ovewrite": false,
+                        "ApplyOnBlur": false,
+                        "HiddenInMobileView": false,
+                        "OnClick": null,
+                        "OnDoubleClick": null,
+                        "OnChange": null,
+                        "OnMouseEnter": null,
+                        "OnMouseLeave": null,
+                        "Controls": [
+                          {
+                            "$type": "CLMS.AppDev.DomainModel.Models.TextBoxControl, CLMS.AppDev.DomainModel",
+                            "ReadOnly": false,
+                            "Required": false,
+                            "MaskString": null,
+                            "FilterForColumn": null,
+                            "FilterForList": null,
+                            "PlaceHolder": null,
+                            "Name": "txtDescription1",
+                            "CssStyle": "",
+                            "CssClass": "",
+                            "Tooltip": null,
+                            "Datasource": "Warehouse.Description",
+                            "DataSetOrderByMember": null,
+                            "DoesNotMakeFormDirty": false,
+                            "FontSizeRole": 0,
+                            "ElementSizeRole": 0,
+                            "ColorRole": 0,
+                            "FilterOperator": 0,
+                            "RowOperator": 0,
+                            "Ovewrite": false,
+                            "ApplyOnBlur": false,
+                            "HiddenInMobileView": false,
+                            "OnClick": null,
+                            "OnDoubleClick": null,
+                            "OnChange": null,
+                            "OnMouseEnter": null,
+                            "OnMouseLeave": null,
+                            "Controls": [],
+                            "ParentNode": null
+                          }
+                        ],
+                        "ParentNode": null
+                      }
+                    ],
+                    "Name": "Row",
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "ParentNode": null
+                  }
+                ],
+                "FooterRows": [],
+                "TableCols": [
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.TableCol, CLMS.AppDev.DomainModel",
+                    "Name": null,
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "Controls": [],
+                    "ParentNode": null
+                  },
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.TableCol, CLMS.AppDev.DomainModel",
+                    "Name": null,
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "Controls": [],
+                    "ParentNode": null
+                  },
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.TableCol, CLMS.AppDev.DomainModel",
+                    "Name": null,
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "Controls": [],
+                    "ParentNode": null
+                  },
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.TableCol, CLMS.AppDev.DomainModel",
+                    "Name": null,
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "Controls": [],
+                    "ParentNode": null
+                  },
+                  {
+                    "$type": "CLMS.AppDev.DomainModel.Models.TableCol, CLMS.AppDev.DomainModel",
+                    "Name": null,
+                    "CssStyle": "",
+                    "CssClass": "",
+                    "Tooltip": null,
+                    "Datasource": null,
+                    "DataSetOrderByMember": null,
+                    "DoesNotMakeFormDirty": false,
+                    "FontSizeRole": 0,
+                    "ElementSizeRole": 0,
+                    "ColorRole": 0,
+                    "FilterOperator": 0,
+                    "RowOperator": 0,
+                    "Ovewrite": false,
+                    "ApplyOnBlur": false,
+                    "HiddenInMobileView": false,
+                    "OnClick": null,
+                    "OnDoubleClick": null,
+                    "OnChange": null,
+                    "OnMouseEnter": null,
+                    "OnMouseLeave": null,
+                    "Controls": [],
+                    "ParentNode": null
+                  }
+                ],
+                "DataSetName": null,
+                "DisplayMember": null,
+                "ValueMember": null,
+                "WhenChanged": null,
+                "DataSetInputs": [],
+                "Name": "WarehouseTable",
+                "CssStyle": "",
+                "CssClass": "",
+                "Tooltip": null,
+                "Datasource": null,
+                "DataSetOrderByMember": null,
+                "DoesNotMakeFormDirty": false,
+                "FontSizeRole": 0,
+                "ElementSizeRole": 0,
+                "ColorRole": 0,
+                "FilterOperator": 0,
+                "RowOperator": 0,
+                "Ovewrite": false,
+                "ApplyOnBlur": false,
+                "HiddenInMobileView": false,
+                "OnClick": null,
+                "OnDoubleClick": null,
+                "OnChange": null,
+                "OnMouseEnter": null,
+                "OnMouseLeave": null,
+                "ParentNode": null
+              }
+            ],
+            "ParentNode": null
+          },
+          "Footer": null,
+          "HasHeader": true,
+          "HasFooter": false,
+          "Collapsible": false,
+          "IsCollapsed": false,
+          "Name": "WarehouseMainFieldSet",
+          "CssStyle": "",
+          "CssClass": "",
+          "Tooltip": null,
+          "Datasource": null,
+          "DataSetOrderByMember": null,
+          "DoesNotMakeFormDirty": false,
+          "FontSizeRole": 0,
+          "ElementSizeRole": 0,
+          "ColorRole": 0,
+          "FilterOperator": 0,
+          "RowOperator": 0,
+          "Ovewrite": false,
+          "ApplyOnBlur": false,
+          "HiddenInMobileView": false,
+          "OnClick": null,
+          "OnDoubleClick": null,
+          "OnChange": null,
+          "OnMouseEnter": null,
+          "OnMouseLeave": null,
+          "ParentNode": null
+        },
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.ButtonControl, CLMS.AppDev.DomainModel",
+          "ActionType": 0,
+          "AppliesFiltersOfList": null,
+          "ClearsFiltersOfList": null,
+          "ValidationGroups": [],
+          "ShowConfirmation": false,
+          "IsDefaultButton": true,
+          "IsEscapeButton": false,
+          "ImageUrl": null,
+          "Type": 0,
+          "ClearDatasetFilter": null,
+          "ApplyDataSetFilter": null,
+          "ClientSideSourceCodeFunction": null,
+          "ControllerAction": null,
+          "Labels": [
+            {
+              "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+              "Value": "Save",
+              "FormatString": null,
+              "RenderAsHtml": false,
+              "Name": "LabelcmdWarehouseSave",
+              "CssStyle": "",
+              "CssClass": "",
+              "Tooltip": null,
+              "Datasource": null,
+              "DataSetOrderByMember": null,
+              "DoesNotMakeFormDirty": false,
+              "FontSizeRole": 0,
+              "ElementSizeRole": 0,
+              "ColorRole": 0,
+              "FilterOperator": 0,
+              "RowOperator": 0,
+              "Ovewrite": false,
+              "ApplyOnBlur": false,
+              "HiddenInMobileView": false,
+              "OnClick": null,
+              "OnDoubleClick": null,
+              "OnChange": null,
+              "OnMouseEnter": null,
+              "OnMouseLeave": null,
+              "Controls": [],
+              "ParentNode": null
+            }
+          ],
+          "Name": "cmdWarehouseSave",
+          "CssStyle": "",
+          "CssClass": "",
+          "Tooltip": null,
+          "Datasource": null,
+          "DataSetOrderByMember": null,
+          "DoesNotMakeFormDirty": false,
+          "FontSizeRole": 0,
+          "ElementSizeRole": 4,
+          "ColorRole": 2,
+          "FilterOperator": 0,
+          "RowOperator": 0,
+          "Ovewrite": false,
+          "ApplyOnBlur": false,
+          "HiddenInMobileView": false,
+          "OnClick": {
+            "$type": "CLMS.AppDev.DomainModel.Models.ExecuteFormControllerAction, CLMS.AppDev.DomainModel",
+            "Type": 2,
+            "Url": null,
+            "DataSetName": null,
+            "ListControlName": null,
+            "DataSetMember": null,
+            "Action": "SaveWarehouse",
+            "Controller": "this",
+            "ControllerType": 0,
+            "OnUnauthorized": "HIDE",
+            "TargetFrame": "_self",
+            "ModalSize": "POPUP",
+            "ModalMode": null,
+            "Parameters": [],
+            "OnCloseModalDialogAction": null,
+            "Permissions": [],
+            "IsPublic": false,
+            "NoPermissionsRequired": false,
+            "AllowAnonymous": false,
+            "AllowAllAuthenticatedUsers": false,
+            "EnableAccessLog": false
+          },
+          "OnDoubleClick": null,
+          "OnChange": null,
+          "OnMouseEnter": null,
+          "OnMouseLeave": null,
+          "ParentNode": null
+        },
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.ButtonControl, CLMS.AppDev.DomainModel",
+          "ActionType": 0,
+          "AppliesFiltersOfList": null,
+          "ClearsFiltersOfList": null,
+          "ValidationGroups": [],
+          "ShowConfirmation": false,
+          "IsDefaultButton": false,
+          "IsEscapeButton": false,
+          "ImageUrl": null,
+          "Type": 0,
+          "ClearDatasetFilter": null,
+          "ApplyDataSetFilter": null,
+          "ClientSideSourceCodeFunction": null,
+          "ControllerAction": null,
+          "Labels": [
+            {
+              "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+              "Value": "Delete",
+              "FormatString": null,
+              "RenderAsHtml": false,
+              "Name": "LabelcmdWarehouseDelete",
+              "CssStyle": "",
+              "CssClass": "",
+              "Tooltip": null,
+              "Datasource": null,
+              "DataSetOrderByMember": null,
+              "DoesNotMakeFormDirty": false,
+              "FontSizeRole": 0,
+              "ElementSizeRole": 0,
+              "ColorRole": 0,
+              "FilterOperator": 0,
+              "RowOperator": 0,
+              "Ovewrite": false,
+              "ApplyOnBlur": false,
+              "HiddenInMobileView": false,
+              "OnClick": null,
+              "OnDoubleClick": null,
+              "OnChange": null,
+              "OnMouseEnter": null,
+              "OnMouseLeave": null,
+              "Controls": [],
+              "ParentNode": null
+            }
+          ],
+          "Name": "cmdDeleteWarehouse",
+          "CssStyle": "display: none",
+          "CssClass": "",
+          "Tooltip": null,
+          "Datasource": null,
+          "DataSetOrderByMember": null,
+          "DoesNotMakeFormDirty": false,
+          "FontSizeRole": 0,
+          "ElementSizeRole": 4,
+          "ColorRole": 6,
+          "FilterOperator": 0,
+          "RowOperator": 0,
+          "Ovewrite": false,
+          "ApplyOnBlur": false,
+          "HiddenInMobileView": false,
+          "OnClick": {
+            "$type": "CLMS.AppDev.DomainModel.Models.ExecuteFormControllerAction, CLMS.AppDev.DomainModel",
+            "Type": 2,
+            "Url": null,
+            "DataSetName": null,
+            "ListControlName": null,
+            "DataSetMember": null,
+            "Action": "DeleteWarehouse",
+            "Controller": "this",
+            "ControllerType": 0,
+            "OnUnauthorized": "HIDE",
+            "TargetFrame": "_self",
+            "ModalSize": "POPUP",
+            "ModalMode": null,
+            "Parameters": [],
+            "OnCloseModalDialogAction": null,
+            "Permissions": [],
+            "IsPublic": false,
+            "NoPermissionsRequired": false,
+            "AllowAnonymous": false,
+            "AllowAllAuthenticatedUsers": false,
+            "EnableAccessLog": false
+          },
+          "OnDoubleClick": null,
+          "OnChange": null,
+          "OnMouseEnter": null,
+          "OnMouseLeave": null,
+          "ParentNode": null
+        },
+        {
+          "$type": "CLMS.AppDev.DomainModel.Models.ButtonControl, CLMS.AppDev.DomainModel",
+          "ActionType": 0,
+          "AppliesFiltersOfList": null,
+          "ClearsFiltersOfList": null,
+          "ValidationGroups": [],
+          "ShowConfirmation": false,
+          "IsDefaultButton": false,
+          "IsEscapeButton": true,
+          "ImageUrl": null,
+          "Type": 0,
+          "ClearDatasetFilter": null,
+          "ApplyDataSetFilter": null,
+          "ClientSideSourceCodeFunction": null,
+          "ControllerAction": null,
+          "Labels": [
+            {
+              "$type": "CLMS.AppDev.DomainModel.Models.LabelControl, CLMS.AppDev.DomainModel",
+              "Value": "Exit",
+              "FormatString": null,
+              "RenderAsHtml": false,
+              "Name": "LabelcmdWarehouseExit",
+              "CssStyle": "",
+              "CssClass": "",
+              "Tooltip": null,
+              "Datasource": null,
+              "DataSetOrderByMember": null,
+              "DoesNotMakeFormDirty": false,
+              "FontSizeRole": 0,
+              "ElementSizeRole": 0,
+              "ColorRole": 0,
+              "FilterOperator": 0,
+              "RowOperator": 0,
+              "Ovewrite": false,
+              "ApplyOnBlur": false,
+              "HiddenInMobileView": false,
+              "OnClick": null,
+              "OnDoubleClick": null,
+              "OnChange": null,
+              "OnMouseEnter": null,
+              "OnMouseLeave": null,
+              "Controls": [],
+              "ParentNode": null
+            }
+          ],
+          "Name": "cmdExit",
+          "CssStyle": "",
+          "CssClass": " pull-right",
+          "Tooltip": null,
+          "Datasource": null,
+          "DataSetOrderByMember": null,
+          "DoesNotMakeFormDirty": false,
+          "FontSizeRole": 0,
+          "ElementSizeRole": 4,
+          "ColorRole": 1,
+          "FilterOperator": 0,
+          "RowOperator": 0,
+          "Ovewrite": false,
+          "ApplyOnBlur": false,
+          "HiddenInMobileView": false,
+          "OnClick": {
+            "$type": "CLMS.AppDev.DomainModel.Models.ExecuteFormControllerAction, CLMS.AppDev.DomainModel",
+            "Type": 1,
+            "Url": null,
+            "DataSetName": null,
+            "ListControlName": null,
+            "DataSetMember": null,
+            "Action": null,
+            "Controller": null,
+            "ControllerType": 0,
+            "OnUnauthorized": "HIDE",
+            "TargetFrame": "_self",
+            "ModalSize": "POPUP",
+            "ModalMode": null,
+            "Parameters": [],
+            "OnCloseModalDialogAction": null,
+            "Permissions": [],
+            "IsPublic": false,
+            "NoPermissionsRequired": false,
+            "AllowAnonymous": false,
+            "AllowAllAuthenticatedUsers": false,
+            "EnableAccessLog": false
+          },
+          "OnDoubleClick": null,
+          "OnChange": null,
+          "OnMouseEnter": null,
+          "OnMouseLeave": null,
+          "ParentNode": null
+        }
+      ],
+      "ParentNode": null
+    }
+  ],
+  "ShowWarningWhenLeavingPage": false,
+  "IsMasterPage": false,
+  "IsPartial": false,
+  "MasterPage": "MasterPage",
+  "Imports": [],
+  "MaxViewModelLevel": 0,
+  "ModelName": "WarehouseForm",
+  "ModelCreator": "c.platsatoura@clmsuk.com",
+  "ModelDescription": null,
+  "DateCreated": null,
+  "Version": "0.2.86"
+}

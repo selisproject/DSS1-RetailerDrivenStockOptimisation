@@ -1,0 +1,1 @@
+Chart.defaults.global.elements.point.radius = 1;
